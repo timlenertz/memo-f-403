@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  12 AUG 2014 15:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  12 AUG 2014 20:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,9 +464,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \verbatim@out=\write3
-runsystem(touch w18-test-2014812958.tex)...disabled (restricted).
+runsystem(touch w18-test-20148121210.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-2014812958.tex)...disabled (restricted).
+runsystem(rm -f w18-test-20148121210.tex)...disabled (restricted).
 
 
 
@@ -635,20 +635,20 @@ Package babel Info: Making ? an active character on input line 370.
 (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -679,7 +679,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 12.
+Package hyperref Info: Link coloring OFF on input line 14.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -689,23 +689,23 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count130
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
+LaTeX Info: Redefining \ref on input line 14.
+LaTeX Info: Redefining \pageref on input line 14.
+LaTeX Info: Redefining \nameref on input line 14.
 
 (./document.out) (./document.out)
 \@outlinefile=\write4
 \openout4 = `document.out'.
 
-LaTeX Info: Redefining \degres on input line 12.
-LaTeX Info: Redefining \dots on input line 12.
-LaTeX Info: Redefining \up on input line 12.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 19.
+LaTeX Info: Redefining \degres on input line 14.
+LaTeX Info: Redefining \dots on input line 14.
+LaTeX Info: Redefining \up on input line 14.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 21.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 19.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 21.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -728,126 +728,52 @@ Chapitre 1.
 ]
 Chapitre 2.
 
-LaTeX Warning: Citation `Tour009' on page 4 undefined on input line 45.
+LaTeX Warning: Citation `Tour009' on page 4 undefined on input line 47.
 
 [4
 
-] [5] [6]
-./document.tex:110: Missing { inserted.
-<to be read again> 
-                   $
-l.110 ... prend les coordonnées des points $\vec_
-                                                  {s}$ et $\vec_{c}$, relati...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
+] [5] [6] [7]
 
-./document.tex:110: Missing } inserted.
-<inserted text> 
-                }
-l.110 ... prend les coordonnées des points $\vec_
-                                                  {s}$ et $\vec_{c}$, relati...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+LaTeX Warning: Citation `Scho1970' on page 8 undefined on input line 182.
 
-./document.tex:110: Missing { inserted.
-<to be read again> 
-                   }
-l.110 ... prend les coordonnées des points $\vec_
-                                                  {s}$ et $\vec_{c}$, relati...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
 
-./document.tex:110: Missing } inserted.
-<inserted text> 
-                }
-l.110 ...nd les coordonnées des points $\vec_{s}$
-                                                   et $\vec_{c}$, relatif au...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+LaTeX Warning: Citation `Scho1966' on page 8 undefined on input line 182.
 
-./document.tex:110: Missing { inserted.
-<to be read again> 
-                   $
-l.110 ...rdonnées des points $\vec_{s}$ et $\vec_
-                                                  {c}$, relatif au centres d...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
+[8] [9]
+Chapitre 3.
+(./document.bbl [10
 
-./document.tex:110: Missing } inserted.
-<inserted text> 
-                }
-l.110 ...rdonnées des points $\vec_{s}$ et $\vec_
-                                                  {c}$, relatif au centres d...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./document.tex:110: Missing { inserted.
-<to be read again> 
-                   }
-l.110 ...rdonnées des points $\vec_{s}$ et $\vec_
-                                                  {c}$, relatif au centres d...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./document.tex:110: Missing } inserted.
-<inserted text> 
-                }
-l.110 ...nées des points $\vec_{s}$ et $\vec_{c}$
-                                                  , relatif au centres de ma...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[7] (./document.bbl [8]
+]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 20.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
- [9
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
+ [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
 
 (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 7287D4BE312429FEF1BFE7CE9F51B47D;441.
+(rerunfilecheck)             Checksum: A125C9F8E327C94726BB22E031E75B31;1126.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
  ) 
 Here is how much of TeX's memory you used:
- 9426 strings out of 493308
- 142147 string characters out of 6137817
- 286271 words of memory out of 5000000
- 12676 multiletter control sequences out of 15000+600000
- 19905 words of font info for 53 fonts, out of 8000000 for 9000
+ 9462 strings out of 493308
+ 142624 string characters out of 6137817
+ 286337 words of memory out of 5000000
+ 12689 multiletter control sequences out of 15000+600000
+ 20671 words of font info for 54 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,9n,51p,1306b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,51p,1306b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
@@ -862,24 +788,25 @@ l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sftt1000.pfb>
-Output written on document.pdf (9 pages, 354521 bytes).
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/cm-super/sftt1000.pfb>
+Output written on document.pdf (11 pages, 394936 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 352 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
