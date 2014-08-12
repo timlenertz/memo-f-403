@@ -5,6 +5,7 @@
 \usepackage{gnuplottex}
 \usepackage{fullpage}
 \usepackage{hyperref}
+\usepackage{url}
 \usepackage[T1]{fontenc}
 \usepackage[frenchb]{babel}
 
@@ -16,8 +17,10 @@
 \date{\today}
 \maketitle
 
+\tableofcontents
+
 \chapter{Introduction}
-Pour des projets de documentation 3D, des objets ou environnements sont souvent numérisés sous forme de \emph{nuages de points}. Un nuage de points consiste en un ensemble de points situés sur les surfaces des objets, définis par des coordonnées dans un repère orthonormal donné, et attribués par des valeurs scalaires ou vectorielles comme par exemple une couleur RGB.
+Pour des projets de documentation 3D, des objets ou environnements sont souvent numérisés sous forme de \emph{nuages de points}. Un nuage de points consiste uniquement en un ensemble de points situés sur les surfaces des objets, définis par des coordonnées dans un repère orthonormal donné, et attribués par des valeurs scalaires ou vectorielles comme par exemple une couleur RGB.
 
 Ces jeux de données sont usuellement capturés par des scanners 3D à télémètre laser, ou par photogrammétrie. Ces données bruts ne représentent qu'une partie de l'objet, et sont limitées par le champ de vision de la caméra, les surfaces cachées (sur le côté opposé au scanner de l'objet), les limites de résolution pour des parties éloignés ou qui ont une texture complexe. Afin d'en synthétiser un nuage de points représentant le modèle complet, plusieurs traitement doivent être effectués, notamment les recalage: Pour toutes les nuages de points partielles, une transformation affine est appliquée aux points afin de les mettre dans un repère commun.
 
@@ -26,24 +29,31 @@ Plusieurs techniques (semi)-automatisées ont été développées qui permettent
 Ce mémoire se concentre sur le recalage de numérisations à distance d'un objet à grande dimensions, avec des numérisations à courtes distances de détails de d'objet. Donc les ensembles de points à recaler pourront avoir des densités de points très différentes, et auront un nombre de points très élevé. Le but est d'établir un workflow et de développer des algorithme qui permettent d'effectuer ce type de recalage. Le travail est basé un projet de documentation 3D actuel du LISA. 
 
 
-\section{Terminologie}
-
-\section{Nuage de points}
-
-
-
 \chapter{Etat de l'art}
 
 \section{Documentation 3D}
-Des nuages de points créés via des processus de numérisation 3D sont utilisés dans plusieurs domaines pour représenter des objets réels. Les modèles 3D peuvent paser de représentations détaillées d'objets petits (p.ex. en dent), à des bâtiments ou même des sites entiers.
+Des nuages de points créés via des processus de numérisation 3D sont utilisés dans plusieurs domaines pour représenter des objets réels. Les modèles 3D peuvent passer de représentations détaillées d'objets petits à des bâtiments ou même des sites entiers. Des exemples d'usage sont par exemple la documentation détaillée de sites archéologiques \cite{Web1} \cite{Kein2011} \cite{Grus2012} et d'environnements urbains \cite{Kers2006}, des acquisitions aériennes de terrains, la vision algorithmique en robotique \cite{Bibe2003}, la capture de formes 3D pour création de prothèses en médecine dentaire et orthopédique, la rétroingénierie, la création de modèles en animation 3D.
 
 Pour collectionner les données bruts de l'objet pour lequel on veut générer un modèle 3D, deux techniques sont généralement utilisés: La \emph{photogrammétrie} consiste à prendre des photos (possiblement stéréoscopiques) de l'objet, à partir desquelles on peut extraire algorithmiquement de l'information sur la profondeur des pixels. D'autre part, on utilise des \emph{scanners tridimensionnels}, des appareils qui effectuent un balayage par laser de l'objet et produisent directement un nuage de points. Souvent les deux techniques sont combinées. Cela permet par exemple de compléter un scan laser très détaillé avec de l'information sur les couleurs des points.
 
-Pour passer des données bruts à un modèle entier, toujours sous forme de nuage de points, un nombre important de post-traitements sont requis. 
-
+Pour passer des données bruts au modèle final envisagé, un nombre important d'étapes de planification et de post-traitement des données doivent être effectués. Par exemple, un projet de documentation archéologique pour lequel des scans 3D et des données photogrammétriques sont utilisés peut passer par les étapes suivantes: \cite{Lerm2009}
+\begin{itemize}
+	\item Planification et acquisition des données bruts. Les positions à partir desquelles les scans 3D sont pris doivent être planifiés minutieusement en fonction du terrain, de la forme de l'objet et des spécifications du scanner, afin d'assurer une couverture complète de l'objet, avec la résolution et fidélité ciblée. De même pour les position où des photos sont prises.
+	\item Filtrage des nuages de points bruts. Le but est d'enlever der erreurs grosses du scanner, comme des points isolés.
+	\item Recalage des nuages de points pour les mettre dans un repère commun. Beaucoup méthodes et algorithmes ont été développés pour automatiser un recalage sous différents conditions, ce qui est le sujet de ce mémoire. Dans certains cas des markers sont placés sur la scène avant l'acquisition des scans et photos. Les nuages de points peuvent ensuite être fusionnés par simple concaténation des points.
+	\item Maillage des nuages de points, par example par triangulation de Delaunay. Le but ici est d'obtenir un modèle qui reprend l'information sur les surfaces du modèle. Pour des formes complexes, par exemple de la végétation sur un mur, des procédures additionnels d'analyse et de filtrage sont requis.
+	\item Par des méthodes photogrammétriques \cite{Tour009} et radiométriques \cite{Giro2013}, les photos sont modifiés et analysés: On corrige des vignettes, distortions et autres erreurs optiques induits par la lentille de la caméra, égalise les valeurs colorimétriques des différentes photos. Par des détecteurs de zones d'intérêt en reconnaissance d'image, on retrouve des markers, ou d'autres points marquants, afin de mettre en correspondance plusieurs photos et d'en extraire la pose de la caméra et des informations de profondeur.
+	\item Recalage des photos sur le modèle pour texturer le maillage. Au cas un modèle non-maillé qui reste sous forme de nuage de points, les photos peuvent être utilisés pour coloriser les points. Ensuite la densité des points peut être uniformisée si nécessaire.
+	\item Dans certains contextes, par exemple en rétroingénierie ou en architecture, le but est de finir avec un modèle CAD. Des méthodes ont été développées pour segmenter le modèle, et pour reconnaitre des formes ou objets.
+\end{itemize}
 
 \subsection{Scanner tridimensionnels}
-Plusieurs types de scanners tridimensionnels existent. 
+Les scanners tridimensionnels utilisent des rayonnements, typiquement des lasers, pour physiquement mesurer des informations de profondeur de leur environnements. Dans les dernières années, cette technologie a connu un développement important. Les scanners 3D disposent d'un niveau avancé d'automatisation, et peuvent produire des données de bonne qualité \cite{Grus2012} à des coût relativement abordables.
+
+\subsubsection{Scanners à temps de vol (LIDAR)}
+\subsubsection{Scanners par triangulation}
+\subsubsection{Scanners par décalage de phase}
+\subsubsection{Scanners par lumière structurée}
 
 
 
@@ -56,7 +66,7 @@ Par recalage, on entend le procédé de trouver ces transformations rigides, de 
 
 On peut distinguer entre les algorithmes locaux (séquentiels) qui opèrent sur deux nuages de points à la fois, et les algorithmes globaux (simultanés) qui effectuent un recalage de plusieurs nuages de points. Cette dernière méthode est plus complexe, mais a l'avantage qu'il n'y a pas d'erreur de recalage qui s'accumule lors des recalages deux-à-deux. Ces algorithmes tentent au lieu de distribuer l'erreur uniformément parmi les nuages.
 
-La méthode préférée pour déterminer un recalage approximatif dépend surtout du type et de la forme de l'objet numérisé, et des données bruts dont on dispose. Certains algorithmes procèdent en identifiant des droites ou des plans dans le modèle, et sont donc plus appropriés pour par exemple des façades de bâtiments. Si les scans ont des zones de chevauchement assez grandes, il peut être possible d'en déduire le recalage de façon automatisée. D'autres méthodes peuvent être utilisée avec des données collectionnées additionnelles, comme des photos prises par le même point de vue que le scanner ou des markers placés sur l'objet avant la numérisation. Par des algorithmes de détection de zones d'intérêt sur des images ou directement sur les nuages de points, on peut alors identifier des points communs dans les différents scans. Aussi les information attribués aux points, comme une couleur, une mesure de température, ou autres, peuvent servir en tant que dimension en plus des coordonnées 3D pour déterminer leur distance. Une première estimation de la pose des scans peut être issue de sensors odométriques ou GPS du scanner.
+La méthode préférée pour déterminer un recalage approximatif dépend surtout du type et de la forme de l'objet numérisé, et des données bruts dont on dispose. Certains algorithmes procèdent en identifiant des droites \cite{Lich2011} ou des plans \cite{Dold2006} dans le modèle, et sont donc plus appropriés pour par exemple des façades simples de bâtiments. Si les scans ont des zones de chevauchement assez grandes, il peut être possible d'en déduire le recalage de façon complètement automatisée. D'autres méthodes peuvent être utilisées avec des données collectionnées additionnelles, comme des photos prises par le même point de vue que le scanner \cite{Tour2009} ou des markers placés sur l'objet avant la numérisation \cite{Mati2011}. Par des algorithmes de détection de zones d'intérêt \cite{Tuyt2007} sur des images ou directement sur les nuages de points, on peut alors identifier des points communs dans les différents scans. Aussi les information attribués aux points, comme une couleur, une mesure de température, ou autres, peuvent servir en tant que dimension en plus des coordonnées 3D pour déterminer leur distance. Une première estimation de la pose des scans peut être issue de sensors odométriques ou GPS du scanner.
 
 Certains algorithmes seront décrit en détail dans les pages suivantes, à savoir ICP \cite{Besl1992} et ses variantes \cite{Rusi2001}, ...
 

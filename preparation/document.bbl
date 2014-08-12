@@ -1,4 +1,37 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Bibe2003}
+Peter Biber.
+\newblock The normal distributions transform: A new approach to laser scan
+  matching.
+\newblock 2003.
+
+\bibitem{Dold2006}
+Christoph Dold;~Claus Brenner.
+\newblock Registration of terrestrial laser scanning data using planar patches
+  and image data.
+\newblock In {\em International Archives of Photogrammetry and Remote Sensing},
+  pages 25--27. Leibniz University of Hannover, 2006.
+
+\bibitem{Web1}
+University of~Arkansas Center~for Advanced Spatial~Technologies.
+\newblock Archaeological laser scanning.
+\newblock
+  \url{http://www.cast.uark.edu/home/research/archaeology-and-historic-preservation/archaeological-geomatics/archaeological-laser-scanning.html},
+  2014.
+
+\bibitem{Told2010}
+Roberto Toldo; Alberto Beinat;~Fabio Crosilla.
+\newblock Global registration of multiple point clouds embedding the
+  generalized procrustes analysis into an icp framework.
+\newblock 3DPVT 2010 Conference, 2010.
+
+\bibitem{Giro2013}
+Luc Girod.
+\newblock {\'E}galisation radiom{\'e}trique de nuages de points 3d: Principes
+  et algorithmique.
+\newblock Stage de fin d'{\'e}tudes, Ecole Nationale des Sciences
+  G{\'e}ographiques (France), Septembre 2013.
 
 \bibitem{Horn1986}
 Berthold~K.P. Horn.
@@ -7,16 +40,70 @@ Berthold~K.P. Horn.
   629. Department of Electrical Engineering, University of Hawaii at Manoa,
   April 1987.
 
+\bibitem{Kein2011}
+Christopher Keiner.
+\newblock Bildregistrierung von 3d-laserscans und bildern f{\"u}r wadi sura.
+\newblock Master's thesis, Fachbereich Mathematik und Informatik der Freien
+  Universit{\"a}t Berlin, April, 2011.
+
 \bibitem{Rusi2001}
 Szymon Rusinkiewicz;~Marc Levoy.
 \newblock Efficient variants of the icp algorithm.
 \newblock volume 3-D Digital Imaging and Modeling, pages 145--152. Stanford
   University, 2001.
 
+\bibitem{Lich2011}
+Maria Lichtenstein.
+\newblock {\em Strukturbasierte Registrierung von Punktwolken unter Verwendung
+  von Bild- und Laserscannerdaten}.
+\newblock PhD thesis, Rheinisch-Westf{\"a}lische Technische Hochschule Aachen,
+  2011.
+
+\bibitem{Kers2006}
+Thomas Kersten; Heinz-J{\"u}rgen Przybilla;~Maren Lindstaedt.
+\newblock Integration, fusion und kombination von terrestrischen
+  laserscannerdaten und digitalen bildern.
+\newblock November 2006.
+
 \bibitem{Besl1992}
 Paul J Besl; Neil~D. McKay.
 \newblock A method for registration of 3-d shapes.
 \newblock In {\em IEEE Transactions on Pattern Analysis and Machine
   Intelligence}, volume~14, pages 239--256. IEEE, February 1992.
+
+\bibitem{Tuyt2007}
+Tinne Tuytelaars;~Krystian Mikolajczyk.
+\newblock Local invariant feature detectors: A survey.
+\newblock {\em Foundations and Trends in Computer Graphics and Vision}, 3(3),
+  2007.
+
+\bibitem{Grus2012}
+P.~Grussenmeyer; E. Alby; T. Landes; M. Koehl; S. Guillemin; J.-F. Hullo; P.
+  Assali;~E. Smigiel.
+\newblock Recording approach of heritage sites based on merging point clouds
+  from high resolution photogrammetry and terrestrial laser scanning.
+\newblock {\em International Archives of the Photogrammetry, Remote Sensing and
+  Spatial Information Sciences}, XXXIX-B5:553--558, 2012.
+
+\bibitem{Tour2009}
+E.~Tournas;~M. Tsakiri.
+\newblock Automatic 3d point cloud registration for cultural heritage
+  documentation.
+\newblock {\em Laser scanning 2009, IAPRS}, XXXVIII:189--194, September 2009.
+
+\bibitem{Mati2011}
+D.~Miniotas V.~Matiukas.
+\newblock Point cloud merging for complete 3d surface reconstruction.
+\newblock Number~7 in ISSN 1392--1215 ELECTRONICS AND ELECTRICAL ENGINEERING.
+  Department of Electronic Systems, Vilnius Gediminas Technical University,
+  2011.
+
+\bibitem{Lerm2009}
+Jos{\'e} Luis Lerma; Santiago Navarro; Miriam Cabrelles;~Valent{\'\i}n
+  Villaverde.
+\newblock Terrestrial laser scanning and close range photogrammetry for 3d
+  archaeological documentation: the upper palaeolithic cave of parpall{\'o} as
+  a case study.
+\newblock {\em Journal of Archaeological Science}, 37:499--507, October 2009.
 
 \end{thebibliography}
