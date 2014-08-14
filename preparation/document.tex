@@ -61,6 +61,25 @@ Les scanners tridimensionnels utilisent des rayonnements, typiquement des lasers
 \subsubsection{Scanners par lumière structurée}
 
 
+\section{Théorie préliminaire}
+
+\subsection{RANSAC}
+L'algorithme RANSAC (``Random Sample Consensus''\emph{Consensus par échantillons aléatoires}), initialement décrit en \cite{Fisc1980}, est une méthode générale qui permet d'aligner un \emph{modèle}, défini par un vecteur de paramètres $\theta$, à des échantillons $p_i$ de données mesurés. L'algorithme procède en sélectionnant aléatoirement des échantillons pour y déduire un modèle possible, qui est ensuite raffiné itérativement. La présence d'une fraction élevée d'erreurs de mesure parmi les échantillons (``outliers''\footnote{dans le contexte de nuages de points, des points qui ne sont pas sur une surface de l'objet}) rend inutilisable des solutions classiques comme la méthode des moindres carrés. Avec l'approche RANSAC, la probabilité inférieure de sélectionner parmi tous les échantillons un outlier mène à un bon alignement avec les échantillons corrects. (``inliers'').
+
+Soit $m$ le nombre minimal d'échantillons requis pour trouver un modèle $\hat{\theta}$ qui comprend ces $m$ échantillons. Soit $P$ l'ensemble d'échantillons. Soit $E(\theta, p)$ une métrique d'erreur qui est zéro si l'échantillon $p$ correspond parfaitement au modèle $\hat{\theta}$. RANSAC procède en répétant la procédure suivante:
+\begin{enumerate}
+	\item Soit $S \subset P$ un sous-ensemble composé de $m$ échantillons choisis aléatoirement.
+	\item Calculer à partir $S$ un modèle estimatif $\hat{\theta}$. Soit $S^* \subset P$ tous les points $p$ de $P$ qui correspondent au modèle: $S^* = \{ p \in P : E(\hat{\theta}, p) < \epsilon \}$, pour une tolérance d'erreur $\epsilon$ donnée. $S^*$ est appelé le \emph{consensus set}.
+	\item Si $|S^*| \geq t$ pour un seuil $t$ déterminé en fonction du nombre d'outliers, calculer l'estimation finale du modèle $\theta$ à partir de tous les échantillons du consensus set $S^*$, et terminer.
+	\item Si $|S^*| < t$, on rejète le modèle $\hat{\theta}$, et recommence à l'étape 1. Si cela arrive plus que $N$ (nombre maximal d'itérations) fois, l'algorithme a échoué.
+\end{enumerate}
+
+Un exemple simple d'application serait d'aligner une droite (modèle) $y = a \, x + b$, définie par les paramètres $\theta = (m,b)$, à des points (échantillons) $p_i = (x_i,y_i)$. Une droite peut être trouvée à partir de $m = 2$ points, en posant $m = \frac{x_2 - x_1}{y_2 - y_1}$ et $b = y_1 - m \, x_1$. Pour ajuster une droite à plus que deux points (pas nécessairement alignés), la méthode des moindres carrés peut être utilisée. Une métrique d'erreur serait la distance du point à la droite, donnée par $E(\theta, p) = \frac{|y - m\,x - b|}{\sqrt{m^2 + 1}}$.
+
+RANSAC peut aussi être utilisé pour aligner deux nuages de points 
+
+\subsection{Transformation de deux triplets de points}
+
 
 \section{Recalage}
 Afin de créer un modèle complet, on doit fusionner plusieurs scans qui sont prises de différents points de vues et qui sont tous limités par le champ de vision du scanner. Ces différents nuages de points ont tous des repères différents, relatifs à la position et à l'orientation du scanner, et possiblement ayant des échelles différents.
@@ -74,7 +93,6 @@ On peut distinguer entre les algorithmes locaux (séquentiels) qui opèrent sur 
 La méthode préférée pour déterminer un recalage approximatif dépend surtout du type et de la forme de l'objet numérisé, et des données bruts dont on dispose. Certains algorithmes procèdent en identifiant des droites \cite{Lich2011} ou des plans \cite{Dold2006} dans le modèle, et sont donc plus appropriés pour par exemple des façades simples de bâtiments. Si les scans ont des zones de chevauchement assez grandes, il peut être possible d'en déduire le recalage de façon complètement automatisée. D'autres méthodes peuvent être utilisées avec des données collectionnées additionnelles, comme des photos prises par le même point de vue que le scanner \cite{Tour2009} ou des markers placés sur l'objet avant la numérisation \cite{Mati2011}. Par des algorithmes de détection de zones d'intérêt \cite{Tuyt2007} sur des images ou directement sur les nuages de points, on peut alors identifier des points communs dans les différents scans. Aussi les information attribués aux points, comme une couleur, une mesure de température, ou autres, peuvent servir en tant que dimension en plus des coordonnées 3D pour déterminer leur distance. Une première estimation de la pose des scans peut être issue de sensors odométriques ou GPS du scanner.
 
 Dans les pages suivantes certains algorithmes et méthodes seront décrit en détail, avec leurs bases mathématiques. Il pourront possiblement être utilisés ou développées pour le projet de mémoire.
-
 
 
 
@@ -206,7 +224,7 @@ La version initiale de la cible $\mathbf{K}$ est formée par les centroids des t
 \end{enumerate} 
 Après l'exécution de cet algorithme, les $n$ nuages de points sont recalés dans un repère commun qui n'est pas spécifié d'avance. Donc un recalage complémentaire est nécessaire pour mettre le nuage fusionné dans le repère désiré.
 
-\subsubsection{Densités non-uniformes}
+\subsubsection{ICP généralisé}
 Pour ce mémoire, il sera nécessaire de trouver des méthodes qui permettent de recaler des nuages de points à densités de points différents. Une version \emph{généralisée} du ICP est développée dans \cite{Sega2009}: On prend en compte que les nuages de points ne sont qu'une approximation des surfaces scannées, et on représente l'aspect de ces surfaces sous-jacentes via un modèle probabilistique.
 
 Pour cet algorithme, l'étape de minimisation est altérée. Les autres étapes (choix des couples de points, etc.) peuvent toujours être implémentés via les différentes variantes proposées. On suppose qu'il existe des nuages de points $\hat{S} = \{ \hat{s}_i \}$ et $\hat{C} = \{ \hat{s}_i \}$ sous-jacents aux nuages de points source $S$ et cible $C$ donnés, qui sont tels qu'il existe une matrice de transformation rigide $\mathbf{M}^*$ qui recale parfaitement $\hat{S}$ et $\hat{C}$. Donc $\hat{c}_i = \mathbf{M}^* \, \hat{s}_i$ pour tout $i$.
@@ -252,14 +270,47 @@ En utilisant \ref{eq:dist_distr}, la formule peut être simplifiée en
 	\mathbf{M} = \argmin_{\mathbf{M}} \sum_{i=1}^{n}
 	(d^{(\mathbf{M})}_i)^T \, (\mathbf{C}^C_i + \mathbf{M}\,\mathbf{C}^S_i\,\mathbf{M}^T)^{-1} \, d^{(\mathbf{M})}_i
 \end{equation}
-C'est cela qui constitue l'amélioration du ICP généralisé par rapport au ICP standard: Au lieu de minimiser la métrique d'erreur $\sum_i \| d^{(\mathbf{M})}_i \|$, on minimise $\sum_i (d^{(\mathbf{M})}_i)^T \, (\mathbf{C}^C_i + \mathbf{M}\,\mathbf{C}^S_i\,\mathbf{M}^T)^{-1} \, d^{(\mathbf{M})}_i$. On le recale plus directement les points $S$ et $P$, mais les surfaces sous-jacentes, qui sont décrits par $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$. \cite{Holz2014}
+C'est cela qui constitue l'amélioration du ICP généralisé par rapport au ICP standard: Au lieu de minimiser la métrique d'erreur $\sum_i \| d^{(\mathbf{M})}_i \|$, on minimise $\sum_i (d^{(\mathbf{M})}_i)^T \, (\mathbf{C}^C_i + \mathbf{M}\,\mathbf{C}^S_i\,\mathbf{M}^T)^{-1} \, d^{(\mathbf{M})}_i$. On le recale plus directement les points $S$ et $P$, mais les surfaces sous-jacentes. Les surfaces à recaler sont les mêmes (vu de différentes perspectives), mais les points $S$ et $P$ ne représentent en général pas exactement les mêmes positions sur la surface, contrairement aux  ``vrais'' points $\hat{S}$ et $\hat{P}$. Par cette méthode, on ne suppose plus cela, mais plutôt on introduit une incertitude sur la position des points donnés par rapport aux vrais points, qui est décrite par les matrices de variance-covariance $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$. Donc l'algorithme correspond à une approche \emph{plane-to-plane}, augmentée par une distribution de probabilité sur les plane, de l'ICP.
 
+Pour un point avec le premier vecteur directeur du repère orthonormal comme vecteur normal, la matrice
+\begin{equation}
+	\begin{bmatrix}
+		\epsilon & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix}
+\end{equation}
+avec $\epsilon$ un petit nombre, indique une grande certitude sur la position du point le long de la direction du vecteur normal, mais une petite certitude sur la position du point dans le plan tangent. Comme la surface est souvent localement planaire, ce plan est une approximation de la surface. Soit $\mathbf{R}_{s_i}$ et $\mathbf{R}_{c_i}$ les matrices de changement de base de ce dernier repère, vers un repère dont le premier vecteur directeur est le vecteur normal du point $s_i$ respectivement $c_i$, sans translation. $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$ peuvent maintenant être calculées par
+\begin{equation} \label{eq:norm_cov_mat}
+	\mathbf{C}^S_i = \mathbf{R}_{s_i} \, \begin{bmatrix}
+		\epsilon & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix} \, \mathbf{R}_{s_i}^T
+	\hspace{1cm} \text{et} \hspace{1cm}
+	\mathbf{C}^C_i = \mathbf{R}_{c_i} \, \begin{bmatrix}
+		\epsilon & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+	\end{bmatrix} \, \mathbf{R}_{c_i}^T
+\end{equation}
 
-\subsection{Extended Gaussian Images}
-On peut générer à partir d'un nuage de point son EGI (Extended Gaussian Image), qui est une forme d'encoder la forme d'un objet convexe. Ceci permet d'estimer la rotation à appliquer, sans partir d'un recalage initial.
+Il a été expérimentalement montré que la méthode génère des résultats supériors au ICP standard. \cite{Sega2009} Cependant, puisqu'elle suppose que les surfaces sont localement planaires, et que $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$ donnent une bonne estimation de la forme de la surface.
+
+L'article \cite{Holz2014} présente une manière de calculer les vecteurs normaux (et donc les matrices via \ref{eq:norm_cov_mat}), dans le contexte de nuages de points à densités non-uniformes pris par un scanner 3D composé d'un télémètre laser 2D tournant. Le télémètre capture seulement des \emph{scan lines} 2D, c'est à dire des valeurs de profondeur de points dans un plan (vertical) sortant du scanner, et non pas dans un champ de vision tridimensionnel. Durant les rotations, plusieurs scan lines sont pris dans différentes. La distance de points voisins en direction horizontale (donc provenant de deux scan lines) sera plus grande à celle en direction verticale, sur une même scan line.
+
+Il ne suffit donc plus de comparer les points voisins pour avoir une estimation du vecteur normal. La méthode proposée procède en créant un maillage à quadrilatères, formée par points voisins sur une scan line, connectés les deux points correspondants de la scan line voisine. Ces derniers points ne seraient pas inclus par une recherche de points voisins classique. Après filtrage du maillage, les normaux sont maintenant estimés en considérant les points adjacents sur le maillage, pour un rayon de recherche donné.
 
 
 \section{4-Points Congruent Sets}
+
+
+
+
+\section{Extended Gaussian Images}
+On peut générer à partir d'un nuage de point son EGI (Extended Gaussian Image), qui est une forme d'encoder la forme d'un objet convexe. Ceci permet d'estimer la rotation à appliquer, sans partir d'un recalage initial.
+
+
 
 \section{Normal Distributions Transform}
 

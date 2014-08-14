@@ -80,6 +80,13 @@ Kok-Lim Low.
 \newblock Technical report, Department of Computer Science; University of North
   Carolina at Chapel Hill, February 2004.
 
+\bibitem{Fisc1980}
+Robert C~Bolles Martin A~Fischler.
+\newblock Random sample consensus: A paradigm for model fitting with
+  applications to image analysis and automated cartography.
+\newblock Technical report, Artificial Intelligence Center, SRI International,
+  Menlo Park, California, March 1980.
+
 \bibitem{Besl1992}
 Paul J Besl; Neil~D. McKay.
 \newblock A method for registration of 3-d shapes.

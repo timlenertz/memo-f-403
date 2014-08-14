@@ -4,7 +4,7 @@ The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ../references.bib
 Warning--entry type for "Web1" isn't style-file defined
---line 84 of file ../references.bib
+--line 96 of file ../references.bib
 Warning--empty booktitle in Holz2014
 Warning--empty journal in Bibe2003
 Warning--empty booktitle in Told2010
@@ -12,45 +12,45 @@ Warning--empty booktitle in Rusi2001
 Warning--empty journal in Kers2006
 Warning--can't use both volume and number fields in Besl1992
 Warning--empty booktitle in Mati2011
-You've used 21 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            641 strings with 8153 characters,
-and the built_in function-call counts, 5571 in all, are:
-= -- 569
-> -- 147
+            648 strings with 8393 characters,
+and the built_in function-call counts, 5773 in all, are:
+= -- 591
+> -- 154
 < -- 8
-+ -- 66
-- -- 42
-* -- 304
-:= -- 941
-add.period$ -- 69
-call.type$ -- 21
-change.case$ -- 85
++ -- 69
+- -- 44
+* -- 314
+:= -- 982
+add.period$ -- 72
+call.type$ -- 22
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 261
-empty$ -- 504
-format.name$ -- 42
-if$ -- 1209
+cite$ -- 29
+duplicate$ -- 269
+empty$ -- 519
+format.name$ -- 44
+if$ -- 1249
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 22
 missing$ -- 16
-newline$ -- 108
-num.names$ -- 42
-pop$ -- 96
+newline$ -- 113
+num.names$ -- 44
+pop$ -- 98
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 66
 quote$ -- 0
-skip$ -- 177
+skip$ -- 182
 stack$ -- 0
-substring$ -- 286
+substring$ -- 291
 swap$ -- 55
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 88
 warning$ -- 7
-while$ -- 54
-width$ -- 23
-write$ -- 234
+while$ -- 56
+width$ -- 24
+write$ -- 246
 (There were 8 warnings)
