@@ -75,7 +75,7 @@ Soit $m$ le nombre minimal d'échantillons requis pour trouver un modèle $\hat{
 \end{enumerate}
 Une autre procédure possible serait d'au lieu d'arrêter à 3, répéter pour un nombre fixe d'itérations, et garder à la fin le modèle pour lequel $|S^*|$ était maximal. 
 
-Un exemple simple d'application serait d'aligner une droite (modèle) $y = a \, x + b$, définie par les paramètres $\theta = (m,b)$, à des points (échantillons) $p_i = (x_i,y_i)$. Une droite peut être trouvée à partir de $m = 2$ points, en posant $m = \frac{x_2 - x_1}{y_2 - y_1}$ et $b = y_1 - m \, x_1$. Pour ajuster une droite à plus que deux points (pas nécessairement alignés), la méthode des moindres carrés peut être utilisée. Une métrique d'erreur serait la distance du point à la droite, donnée par $E(\theta, p) = \frac{|y - m\,x - b|}{\sqrt{m^2 + 1}}$.
+Un exemple simple d'application serait d'aligner une droite (modèle) $y = m \, x + b$, définie par les paramètres $\theta = (m,b)$, à des points (échantillons) $p_i = (x_i,y_i)$. Une droite peut être trouvée à partir de $m = 2$ points, en posant $m = \frac{x_2 - x_1}{y_2 - y_1}$ et $b = y_1 - m \, x_1$. Pour ajuster une droite à plus que deux points (pas nécessairement alignés), la méthode des moindres carrés peut être utilisée. Une métrique d'erreur serait la distance du point à la droite, donnée par $E(\theta, p) = \frac{|y - m\,x - b|}{\sqrt{m^2 + 1}}$.
 
 \subsection{Transformation de deux triplets de points}
 
@@ -83,7 +83,7 @@ Un exemple simple d'application serait d'aligner une droite (modèle) $y = a \, 
 \section{Recalage}
 Afin de créer un modèle complet, on doit fusionner plusieurs scans qui sont prises de différents points de vues et qui sont tous limités par le champ de vision du scanner. Ces différents nuages de points ont tous des repères différents, relatifs à la position et à l'orientation du scanner, et possiblement ayant des échelles différents.
 
-Puisqu'il s'agit toujours de repères cartésiens orthonormals, on peut mettre un nuage de points dans un autre repère en appliquant une matrice de transformation rigide à tous les points du nuage. Une telle transformation consiste en une translation, rotation, et dans certains cas un facteur de redimensionnement. Dès que les nuages de points sont tous dans le même repère, on peut les fusionner par simple concaténation des points. En pratique, des post- et pré-traitements devront être effectués pour ajuster les densités et la distribution des points, corriger des erreurs dans les données bruts comme des points \emph{outliers}, et autres.
+Puisqu'il s'agit toujours de repères cartésiens orthonormals, on peut mettre un nuage de points dans un autre repère en appliquant une matrice de transformation rigide à tous les points du nuage. Une telle transformation consiste en une translation, rotation, et dans certains cas un facteur de redimensionnement\footnote{Pour de pouvoir exprimer une transformation rigide (translation, rotation, redimensionnement) d'un point tridimensionnel $\vec{p}$ en utilisant uniquement une multiplication matricielle $\vec{x'} = \mathbf{M} \, \vec{x}$, des \emph{coordonnées homogènes} peuvent être utilisés pour la matrice de transformation et les points.}. Dès que les nuages de points sont tous dans le même repère, on peut les fusionner par simple concaténation des points. En pratique, des post- et pré-traitements devront être effectués pour ajuster les densités et la distribution des points, corriger des erreurs dans les données bruts comme des points \emph{outliers}, et autres.
 
 Par recalage, on entend le procédé de trouver ces transformations rigides, de manière automatisé ou semi-automatisé. D'une part on a les algorithmes de recalage approximatif, donc le but est d'analyser le contenu des nuages de points et d'en identifier des régions qui représentent la même partie du modèle afin de trouver un recalage approximatif. Ensuite, ce recalage initial peut être raffiné par un algorithme de recalage précis pour bien aligner les surfaces des nuages de points. Généralement ICP est utilisé pour cela. Sachant que les nuages de points sont déjà alignés de manière à ce que les points qui représentent les mêmes parties du modèle sont proches l'un de l'autre, ICP procède en minimisant les distances entre ces points.
 
@@ -342,12 +342,48 @@ Pour choisir une base $\dot{b}$, l'algorithme choisir d'abord aléatoirement tro
 
 
 
+\section{Normal Distributions Transform}
+Dans le context de la robotique, la méthode NDT\footnote{transformée en distribution normale} a été développée pour aligner deux nuages de points 2D qui représente les distances d'objets autour d'un robot mobile qui de déplace sur un plan horizontal. \cite{Bibe2003} Ce recalage permet de construire une carte 2D des environs du robot, qui consiste en une translation 2D et une rotation sur une axe, dénotées par les paramètres $\theta = (t_x, t_y, \phi)$. La méthode est par exemple utilisé pour mesurer la position précise do robot en partent par une estimation calculée par des données odométriques.
+
+L'idea est d'au lieu de recaler directement des points comme ICP, on recale leur \emph{transformée en distribution normale}, une représentation continue et dérivable du nuage de points par morceaux du nuage de points qui consiste en la distribution de probabilité qu'un point soit à une position. La NDT est calculée à partir d'un nuage de points cible $C = \{ \vec{c}_i \}$ de manière suivante. On commence par subdiviser l'espace 2D en une grille régulière avec une taille donnée des cellules. Soit $C_j$ l'ensemble des points qui se trouvent dans la cellule $j$. Pour tous les cellules qui contiennent au moins $3$ points, on peut modéliser la probabilité $p(\vec{x})$ d'y trouver un point à la position $\vec{x}$:
+	
+Soit $\vec{\mu}_j = \frac{1}{n_j} \sum_{i} \vec{c}_{j,i}$ la moyenne des points dans la cellule. La matrice de variance-covariance qui représente la distributions des points $C_j$ est calculée par $\mathbf{C}_j = \frac{1}{n_j - 1} \sum_i (\vec{c}_{j,i} - \vec{\mu}_j)(\vec{c}_{j,i} - \vec{\mu}_j)^T$. La matrice exprime une distribution de Gauss en deux dimensions, ajusté sur la distributions des points. $p(\vec{x})$ peut être calculé par la fonction caractéristique:
+\begin{equation}
+	p(\vec{x}) = \exp \left(- \frac{ (\vec{x} - \vec{\mu_j})^T \, \Sigma^{-1} \, (\vec{x} - \vec{\mu_j}) }{2} \right)
+\end{equation}
+
+Similairement au ICP, l'algorithme procède en raffinant itérativement une estimation de la transformation $(t_x, t_y, \phi)$ cherchée. La fonction de transformation $T$ est exprimée par
+\begin{equation}
+	T_{\theta} : \vec{p} \mapsto \begin{bmatrix}
+		\cos \phi & - \sin \phi \\
+		\sin \phi & \cos \phi
+	\end{bmatrix} \, \begin{bmatrix}
+		p_x \\
+		p_y
+	\end{bmatrix} + \begin{bmatrix}
+		t_x \\
+		t_y
+	\end{bmatrix}
+\end{equation}
+Les étapes suivies par l'algorithme pour recaler une nuage de points source $S$ à un nuage de points cible $C$ sont les suivantes:
+\begin{enumerate}
+	\item Créer la NDT pour $C$, et initialiser une estimation des paramètre de recalage $\theta = (t_x, t_y, \phi)$ (possiblement en utilisant des données odométriques enregistrées par le robot).
+	\item Mettre les points $S$ dans le repère de $C$, en appliquant la transformation $T_{\theta}$.
+	\item Pour tous les points transformés $\vec{s'}_i = T(\vec{s}_i)$, trouver sa cellule $j$ et les $\mathbf{C}_j$, $\vec{\mu}_j$ correspondants.
+	\item On sait que $p(\vec{x})$ exprime la probabilité qu'un point de $C$ se trouve à la position $\vec{x}$. La somme $\sum_i p(\vec{x}_i)$ est donc maximale si les $\vec{x}_i$ représentent tous des positions de points, par exemple si $\{ x_i \} = C$, donc si le recalage est parfait. L'algorithme va donc maximiser une fonction \emph{score} des paramètres $\theta$ donnée par
+		\begin{equation}
+			\text{score}(\theta) = \sum_{i} \exp \left( - \frac{ (\vec{s'}_i - \vec{\mu}_j)^T \, \mathbf{C}_j^{-1} \, (\vec{s'}_i - \vec{\mu}_j) }{2} \right)
+		\end{equation}
+	\item Calculer des nouveaux paramètres de transformation $\theta$ par maximisation de la fonction \emph{score}.
+	\item Tant que le recalage n'est pas encore assez bon, répéter avec l'étape 2.
+\end{enumerate}
+
+
 \section{Extended Gaussian Images}
 On peut générer à partir d'un nuage de point son EGI (Extended Gaussian Image), qui est une forme d'encoder la forme d'un objet convexe. Ceci permet d'estimer la rotation à appliquer, sans partir d'un recalage initial.
 
 
 
-\section{Normal Distributions Transform}
 
 \section{Extended Gaussian Images}
 

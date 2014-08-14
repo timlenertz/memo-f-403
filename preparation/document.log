@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  14 AUG 2014 19:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  14 AUG 2014 20:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,9 +464,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \verbatim@out=\write3
-runsystem(touch w18-test-20148141157.tex)...disabled (restricted).
+runsystem(touch w18-test-20148141258.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-20148141157.tex)...disabled (restricted).
+runsystem(rm -f w18-test-20148141258.tex)...disabled (restricted).
 
 
 
@@ -736,40 +736,33 @@ e the qua-dru-plets $[] \OT1/cmr/m/n/10 = ([]\OML/cmm/m/it/10 ; []; []; []\OT1/
 cmr/m/n/10 )$ \T1/cmr/m/n/10 congruents
  []
 
-
-LaTeX Warning: Citation `Aige2008' on page 12 undefined on input line 339.
-
-[12] [13]
+[12] [13] [14]
 Chapitre 3.
-(./document.bbl [14
+(./document.bbl [15
 
 ]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 28.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [15
+) [16
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 369.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 369.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
 
 (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 369.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 369.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 5EEDAF9AFFC0D829CE74117F3CDF892A;1349.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 369.
+(rerunfilecheck)             Checksum: 8D4E85101F530D90D8708F66D5C6AAF0;1349.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 405.
  ) 
 Here is how much of TeX's memory you used:
- 9518 strings out of 493308
- 143265 string characters out of 6137817
- 286748 words of memory out of 5000000
+ 9531 strings out of 493308
+ 143394 string characters out of 6137817
+ 286780 words of memory out of 5000000
  12704 multiletter control sequences out of 15000+600000
  21357 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -808,10 +801,10 @@ c/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
 cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
 -super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
 uper/sftt1000.pfb>
-Output written on document.pdf (16 pages, 486969 bytes).
+Output written on document.pdf (17 pages, 499725 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 406 compressed objects within 5 object streams
- 119 named destinations out of 1000 (max. 500000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 427 compressed objects within 5 object streams
+ 132 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
