@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{Holz2014}
+Dirk Holz;~Sven Behnke.
+\newblock Registration of non-uniform density 3d point clouds using approximate
+  surface reconstruction.
+\newblock Joint 45th International Symposium on Robotics (ISR) and 8th German
+  Conference on Robotics (ROBOTIK), Munich, June 2014. Autonomous Intelligent
+  Systems Group, University of Bonn, Germany.
+
 \bibitem{Bibe2003}
 Peter Biber.
 \newblock The normal distributions transform: A new approach to laser scan
@@ -65,6 +73,13 @@ Thomas Kersten; Heinz-J{\"u}rgen Przybilla;~Maren Lindstaedt.
   laserscannerdaten und digitalen bildern.
 \newblock November 2006.
 
+\bibitem{Low2004}
+Kok-Lim Low.
+\newblock Linear least-squares optimization for point-to-plane icp surface
+  registration.
+\newblock Technical report, Department of Computer Science; University of North
+  Carolina at Chapel Hill, February 2004.
+
 \bibitem{Besl1992}
 Paul J Besl; Neil~D. McKay.
 \newblock A method for registration of 3-d shapes.
@@ -77,6 +92,17 @@ Tinne Tuytelaars;~Krystian Mikolajczyk.
 \newblock {\em Foundations and Trends in Computer Graphics and Vision}, 3(3),
   2007.
 
+\bibitem{Scho1970}
+Robert M~Caroll Peter H~Sch{\"o}nemann.
+\newblock Fitting one matrix to another using choice of a central dilation and
+  a rigid motion.
+\newblock {\em Phychometrika}, 35(2):245--255, June 1970.
+
+\bibitem{Scho1966}
+Peter~H Sch{\"o}nemann.
+\newblock A generalized solution of the orthogonal procrustes problem.
+\newblock {\em Phychometrika}, 31(1):1--10, March 1966.
+
 \bibitem{Grus2012}
 P.~Grussenmeyer; E. Alby; T. Landes; M. Koehl; S. Guillemin; J.-F. Hullo; P.
   Assali;~E. Smigiel.
@@ -84,6 +110,11 @@ P.~Grussenmeyer; E. Alby; T. Landes; M. Koehl; S. Guillemin; J.-F. Hullo; P.
   from high resolution photogrammetry and terrestrial laser scanning.
 \newblock {\em International Archives of the Photogrammetry, Remote Sensing and
   Spatial Information Sciences}, XXXIX-B5:553--558, 2012.
+
+\bibitem{Sega2009}
+Aleksandr V. Segal; Dirk Haehnel;~Sebastian Thrun.
+\newblock Generalized-icp.
+\newblock {\em Proceedings of Robotics: Science and Systems}, 2009.
 
 \bibitem{Tour2009}
 E.~Tournas;~M. Tsakiri.

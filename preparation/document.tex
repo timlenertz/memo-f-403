@@ -11,6 +11,9 @@
 
 \setcounter{secnumdepth}{3}
 
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
 \begin{document}
 
 \title{Recalage et fusion de modèles numérisés tridimensionnels de grande taille}
@@ -44,7 +47,7 @@ Pour passer des données bruts au modèle final envisagé, un nombre important d
 	\item Filtrage des nuages de points bruts. Le but est d'enlever der erreurs grosses du scanner, comme des points isolés.
 	\item Recalage des nuages de points pour les mettre dans un repère commun. Beaucoup méthodes et algorithmes ont été développés pour automatiser un recalage sous différents conditions, ce qui est le sujet de ce mémoire. Dans certains cas des markers sont placés sur la scène avant l'acquisition des scans et photos. Les nuages de points peuvent ensuite être fusionnés par simple concaténation des points.
 	\item Maillage des nuages de points, par example par triangulation de Delaunay. Le but ici est d'obtenir un modèle qui reprend l'information sur les surfaces du modèle. Pour des formes complexes, par exemple de la végétation sur un mur, des procédures additionnels d'analyse et de filtrage sont requis.
-	\item Par des méthodes photogrammétriques \cite{Tour009} et radiométriques \cite{Giro2013}, les photos sont modifiés et analysés: On corrige des vignettes, distortions et autres erreurs optiques induits par la lentille de la caméra, égalise les valeurs colorimétriques des différentes photos. Par des détecteurs de zones d'intérêt en reconnaissance d'image, on retrouve des markers, ou d'autres points marquants, afin de mettre en correspondance plusieurs photos et d'en extraire la pose de la caméra et des informations de profondeur.
+	\item Par des méthodes photogrammétriques \cite{Tour2009} et radiométriques \cite{Giro2013}, les photos sont modifiés et analysés: On corrige des vignettes, distortions et autres erreurs optiques induits par la lentille de la caméra, égalise les valeurs colorimétriques des différentes photos. Par des détecteurs de zones d'intérêt en reconnaissance d'image, on retrouve des markers, ou d'autres points marquants, afin de mettre en correspondance plusieurs photos et d'en extraire la pose de la caméra et des informations de profondeur.
 	\item Recalage des photos sur le modèle pour texturer le maillage. Au cas un modèle non-maillé qui reste sous forme de nuage de points, les photos peuvent être utilisés pour coloriser les points. Ensuite la densité des points peut être uniformisée si nécessaire.
 	\item Dans certains contextes, par exemple en rétroingénierie ou en architecture, le but est de finir avec un modèle CAD. Des méthodes ont été développées pour segmenter le modèle, et pour reconnaitre des formes ou objets.
 \end{itemize}
@@ -70,7 +73,7 @@ On peut distinguer entre les algorithmes locaux (séquentiels) qui opèrent sur 
 
 La méthode préférée pour déterminer un recalage approximatif dépend surtout du type et de la forme de l'objet numérisé, et des données bruts dont on dispose. Certains algorithmes procèdent en identifiant des droites \cite{Lich2011} ou des plans \cite{Dold2006} dans le modèle, et sont donc plus appropriés pour par exemple des façades simples de bâtiments. Si les scans ont des zones de chevauchement assez grandes, il peut être possible d'en déduire le recalage de façon complètement automatisée. D'autres méthodes peuvent être utilisées avec des données collectionnées additionnelles, comme des photos prises par le même point de vue que le scanner \cite{Tour2009} ou des markers placés sur l'objet avant la numérisation \cite{Mati2011}. Par des algorithmes de détection de zones d'intérêt \cite{Tuyt2007} sur des images ou directement sur les nuages de points, on peut alors identifier des points communs dans les différents scans. Aussi les information attribués aux points, comme une couleur, une mesure de température, ou autres, peuvent servir en tant que dimension en plus des coordonnées 3D pour déterminer leur distance. Une première estimation de la pose des scans peut être issue de sensors odométriques ou GPS du scanner.
 
-Certains algorithmes seront décrit en détail dans les pages suivantes, à savoir ICP \cite{Besl1992} et ses variantes \cite{Rusi2001}, ...
+Dans les pages suivantes certains algorithmes et méthodes seront décrit en détail, avec leurs bases mathématiques. Il pourront possiblement être utilisés ou développées pour le projet de mémoire.
 
 
 
@@ -81,6 +84,8 @@ L'algorithme ICP (``itératif point le plus proche'') est considéré comme la m
 Plus précisément, pour tout point $s_i$ de l'ensemble \emph{source}, on choisit un point $c_i$ de l'ensemble \emph{cible} pour lequel on estime qu'il représente plus au moins la même position dans le nuage de points. Comme les deux nuages de points sont déjà recalés approximativement, une méthode courante est de choisir le point le plus proche, avec la transformation actuelle. L'algorithme nécessite donc que les densités de points des deux ensembles sont similaires. Ensuite une transformation est appliquée aux points $s_i$ qui minimise une métrique donnée de l'erreur de recalage.
 
 La \emph{cible} ne doit pas forcément être donnée sous forme de nuage de points, mais peut par exemple être une surface mathématique continue donnée sous forme paramétrique $(x(\vec{t}),y(\vec{t}),z(\vec{t}))$ ou implicite $g(x, y, z) = 0$. On peut alors calculer numériquement les coordonnées d'un point $c_i$ correspondant à chaque point $s_i$. \cite{Besl1992}
+
+Quand les vecteurs normaux sur la cible sont connus, il est possible d'utiliser une variante \emph{point-to-plane}\footnote{au lieu de \emph{point-to-point}}: Au lieu de minimiser une métrique des distance entre deux points, les écarts autre les points source et les plans tangents aux points cible sont minimisés. Cette méthode a généralement une vitesse de convergence supérieur et peut mener à des meilleurs résultats. Les algorithmes utilisés à chaque itération pour calculer la minimisation ont cependant un coût numérique plus élevé. L'ICP \emph{point-to-plane} est une alternative intéressante puisque les surface des objets scannés sont souvent localement planaires. \cite{Low2004}
 
 Plusieurs variantes de l'algorithme ont été développées qui se distinguent par le choix des couples de points, des poids associés aux couples, le rejet de certains couples, et la façon comment la métrique d'erreur est définie et minimisée. \cite{Rusi2001}
 
@@ -155,11 +160,10 @@ Donc, cette méthode permet de déterminer la rotation et translation à appliqu
 \subsubsection{Variantes de l'algorithme}
 Comme mentionné, diverses variantes de l'ICP sont possibles. \cite{Rusi2001} donne un comparatif des différentes possibilités.
 
-
 \subsubsection{Analyse procustéenne généralisée}
 Le problème de trouver une transformation rigide qui minimise une distance d'un ensemble de couples de points donnés ${(x_{1,i}, x_{2,i})}$ peut aussi être résolu par \emph{analyse procustéenne}. L'\emph{analyse procustéenne généralisée} (``GPA'') permet d'avoir au lieu de couples des $k$-uplets ${(x_{1,i}, x_{2,i}, \ldots, x_{k,i})}$, choisis parmi $k$ ensembles de points. En général, l'analyse procustéenne sert à aligner des \emph{formes}, ce qui peut être vu comme l'information géométrique qui reste d'un objet après avoir éliminé sa position, orientation et échelle. La méthode est utilisé dans beaucoup de domaines, notamment en statistique.
 
-Soit $n$ le nombre de couples. On encode la liste des $k$-uplets via $k$ \emph{matrices modèle} $n$x$3$ $\mathbf{X}_j$, dont les colonnes contiennent les $3$ coordonnées des $j$-ième éléments des tuples. Ces matrices contiennent donc tous approximativement les mêmes points, hormis une transformation rigide.
+Soit $n$ le nombre de couples. On encode la liste des $k$-uplets via $k$ \emph{matrices modèle} $n \times 3$ $\mathbf{X}_j$, dont les colonnes contiennent les $3$ coordonnées des $j$-ième éléments des tuples. Ces matrices contiennent donc tous approximativement les mêmes points, hormis une transformation rigide.
 
 On définit la \emph{cible} $\mathbf{K}$ comme
 \begin{equation} \label{eq:gpa_centroid}
@@ -173,7 +177,7 @@ Donc on doit trouver, pour tous les $k$ matrices $\mathbf{X}_j$, une matrice ort
 \begin{equation}
 	\| \mathbf{X'}_j \| = \| c \, \mathbf{X}_j \, \mathbf{R}_j + j \, t^T - \mathbf{K} \|
 \end{equation}
-où $j$ est un vecteur unitaire $3$x$1$, et $\|\mathbf{X}\|$ représente la norme de Frobenius.\footnote{La norme de Frobenius d'une matrice $m$x$n$ $\mathbf{X}$ est défini comme racine carrée de la somme des carrés de tous les éléments de $\mathbf{X}$. On a:\begin{equation}
+où $j$ est un vecteur unitaire $3 \times 1$, et $\|\mathbf{X}\|$ représente la norme de Frobenius.\footnote{La norme de Frobenius d'une matrice $m \times n$ $\mathbf{X}$ est défini comme racine carrée de la somme des carrés de tous les éléments de $\mathbf{X}$. On a:\begin{equation}
 	\| \mathbf{X} \|
 	= \sqrt{ \sum_{i=1}^{m} \sum_{j=1}^{n} \| x_{i,j} \|^2 }
 	= \text{tr}(\mathbf{X}^* \, \mathbf{X})
@@ -196,11 +200,59 @@ La version initiale de la cible $\mathbf{K}$ est formée par les centroids des t
 	\item Initialiser ${\mathbf{M}_i}$ par matrices d'identité
 	\item Trouver les tuples de points correspondants
 	\item Former la cible $\mathbf{K}$ à partir des centroids des tuples
-	\item Estimer par GPA les transformations rigides qui alignent ${(p_i)}$ à la cible
-	\item Appliquer ces transformations aux points ${(p_i)}$, et ajouter les aux matrices ${\mathbf{M}_i}$
+	\item Estimer par GPA les transformations rigides qui alignent $\{p_i\}$ à la cible
+	\item Appliquer ces transformations aux points $\{p_i\}$, et ajouter les aux matrices ${\mathbf{M}_i}$
 	\item Répéter depuis 2, jusqu'à ce que $\mathbf{K}$ est stabilisé (ou un nombre limite d'itérations a été dépassé)
 \end{enumerate} 
 Après l'exécution de cet algorithme, les $n$ nuages de points sont recalés dans un repère commun qui n'est pas spécifié d'avance. Donc un recalage complémentaire est nécessaire pour mettre le nuage fusionné dans le repère désiré.
+
+\subsubsection{Densités non-uniformes}
+Pour ce mémoire, il sera nécessaire de trouver des méthodes qui permettent de recaler des nuages de points à densités de points différents. Une version \emph{généralisée} du ICP est développée dans \cite{Sega2009}: On prend en compte que les nuages de points ne sont qu'une approximation des surfaces scannées, et on représente l'aspect de ces surfaces sous-jacentes via un modèle probabilistique.
+
+Pour cet algorithme, l'étape de minimisation est altérée. Les autres étapes (choix des couples de points, etc.) peuvent toujours être implémentés via les différentes variantes proposées. On suppose qu'il existe des nuages de points $\hat{S} = \{ \hat{s}_i \}$ et $\hat{C} = \{ \hat{s}_i \}$ sous-jacents aux nuages de points source $S$ et cible $C$ donnés, qui sont tels qu'il existe une matrice de transformation rigide $\mathbf{M}^*$ qui recale parfaitement $\hat{S}$ et $\hat{C}$. Donc $\hat{c}_i = \mathbf{M}^* \, \hat{s}_i$ pour tout $i$.
+
+$\hat{S}$ et $\hat{C}$ constituent une version idéalisée de la représentation de la surface par nuage de points. Avec $S$ et $C$, un recalage parfait n'est généralement pas faisable.
+
+On suppose aussi que les points de $S$ et $C$ sont des variables aléatoires tirés de $\hat{S}$ et $\hat{C}$ par une loi normale multidimensionnelle
+\begin{equation}
+	s_i \sim \mathcal{N}(\hat{s}_i, \mathbf{C}^S_i)
+	\hspace{1cm} \text{et} \hspace{1cm}
+	c_i \sim \mathcal{N}(\hat{c}_i, \mathbf{C}^C_i)
+\end{equation}
+où $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$ sont des matrice de variance-covariance qu'on associe à chaque point de $S$ et $C$. Ces matrices vont être paramétrisés pour décrire la surface autour de $\hat{s}_i$ respectivement $\hat{c}_i$. Ils représentent les distribution de probabilité des positions de $s_i$ et $c_i$.
+
+La distance entre deux points pour une matrice de transformation $\mathbf{M}$ est donnée par $d^{(\mathbf{M})}_i = c_i - \mathbf{M} \, s_i$. Le but sera de trouver $\mathbf{M}$ qui minimise $\sum_{i} \|\ d^{(\mathbf{M})}_i \|^2$. Dans ce modèle, les $d^{(\mathbf{M})}_i$ sont eux-mêmes des variables aléatoires. Vu que $a_i$ et $b_i$ sont tirés d'une loi normale multidimensionnelle, la distribution de $d^{(\mathbf{M})}_i$ est
+\begin{equation} \label{eq:dist_distr}
+	d^{(\mathbf{M})}_i \sim \mathcal{N}(\hat{c}_i - \mathbf{M}\,\hat{s}_i, \mathbf{C}^C_i + \mathbf{M}\,\mathbf{C}^S_i\,\mathbf{M}^T)
+\end{equation}
+Par conséquent,
+\begin{equation}
+	d^{(\mathbf{M}^*)}_i \sim \mathcal{N}(0, \mathbf{C}^C_i + (\mathbf{M}^*)\,\mathbf{C}^S_i\,(\mathbf{M}^*)^T)
+\end{equation}
+
+La méthode d'estimation du maximum de vraisemblance est utilisée dont le principe est le suivant: On a $n$ échantillons $x_1, \ldots, x_n$ issus d'une variable aléatoire $X$, et on cherche la fonction de densité $f^{(\theta^*)}$ de probabilité associée à $X$, en sachant qu'elle appartient à une famille de fonctions de densité de probabilité, paramétrisée par $\theta$. Quand $X$ est discrète, la fonction de masse $p^{(\theta^*)}$ est utilisée. Donc on calcule une estimation de $\theta^*$ à partir de $x_1, \ldots, x_n$ et $f$. Pour une valeur du paramètre $\theta$ donnée, et on supposant que les échantillons sont mutuellement indépendants, la \emph{fonction de vraisemblance} peut être calculée par
+\begin{equation}
+	L(\theta; x_1, \ldots, x_n) = \prod_{i=1}^{n} f^{(\theta)}(x_i)
+\end{equation}
+Une estimation de $\theta^*$ peut alors être trouvée en maximisant $L$:
+\begin{equation}
+	\hat{\theta} = \argmax_{\theta} L(\theta; x_1, \ldots, x_n)
+\end{equation}
+
+On considère que $d^{(\mathbf{M})}_i$ sont des échantillons. En fixant $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$, a fonction de masse des échantillons $p^{\mathbf{M}}$ peut être calculée avec $\mathbf{M}$ comme seule inconnue. Par une application récursive de l'estimation du maximum de vraisemblance, une valeur pour $\mathbf{M}$ pourra être trouvée:
+\begin{equation}
+	\mathbf{M}
+	= \argmax_{\mathbf{M}} \prod_{i=1}^{n} p^{\mathbf{M}}(d^{(\mathbf{M})}_i)
+	= \argmax_{\mathbf{M}} \sum_{i=1}^{n} \log(p^{\mathbf{M}}(d^{(\mathbf{M})}_i))
+\end{equation}
+La somme des logarithmes peux être maximisée au lieu parque que la fonction $\log$ est strictement croissante.
+
+En utilisant \ref{eq:dist_distr}, la formule peut être simplifiée en
+\begin{equation}
+	\mathbf{M} = \argmin_{\mathbf{M}} \sum_{i=1}^{n}
+	(d^{(\mathbf{M})}_i)^T \, (\mathbf{C}^C_i + \mathbf{M}\,\mathbf{C}^S_i\,\mathbf{M}^T)^{-1} \, d^{(\mathbf{M})}_i
+\end{equation}
+C'est cela qui constitue l'amélioration du ICP généralisé par rapport au ICP standard: Au lieu de minimiser la métrique d'erreur $\sum_i \| d^{(\mathbf{M})}_i \|$, on minimise $\sum_i (d^{(\mathbf{M})}_i)^T \, (\mathbf{C}^C_i + \mathbf{M}\,\mathbf{C}^S_i\,\mathbf{M}^T)^{-1} \, d^{(\mathbf{M})}_i$. On le recale plus directement les points $S$ et $P$, mais les surfaces sous-jacentes, qui sont décrits par $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$. \cite{Holz2014}
 
 
 \subsection{Extended Gaussian Images}
