@@ -18,12 +18,12 @@
 \contentsline {subsubsection}{\numberline {2.3.1.4}Version simultan\IeC {\'e}e de l'ICP}{9}{subsubsection.2.3.1.4}
 \contentsline {subsubsection}{\numberline {2.3.1.5}ICP g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{10}{subsubsection.2.3.1.5}
 \contentsline {section}{\numberline {2.4}4-Points Congruent Sets}{11}{section.2.4}
-\contentsline {section}{\numberline {2.5}Extended Gaussian Images}{11}{section.2.5}
-\contentsline {section}{\numberline {2.6}Normal Distributions Transform}{12}{section.2.6}
-\contentsline {section}{\numberline {2.7}Extended Gaussian Images}{12}{section.2.7}
-\contentsline {section}{\numberline {2.8}Identification et correspondance de droites}{12}{section.2.8}
-\contentsline {section}{\numberline {2.9}Identification et correspondance de plans}{12}{section.2.9}
-\contentsline {section}{\numberline {2.10}D\IeC {\'e}tecteurs de zones d'int\IeC {\'e}r\IeC {\^e}t}{12}{section.2.10}
-\contentsline {section}{\numberline {2.11}Recalage via des photos}{12}{section.2.11}
-\contentsline {section}{\numberline {2.12}Photogramm\IeC {\'e}trie}{12}{section.2.12}
-\contentsline {chapter}{\numberline {3}Projet pr\IeC {\'e}vu pour le m\IeC {\'e}moire}{13}{chapter.3}
+\contentsline {section}{\numberline {2.5}Extended Gaussian Images}{13}{section.2.5}
+\contentsline {section}{\numberline {2.6}Normal Distributions Transform}{13}{section.2.6}
+\contentsline {section}{\numberline {2.7}Extended Gaussian Images}{13}{section.2.7}
+\contentsline {section}{\numberline {2.8}Identification et correspondance de droites}{13}{section.2.8}
+\contentsline {section}{\numberline {2.9}Identification et correspondance de plans}{13}{section.2.9}
+\contentsline {section}{\numberline {2.10}D\IeC {\'e}tecteurs de zones d'int\IeC {\'e}r\IeC {\^e}t}{13}{section.2.10}
+\contentsline {section}{\numberline {2.11}Recalage via des photos}{13}{section.2.11}
+\contentsline {section}{\numberline {2.12}Photogramm\IeC {\'e}trie}{13}{section.2.12}
+\contentsline {chapter}{\numberline {3}Projet pr\IeC {\'e}vu pour le m\IeC {\'e}moire}{14}{chapter.3}

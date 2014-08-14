@@ -64,7 +64,7 @@ Les scanners tridimensionnels utilisent des rayonnements, typiquement des lasers
 \section{Théorie préliminaire}
 
 \subsection{RANSAC}
-L'algorithme RANSAC (``Random Sample Consensus''\emph{Consensus par échantillons aléatoires}), initialement décrit en \cite{Fisc1980}, est une méthode générale qui permet d'aligner un \emph{modèle}, défini par un vecteur de paramètres $\theta$, à des échantillons $p_i$ de données mesurés. L'algorithme procède en sélectionnant aléatoirement des échantillons pour y déduire un modèle possible, qui est ensuite raffiné itérativement. La présence d'une fraction élevée d'erreurs de mesure parmi les échantillons (``outliers''\footnote{dans le contexte de nuages de points, des points qui ne sont pas sur une surface de l'objet}) rend inutilisable des solutions classiques comme la méthode des moindres carrés. Avec l'approche RANSAC, la probabilité inférieure de sélectionner parmi tous les échantillons un outlier mène à un bon alignement avec les échantillons corrects. (``inliers'').
+L'algorithme RANSAC (``Random Sample Consensus''\emph{Consensus par échantillons aléatoires}), initialement décrit en \cite{Fisc1980}, est une méthode générale qui permet d'aligner un \emph{modèle}, défini par un vecteur de paramètres $\theta$, à des échantillons $p_i$ de données mesurés. L'algorithme procède en sélectionnant aléatoirement des échantillons pour y déduire un modèle possible, qui est ensuite raffiné itérativement. La présence d'une fraction élevée d'erreurs de mesure parmi les échantillons (``outliers''\footnote{dans le contexte de nuages de points, des points qui ne sont pas sur une surface de l'objet}) rend inutilisable des solutions classiques comme la méthode des moindres carrés. Avec l'approche RANSAC, la probabilité inférieure de sélectionner parmi tous les échantillons un outlier mène à un bon alignement avec les échantillons corrects. (``inliers'') Contrairement à des méthodes non-probabilistiques, RANSAC essaye de trouver une estimation initiale du modèle par un nombre minimal d'échantillons, et non pas par un nombre le plus grand possible.
 
 Soit $m$ le nombre minimal d'échantillons requis pour trouver un modèle $\hat{\theta}$ qui comprend ces $m$ échantillons. Soit $P$ l'ensemble d'échantillons. Soit $E(\theta, p)$ une métrique d'erreur qui est zéro si l'échantillon $p$ correspond parfaitement au modèle $\hat{\theta}$. RANSAC procède en répétant la procédure suivante:
 \begin{enumerate}
@@ -73,10 +73,9 @@ Soit $m$ le nombre minimal d'échantillons requis pour trouver un modèle $\hat{
 	\item Si $|S^*| \geq t$ pour un seuil $t$ déterminé en fonction du nombre d'outliers, calculer l'estimation finale du modèle $\theta$ à partir de tous les échantillons du consensus set $S^*$, et terminer.
 	\item Si $|S^*| < t$, on rejète le modèle $\hat{\theta}$, et recommence à l'étape 1. Si cela arrive plus que $N$ (nombre maximal d'itérations) fois, l'algorithme a échoué.
 \end{enumerate}
+Une autre procédure possible serait d'au lieu d'arrêter à 3, répéter pour un nombre fixe d'itérations, et garder à la fin le modèle pour lequel $|S^*|$ était maximal. 
 
 Un exemple simple d'application serait d'aligner une droite (modèle) $y = a \, x + b$, définie par les paramètres $\theta = (m,b)$, à des points (échantillons) $p_i = (x_i,y_i)$. Une droite peut être trouvée à partir de $m = 2$ points, en posant $m = \frac{x_2 - x_1}{y_2 - y_1}$ et $b = y_1 - m \, x_1$. Pour ajuster une droite à plus que deux points (pas nécessairement alignés), la méthode des moindres carrés peut être utilisée. Une métrique d'erreur serait la distance du point à la droite, donnée par $E(\theta, p) = \frac{|y - m\,x - b|}{\sqrt{m^2 + 1}}$.
-
-RANSAC peut aussi être utilisé pour aligner deux nuages de points 
 
 \subsection{Transformation de deux triplets de points}
 
@@ -97,7 +96,7 @@ Dans les pages suivantes certains algorithmes et méthodes seront décrit en dé
 
 
 \subsection{Iterative Closest Point}
-L'algorithme ICP (``itératif point le plus proche'') est considéré comme la méthode standard pour l'alignement précis de deux nuages de points, après qu'un recalage approximatif initial a déjà été fait. Parmi les deux nuages de points pris comme entrée, l'un (\emph{référence}) reste fixé, tandis que l'autre (\emph{source}) est transformé par translation et rotation. L'algorithme procède en itérativement raffinant la transformation à chaque étape, de manière à ce que la distance entre les deux nuages de points soit minimisée.
+L'algorithme ICP\footnote{itératif point le plus proche} est considéré comme la méthode standard pour l'alignement précis de deux nuages de points, après qu'un recalage approximatif initial a déjà été fait. Parmi les deux nuages de points pris comme entrée, l'un (\emph{référence}) reste fixé, tandis que l'autre (\emph{source}) est transformé par translation et rotation. L'algorithme procède en itérativement raffinant la transformation à chaque étape, de manière à ce que la distance entre les deux nuages de points soit minimisée.
 
 Plus précisément, pour tout point $s_i$ de l'ensemble \emph{source}, on choisit un point $c_i$ de l'ensemble \emph{cible} pour lequel on estime qu'il représente plus au moins la même position dans le nuage de points. Comme les deux nuages de points sont déjà recalés approximativement, une méthode courante est de choisir le point le plus proche, avec la transformation actuelle. L'algorithme nécessite donc que les densités de points des deux ensembles sont similaires. Ensuite une transformation est appliquée aux points $s_i$ qui minimise une métrique donnée de l'erreur de recalage.
 
@@ -121,7 +120,7 @@ En général, un algorithme ICP procède selon les étapes suivantes:
 \end{enumerate}
 
 
-\subsubsection{Calcul de la transformation par quaternions}
+\subsubsection{Calcul de la transformation par quaternions} \label{sec:quat_trans}
 Une manière de calculer la translation et rotation qui est appliquée à chaque itération à l'ensemble de points \emph{source} est décrite dans \cite{Besl1992} et \cite{Horn1986}. La procédure prend uniquement les $n$ couples de points $(\vec{s}_i, \vec{c}_i)$ comme entrée, où $\vec{c}_i$ est un point de l'ensemble \emph{cible} $C$, et $\vec{s}_i$ un point de l'ensemble \emph{source} $S$. On suppose que les transformations données par les itérations précédentes ont déjà été appliquées aux points $s_i$. La méthode reste valable pour tout choix de points, et $C$ ne doit pas forcément être donné sous forme d'ensemble de points, mais ses points $\vec{c}_i$ peuvent aussi par exemple être calculés à partir d'une surface paramétrique.
 
 Le but de trouver $\vec{q}_T$ et $\dot{q}_R$ qui minimisent le carré des distances des couples $f(\vec{q})$.
@@ -303,7 +302,43 @@ Il ne suffit donc plus de comparer les points voisins pour avoir une estimation 
 
 
 \section{4-Points Congruent Sets}
+La méthode 4-Points Congruent Sets\footnote{ensemble congruents de 4-points} (4PCS) est une approche qui permet de recaler deux nuages de points avec du bruit (i.e. outliers), relativement peu d'information commune, et sans avoir besoin d'un recalage initial. Elle est basée sur une variante du RANSAC appliqué sur des échantillons bien choisis.
 
+Le principe de RANSAC est de trouver par recherche aléatoire un nombre minimal d'échantillons à partir desquelles une approximation assez bonne d'un modèle peut être trouvée, et puis de raffiner cette approximation en utilisant uniquement les échantillons (inliers) assez proches. Pour le problème du recalage de deux nuages de points $S$ et $C$, le modèle à chercher est une matrice de transformation $\mathbf{M}$ qui recale assez bien les deux nuages. Une telle matrice peut être univoquement définie par deux triplets de points sans les repères de $S$ et $C$ respectivement. Une méthode pour en déduire $\mathbf{M}$ est donnée en \cite{Horn1986}. $\mathbf{M}$ représente le recalage correct si les points des deux triplets représentent toujours les mêmes positions dans les deux nuages de points.
+
+Une manière d'appliquer RANSAC est donc de choisir comme échantillons aléatoirement ces deux triplets de points, et de calculer et vérifier les matrices de transformation correspondantes. Le consensus set est l'ensemble de points de $s \in S$ pour lesquels $\min_{c \in C} \| s - c \| < \epsilon$. On peut raffiner le recalage par exemple avec ICP. La plupart de ces échantillons ne formeront pas un recalage correct. Une telle méthode aurait une complexité d'au moins $O(n^3 \, \log n)$. Pour la rendre utilisable, il faut donc altérer la façon de choisir des échantillons.
+
+La méthode 4PCS utilise comme échantillon deux 4-points (i.e. quadruples de points) prises de $S$ et de $C$. Ceci permettra d'arriver à une complexité quadratique au lieu de cubique. A partir de $S$, on choisit aléatoirement quatre points qui sont coplanaires. Ces quatre points sont appelés la \emph{base}. En pratique, une coplanarité approximative est suffisante. Pour le deuxième quadruple, on choisit ceux qui sont congruents avec le premier, c'est à dire que le premier peut être transformé en le deuxième par une transformation rigide. L'algorithme fonctionne selon la procédure suivante:
+\begin{enumerate}
+	\item Sélectionner aléatoirement base $\dot{b}$ (quadruple de points coplanaires) de $S$.
+	\item Trouver l'ensemble $U$ des quadruples congruents à la base.
+	\item Pour tout $\dot{u}_i \in U$, calculer la matrice de transformation $\mathbf{M}_i$ qui aligne $\dot{u}_i$ à $\dot{b}$. La solution à forme fermée développée en \ref{sec:quat_trans} peut être utilisée pour aligner deux ensembles de $4$ points. Le consensus set $S_i \cup S$ est formé par les points de la source qui sont après la transformation $\mathbf{M}_i$ assez bien recalés à la cible:
+		\begin{equation}
+			S_i = \{ s \in S : \min_{c \in C} \| c - \mathbf{M}_i \, s \| < \delta \}
+		\end{equation}
+	\item On retient le consensus set $S_k$ et la matrice de transformation $\mathbf{M}_k$ correspondante pour lequel $|S_i|$ était maximal. $\mathbf{M}_k$ correspond à la meilleure transformation qui a pu être trouvée avec la base $\dot{b}$.
+	\item Un compteur est incrémenté. S'il n'a pas encore dépassé un nombre fixé $L$, on continue avec l'étape 1. Sinon, l'algorithme se termine. A la fin on garde la matrice $\mathbf{M}_k$ pour laquelle $|S_k|$ était maximal.
+\end{enumerate}
+
+L'opération fondamentale de l'algorithme est la recherche the quadruplets $\dot{u} = (\vec{u}_1, \vec{u}_2, \vec{u}_3, \vec{u}_4)$ congruents à une base $\dot{b} = (\vec{b}_1, \vec{b}_2, \vec{b}_3, \vec{b}_4)$ donnée. Les points de la base sont coplanaires, par définition. Il y aura toujours deux paires dans la base qui forment des droites qui s'intersectent. Sans perte de généralité, soit $\vec{u}_1 \vec{u}_2$ et $\vec{u}_3 \vec{u}_4$ ces droites, et $\vec{e}$ leur point d'intersection. Il a été montré que les deux nombres
+\begin{equation}
+	r_1 = \frac{\| \vec{u}_1 - e \|}{\| \vec{u}_1 - \vec{u}_2 \|}
+	\hspace{1cm} \text{et} \hspace{1cm}
+	r_2 = \frac{\| \vec{u}_3 - e \|}{\| \vec{u}_3 - \vec{u}_4 \|}
+\end{equation}
+sont invariants par rapport à la transformation affine de $\dot{b}$. De plus, in changent toujours quand une transformation non-affine est appliqué. Donc pour trouver des candidats pour $\dot{u}$, il suffit de chercher les quadruples qui produisent les mêmes valeurs $r_1$ et $r_2$.
+
+On considère tous des paires de points $(\vec{s}_1, \vec{s}_2) \in S$, on faisant l'hypothèse qu'ils appartiennent à un des quadruples $\dot{u}$ cherchés, et qu'ils sont congruents à soit $(\vec{b}_1, \vec{b}_2)$ ou $(\vec{b}_3 \vec{b}_4)$. Donc ils forment une des droites qui passent par leur équivalent de $\vec{e}$. Des paires sont cherchés dans les deux ordres, c'est à dire on considère $(\vec{s}_1, \vec{s}_2)$ et $(\vec{s}_2, \vec{s}_1)$ séparément. Puisqu'on ne sait pas quelles des deux droites ils représentent, il y a deux possibilités $\vec{e}_1$ et $\vec{e}_2$ pour la position du point d'intersection de ce quadruple:
+\begin{equation}
+	\vec{e}_1 = \vec{s}_1 = r_1 \, (\vec{s}_2 - \vec{s}_1)
+	\hspace{1cm} \text{ou} \hspace{1cm}
+	\vec{e}_2 = \vec{s}_1 = r_2 \, (\vec{s}_2 - \vec{s}_1)	
+\end{equation}
+Si deux paires de points $(\vec{s_1}', \vec{s_2}')$ et $(\vec{s_1}'', \vec{s_2}'')$ ont pu être trouvés tels que $\vec{e_1}' = \vec{e_2}''$, alors il est probable qu'ils forment un des quadruples congruents cherchés.
+
+L'algorithme procède par filtrer les quadruples qui ne sont pas congruents avec la base. Dans l'implémentation donnée par \cite{Aige2008}, l'algorithme considère seulement les paires $(\vec{s}_1, \vec{s}_2)$ dont la distance correspond approximativement à $\| \vec{b}_1 - \vec{b}_2 \|$ ou $\| \vec{b}_3 - \vec{b}_4 \|$. Les points $\vec{e}$ sont mis sur une structure \emph{range tree}, ce qui permet de trouver des partenaires coïncidents $e'$ de façon efficace. La procédure a une complexité dans $O(n^2 + k)$, où $k$ est le nombre de quadruplets $\dot{u}$ qui seront trouvés. (L'algorithme est \emph{output-sensitive}.)
+
+Pour choisir une base $\dot{b}$, l'algorithme choisir d'abord aléatoirement trois points de $C$. On préfère des points à distance plutôt élevée, afin que la base ne soit pas perturbé par des imprécisions locales. On cherche ensuite le quatrième point de manière à ce qu'il soit coplanaire avec les trois autres.
 
 
 
