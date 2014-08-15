@@ -26,4 +26,6 @@
 \contentsline {section}{\numberline {2.10}D\IeC {\'e}tecteurs de zones d'int\IeC {\'e}r\IeC {\^e}t}{16}{section.2.10}
 \contentsline {section}{\numberline {2.11}Recalage via des photos}{16}{section.2.11}
 \contentsline {section}{\numberline {2.12}Photogramm\IeC {\'e}trie}{16}{section.2.12}
-\contentsline {chapter}{\numberline {3}Projet pr\IeC {\'e}vu pour le m\IeC {\'e}moire}{17}{chapter.3}
+\contentsline {subsection}{\numberline {2.12.1}Calibration}{16}{subsection.2.12.1}
+\contentsline {section}{\numberline {2.13}Combination photo-nuage de points}{17}{section.2.13}
+\contentsline {chapter}{\numberline {3}Projet pr\IeC {\'e}vu pour le m\IeC {\'e}moire}{18}{chapter.3}

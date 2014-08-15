@@ -148,7 +148,6 @@ La méthode préférée pour déterminer un recalage approximatif dépend surtou
 Dans les pages suivantes certains algorithmes et méthodes seront décrit en détail, avec leurs bases mathématiques. Il pourront possiblement être utilisés ou développées pour le projet de mémoire.
 
 
-
 \section{Iterative Closest Point}
 L'algorithme ICP\footnote{itératif point le plus proche} est considéré comme la méthode standard pour l'alignement précis de deux nuages de points, après qu'un recalage approximatif initial a déjà été fait. Parmi les deux nuages de points pris comme entrée, l'un (\emph{référence}) reste fixé, tandis que l'autre (\emph{source}) est transformé par translation et rotation. L'algorithme procède en itérativement raffinant la transformation à chaque étape, de manière à ce que la distance entre les deux nuages de points soit minimisée.
 
@@ -473,6 +472,17 @@ Il est montré expérimentalement que ces deux dernières mesures peuvent donner
 \section{Recalage via des photos}
 
 \section{Photogrammétrie}
+La photogrammétrie peut être définie comme la science d'extraire algorithmiquement des informations sur un environnement tridimensionnel à partir de photos. En particulier, une opération photogrammétrique fondamentale est de retrouver les positions 3D correspondants à des points sur la photo.
+
+\subsection{Calibration}
+Une première étape à effectuer pour pouvoir faire de mesures photogrammétriques est la calibration. Elle consiste à déterminer les paramètres extrinsèques et intrinsèques de la caméra avec laquelle les photos one été pris. Les \emph{paramètres extrinsèques} sont la position et l'orientation de la caméra par rapport à l'environnement. Dans un repère donné, ils peuvent être définis par les coordonnées $(x_0, y_0, z_0)$ et les angles d'Euler $(\omega, \phi, \kappa)$. Les \emph{paramètres intrinsèques} consistent 
+
+
+\section{Combination photo-nuage de points}
+Comme mentionné, dans des projets de documentation 3D on combine souvent des scans laser avec des information extraits de photos prises en combinaison avec les scans laser. Par exemple cela est usuellement utilisé pour coloriser un nuage de points. Une opération fondamentale est de pouvoir déterminer la position 3D qui correspond à chaque pixel de l'image.
+
+Une technique est décrite dans \cite{Tour2009}. Ici, on suppose que la position et pose de la caméra par rapport au scanner laser est connue.
+
 
 \chapter{Projet prévu pour le mémoire}
 

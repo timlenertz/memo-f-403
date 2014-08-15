@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  15 AUG 2014 17:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  15 AUG 2014 20:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,9 +471,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \verbatim@out=\write3
-runsystem(touch w18-test-20148151067.tex)...disabled (restricted).
+runsystem(touch w18-test-20148151202.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-20148151067.tex)...disabled (restricted).
+runsystem(rm -f w18-test-20148151202.tex)...disabled (restricted).
 
 
 
@@ -747,40 +747,40 @@ Chapitre 2.
 [4
 
 ] [5] [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (4.2574pt too wide) in paragraph at lines 351--352
+Overfull \hbox (4.2574pt too wide) in paragraph at lines 350--351
 []\T1/cmr/m/n/10 L'opération fon-da-men-tale de l'al-go-rithme est la re-cherch
 e the qua-dru-plets $[] \OT1/cmr/m/n/10 = ([]\OML/cmm/m/it/10 ; []; []; []\OT1/
 cmr/m/n/10 )$ \T1/cmr/m/n/10 congruents
  []
 
-[13] [14] [15] [16]
+[13] [14] [15] [16] [17]
 Chapitre 3.
-(./document.bbl [17
+(./document.bbl [18
 
 ]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 34.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [18
+) [19
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 492.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 492.
 
 (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 492.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 492.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 6B8FC6A4204236DBBD4BB2BC819FF0FD;1786.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
+(rerunfilecheck)             Checksum: 35B605F688895B75A15C6CBD9469B022;1934.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 492.
  ) 
 Here is how much of TeX's memory you used:
- 9649 strings out of 493308
- 145076 string characters out of 6137817
- 288448 words of memory out of 5000000
- 12790 multiletter control sequences out of 15000+600000
+ 9653 strings out of 493308
+ 145129 string characters out of 6137817
+ 289448 words of memory out of 5000000
+ 12792 multiletter control sequences out of 15000+600000
  23837 words of font info for 67 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,9n,51p,1306b,507s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -819,10 +819,10 @@ ublic/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
 lic/cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
 c/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
 cm-super/sftt1000.pfb>
-Output written on document.pdf (19 pages, 527302 bytes).
+Output written on document.pdf (20 pages, 529602 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 485 compressed objects within 5 object streams
- 148 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
