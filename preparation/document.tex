@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{amsfonts}
 \usepackage{gnuplottex}
 \usepackage{fullpage}
 \usepackage{hyperref}
@@ -77,8 +78,35 @@ Une autre procédure possible serait d'au lieu d'arrêter à 3, répéter pour u
 
 Un exemple simple d'application serait d'aligner une droite (modèle) $y = m \, x + b$, définie par les paramètres $\theta = (m,b)$, à des points (échantillons) $p_i = (x_i,y_i)$. Une droite peut être trouvée à partir de $m = 2$ points, en posant $m = \frac{x_2 - x_1}{y_2 - y_1}$ et $b = y_1 - m \, x_1$. Pour ajuster une droite à plus que deux points (pas nécessairement alignés), la méthode des moindres carrés peut être utilisée. Une métrique d'erreur serait la distance du point à la droite, donnée par $E(\theta, p) = \frac{|y - m\,x - b|}{\sqrt{m^2 + 1}}$.
 
-\subsection{Transformation de deux triplets de points}
+\subsection{Méthode de Newton} \label{sec:newton}
+La méthode de Newton est un algorithme qui a le but de trouver itérativement des racines d'une fonction réelle continue et dérivable. En partant d'un point $x_0$ proche à la racine, on construit la série $x_{k+1} = x_{k} - \frac{f(x_k)}{f'(x_k)}$ Le point $x_{k+1}$ est la solution de l'équation $f(x_k) + f'(x_k) \, (x - x_k) = 0$, donc le point d'intersection de la tangente de $f$ en $x_k$ avec l'abscisse. Le principe d'algorithme est que les tangentes donnent une approximation du comportement de la fonction. Donc quand la racine a été trouvée, $x_k$ sera un point stationnaire ($x_k = x_{k+1}$).
 
+La méthode peut aussi être appliquée pour résoudre des problèmes d'optimisation, c'est à dire de minimisation d'une fonction, on considérant les racines de sa fonction dérivée $f'$. La formule devient
+\begin{equation}
+	x_{k+1} = x_{k} - \frac{f'(x_k)}{f''(x_k)}
+\end{equation}
+
+Ceci peut aussi être étendu pour la résolution de problèmes d'optimisation sur une variable multidimensionnelle $\vec{x}$. On remplace $f'$ par le gradient
+\footnote{La gradient d'une fonction vectorielle dérivable $f : \mathbb{R}^n \rightarrow \mathbb{R}$ est le vecteur des ses $n$ dérivées partielles: $$\nabla f(\vec{x}) = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right)^T$$}
+$\nabla f(\vec{x})$, et $(f'')^{-1}$ par l'inverse de la matrice Hessienne
+\footnote{La matrice Hessienne d'une fonction vectorielle $f : \mathbb{R}^n \rightarrow \mathbb{R}$ dérivable deux fois est composée de toutes les combinaisons de ses dérivées partielles secondes: $$\mathbf{H}_{i,j} f(\vec{x}) = \frac{\partial^2 f}{\partial x_i \, \partial x_j}$$}
+$( \mathbf{H} f(\vec{x}) )^{-1}$:
+\begin{equation}
+	\vec{x}_{k+1} = \vec{x}_{k} - (\mathbf{H} f(\vec{x}_k))^{-1} \, \nabla f(\vec{x}_k)
+\end{equation}
+Pour éviter de passer par le calcul de la matrice inverse, le vecteur $\hat{\Delta} x_k = (\mathbf{H} f(\vec{x}_k))^{-1} \, \nabla f(\vec{x}_k)$, la quantité à retrancher du résultat après chaque itération, peut être trouvée par résolution du système d'équations linéaires $(\mathbf{H} f(\vec{x}_k)) \, \hat{\Delta} x = \nabla f(\vec{x}_k)$.
+\footnote{$\hat{\Delta} x_k$ est une approximation d'un vecteur $\Delta x_k$ qui résoudrait le problème en une étape.}
+Ecrit sous forme non-matricielle:
+\begin{equation}
+\begin{dcases}
+	\frac{\partial^2 f}{\partial x_1 \, \partial x_1} \, \hat{\Delta} x_1 + \frac{\partial^2 f}{\partial x_1 \, \partial x_2} \, \hat{\Delta} x_2 + \dotsb + \frac{\partial^2 f}{\partial x_1 \, \partial x_n} \, \hat{\Delta} x_n = \frac{d f}{d x_1} \\
+	\frac{\partial^2 f}{\partial x_2 \, \partial x_1} \, \hat{\Delta} x_1 + \frac{\partial^2 f}{\partial x_2 \, \partial x_2} \, \hat{\Delta} x_2 + \dotsb + \frac{\partial^2 f}{\partial x_1 \, \partial x_n} \, \hat{\Delta} x_n = \frac{d f}{d x_2} \\
+	\hspace{3mm} \vdots \\
+	\frac{\partial^2 f}{\partial x_n \, \partial x_1} \, \hat{\Delta} x_1 + \frac{\partial^2 f}{\partial x_n \, \partial x_2} \, \hat{\Delta} x_2 + \dotsb + \frac{\partial^2 f}{\partial x_n \, \partial x_n} \, \hat{\Delta} x_n = \frac{d f}{d x_n} \\
+\end{dcases}
+\end{equation}
+
+Dans la cas unidimensionnel, on prend la tangente de $f'$ afin d'arriver au point minimal de $f$, qui correspond à la racine de $f'$. Pour trouver celle-ci on a besoin de prendre la dérivée seconde $f''$. Or pour des fonctions multidimensionnelles $\mathbb{R}^n \rightarrow \mathbb{R}$, il y aura $n$ fonctions dérivées partielles, toujours du type $\mathbb{R}^n \rightarrow \mathbb{R}$. Par conséquent il y aura $n^2$ fonctions dérivées secondes partielles. Ceci explique la nécessité de résoudre un système d'équations $n \times n$.
 
 \section{Recalage}
 Afin de créer un modèle complet, on doit fusionner plusieurs scans qui sont prises de différents points de vues et qui sont tous limités par le champ de vision du scanner. Ces différents nuages de points ont tous des repères différents, relatifs à la position et à l'orientation du scanner, et possiblement ayant des échelles différents.
@@ -378,6 +406,11 @@ Les étapes suivies par l'algorithme pour recaler une nuage de points source $S$
 	\item Tant que le recalage n'est pas encore assez bon, répéter avec l'étape 2.
 \end{enumerate}
 
+Comme montré dans la section \ref{sec:newton}, on peut utiliser la méthode de Newton multidimensionnelle pour ce problème de maximisation: On minimise la fonction opposée $- \text{score}$. Puisqu'il y a trois paramètres $(t_x, t_y, \phi)$ et la fonction \emph{score} calcule un réel, on est dans le cas $\mathbb{R}^3 \rightarrow \mathbb{R}$. Pour chaque itération de l'algorithme de Newton résoud le système
+\begin{equation}
+	[\mathbf{H} \, \text{score}(\theta)] \, \Delta \theta = \nabla \, \text{score}(\theta)
+\end{equation}
+en utilisant la définition de la fonction \emph{score}.
 
 \section{Extended Gaussian Images}
 On peut générer à partir d'un nuage de point son EGI (Extended Gaussian Image), qui est une forme d'encoder la forme d'un objet convexe. Ceci permet d'estimer la rotation à appliquer, sans partir d'un recalage initial.
