@@ -12,45 +12,45 @@ Warning--empty booktitle in Rusi2001
 Warning--empty journal in Kers2006
 Warning--can't use both volume and number fields in Besl1992
 Warning--empty booktitle in Mati2011
-You've used 23 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            654 strings with 8522 characters,
-and the built_in function-call counts, 5986 in all, are:
-= -- 612
-> -- 161
-< -- 8
-+ -- 72
-- -- 46
-* -- 326
-:= -- 1022
-add.period$ -- 75
-call.type$ -- 23
-change.case$ -- 94
+            660 strings with 8719 characters,
+and the built_in function-call counts, 6275 in all, are:
+= -- 642
+> -- 168
+< -- 9
++ -- 75
+- -- 48
+* -- 337
+:= -- 1067
+add.period$ -- 78
+call.type$ -- 24
+change.case$ -- 98
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 279
-empty$ -- 537
-format.name$ -- 46
-if$ -- 1292
+cite$ -- 31
+duplicate$ -- 297
+empty$ -- 560
+format.name$ -- 48
+if$ -- 1359
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 17
-newline$ -- 118
-num.names$ -- 46
-pop$ -- 100
+int.to.str$ -- 24
+missing$ -- 18
+newline$ -- 123
+num.names$ -- 48
+pop$ -- 105
 preamble$ -- 1
-purify$ -- 69
+purify$ -- 72
 quote$ -- 0
-skip$ -- 190
+skip$ -- 205
 stack$ -- 0
-substring$ -- 296
-swap$ -- 56
-text.length$ -- 8
+substring$ -- 307
+swap$ -- 64
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 92
+type$ -- 96
 warning$ -- 7
-while$ -- 58
-width$ -- 25
-write$ -- 257
+while$ -- 61
+width$ -- 26
+write$ -- 268
 (There were 8 warnings)

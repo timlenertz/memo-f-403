@@ -10,7 +10,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[frenchb]{babel}
 
-\setcounter{secnumdepth}{3}
+% \setcounter{secnumdepth}{3}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -123,7 +123,7 @@ Dans les pages suivantes certains algorithmes et méthodes seront décrit en dé
 
 
 
-\subsection{Iterative Closest Point}
+\section{Iterative Closest Point}
 L'algorithme ICP\footnote{itératif point le plus proche} est considéré comme la méthode standard pour l'alignement précis de deux nuages de points, après qu'un recalage approximatif initial a déjà été fait. Parmi les deux nuages de points pris comme entrée, l'un (\emph{référence}) reste fixé, tandis que l'autre (\emph{source}) est transformé par translation et rotation. L'algorithme procède en itérativement raffinant la transformation à chaque étape, de manière à ce que la distance entre les deux nuages de points soit minimisée.
 
 Plus précisément, pour tout point $s_i$ de l'ensemble \emph{source}, on choisit un point $c_i$ de l'ensemble \emph{cible} pour lequel on estime qu'il représente plus au moins la même position dans le nuage de points. Comme les deux nuages de points sont déjà recalés approximativement, une méthode courante est de choisir le point le plus proche, avec la transformation actuelle. L'algorithme nécessite donc que les densités de points des deux ensembles sont similaires. Ensuite une transformation est appliquée aux points $s_i$ qui minimise une métrique donnée de l'erreur de recalage.
@@ -148,7 +148,7 @@ En général, un algorithme ICP procède selon les étapes suivantes:
 \end{enumerate}
 
 
-\subsubsection{Calcul de la transformation par quaternions} \label{sec:quat_trans}
+\subsection{Calcul de la transformation par quaternions} \label{sec:quat_trans}
 Une manière de calculer la translation et rotation qui est appliquée à chaque itération à l'ensemble de points \emph{source} est décrite dans \cite{Besl1992} et \cite{Horn1986}. La procédure prend uniquement les $n$ couples de points $(\vec{s}_i, \vec{c}_i)$ comme entrée, où $\vec{c}_i$ est un point de l'ensemble \emph{cible} $C$, et $\vec{s}_i$ un point de l'ensemble \emph{source} $S$. On suppose que les transformations données par les itérations précédentes ont déjà été appliquées aux points $s_i$. La méthode reste valable pour tout choix de points, et $C$ ne doit pas forcément être donné sous forme d'ensemble de points, mais ses points $\vec{c}_i$ peuvent aussi par exemple être calculés à partir d'une surface paramétrique.
 
 Le but de trouver $\vec{q}_T$ et $\dot{q}_R$ qui minimisent le carré des distances des couples $f(\vec{q})$.
@@ -202,10 +202,10 @@ Il est aussi montré que le quaternion unitaire $\dot{q}_R$ qui maximise l'expre
 Donc, cette méthode permet de déterminer la rotation et translation à appliquer à \textbf{M} par une série de calculs, sans passer par des méthodes approximatives.
 
 
-\subsubsection{Variantes de l'algorithme}
+\subsection{Variantes de l'algorithme}
 Comme mentionné, diverses variantes de l'ICP sont possibles. \cite{Rusi2001} donne un comparatif des différentes possibilités.
 
-\subsubsection{Analyse procustéenne généralisée}
+\subsection{Analyse procustéenne généralisée}
 Le problème de trouver une transformation rigide qui minimise une distance d'un ensemble de couples de points donnés ${(x_{1,i}, x_{2,i})}$ peut aussi être résolu par \emph{analyse procustéenne}. L'\emph{analyse procustéenne généralisée} (``GPA'') permet d'avoir au lieu de couples des $k$-uplets ${(x_{1,i}, x_{2,i}, \ldots, x_{k,i})}$, choisis parmi $k$ ensembles de points. En général, l'analyse procustéenne sert à aligner des \emph{formes}, ce qui peut être vu comme l'information géométrique qui reste d'un objet après avoir éliminé sa position, orientation et échelle. La méthode est utilisé dans beaucoup de domaines, notamment en statistique.
 
 Soit $n$ le nombre de couples. On encode la liste des $k$-uplets via $k$ \emph{matrices modèle} $n \times 3$ $\mathbf{X}_j$, dont les colonnes contiennent les $3$ coordonnées des $j$-ième éléments des tuples. Ces matrices contiennent donc tous approximativement les mêmes points, hormis une transformation rigide.
@@ -231,7 +231,7 @@ où $j$ est un vecteur unitaire $3 \times 1$, et $\|\mathbf{X}\|$ représente la
 Une solution de l'analyse procustéenne qui permet de trouver $\mathbf{X'}_j$ et la procédure qui permet de calculer ce résultat sont données dans \cite{Scho1970} et \cite{Scho1966}. 
 
 
-\subsubsection{Version simultanée de l'ICP}
+\subsection{Version simultanée de l'ICP}
 Une approche qui permet de faire un recalage ICP \emph{simultané} de plusieurs nuages de points en utilisant l'analyse procustéenne généralisée est décrite dans \cite{Told2010}.
 
 Comme montré dans la section précédente, une solution du problème GPA est l'aligner les nuages de points à une \emph{cible} $\mathbf{K}$ générée artificiellement à partie de tous les nuages de points, au lieu de les aligner à un autre nuage de points donné comme entrée. Ceci est appliqué pour rendre l'ICP \emph{simultané}, de manière à ce qu'il n'y a pas d'erreur qui s'accumule.
@@ -251,7 +251,7 @@ La version initiale de la cible $\mathbf{K}$ est formée par les centroids des t
 \end{enumerate} 
 Après l'exécution de cet algorithme, les $n$ nuages de points sont recalés dans un repère commun qui n'est pas spécifié d'avance. Donc un recalage complémentaire est nécessaire pour mettre le nuage fusionné dans le repère désiré.
 
-\subsubsection{ICP généralisé}
+\subsection{ICP généralisé}
 Pour ce mémoire, il sera nécessaire de trouver des méthodes qui permettent de recaler des nuages de points à densités de points différents. Une version \emph{généralisée} du ICP est développée dans \cite{Sega2009}: On prend en compte que les nuages de points ne sont qu'une approximation des surfaces scannées, et on représente l'aspect de ces surfaces sous-jacentes via un modèle probabilistique.
 
 Pour cet algorithme, l'étape de minimisation est altérée. Les autres étapes (choix des couples de points, etc.) peuvent toujours être implémentés via les différentes variantes proposées. On suppose qu'il existe des nuages de points $\hat{S} = \{ \hat{s}_i \}$ et $\hat{C} = \{ \hat{s}_i \}$ sous-jacents aux nuages de points source $S$ et cible $C$ donnés, qui sont tels qu'il existe une matrice de transformation rigide $\mathbf{M}^*$ qui recale parfaitement $\hat{S}$ et $\hat{C}$. Donc $\hat{c}_i = \mathbf{M}^* \, \hat{s}_i$ pour tout $i$.
@@ -412,13 +412,45 @@ Comme montré dans la section \ref{sec:newton}, on peut utiliser la méthode de 
 \end{equation}
 en utilisant la définition de la fonction \emph{score}.
 
-\section{Extended Gaussian Images}
-On peut générer à partir d'un nuage de point son EGI (Extended Gaussian Image), qui est une forme d'encoder la forme d'un objet convexe. Ceci permet d'estimer la rotation à appliquer, sans partir d'un recalage initial.
-
-
+Une façon simple d'étendre la méthode NDT pour utilisation avec des nuages de points 3D, mais toujours avec des transformations qui restent sur un plan horizontal, est décrite en \cite{Dold2007}. On extrait à partir des nuages de points 3D source et cible plusieurs couches horizontales 2D à différentes hauteures. Le recalage NDT est fait sur toutes ces sous-nuages 2D en même temps, en utilisant toujours la même grille de cellules. Pour la fonction \emph{score}, on prend la somme des différentes fonctions \emph{score} appartenant aux sous-nuages.
 
 
 \section{Extended Gaussian Images}
+Si on cherche à recaler des nuages de points seulement au niveau de la rotation, sans avoir une estimation initiale du recalage, une possibilité intéressante pourrait être d'utiliser leur Extended Gaussian Images\footnote{Image gaussienne étendue} (EGI).
+
+On commence par segmentiser les nuages de points en différentes surfaces planaires, pour lesquelles on calcule le vecteur normal. On disposera donc pour chaque nuages de point un ensemble de vecteurs normaux, qui peuvent être décrits par des coordonnés sphériques $(\theta, \phi)$. L'idée est de trouver une rotation 3D qui recale ces ensembles $\{(\theta_i, \phi_i)\}$, sachant que les angles sont modulo $2 \pi$.
+
+Cette projection des vecteur normaux d'un objet sur une sphère unitaire est appelée l'Extended Gaussian Image de l'objet. \cite{Horn1984} Il a été montré que pour des objets convexes, l'EGI décrit univoquement l'objet, malgré la perte d'information. Des méthodes existent pour reconstruire un polyèdre convexe à partir de son EGI. Evidemment, l'EGI est invariant par rapport à une translation de l'objet, et par rapport à son échelle.
+
+Pour pouvoir représenter un EGI numériquement, la surface de la sphere sera divisée en des petites cellules, et pour chacune d'elles on compte le nombre de normales $\vec{n} = (\theta, \phi)$ qui tombent dans cette cellule. Ce problème l'est pas évident puisqu'on essaye de passer d'une topologie sphérique à une sérialisation numérique. Un bon pavage de la sphère satisferait les conditions suivantes: 
+\begin{itemize}
+	\item Les cellules ont les mêmes formes, les mêmes aires, et des formes régulières compactes
+	\item La division doit est assez fine pour produire une bonne résolution angulaire
+	\item Il y a des rotations avec lesquelles des cellules avant et après la rotation coïncideront
+\end{itemize}
+
+Une manière simple est de divider la sphère dans des intervalles de longitude et de latitude. Ce pavage peut être rendu arbitrairement fin, mais les cellules n'auront les la même taille. Proche aux pôles, ils deviendront plus petits à cause de la convergence des méridiens. On pourrait améliorer le pavage en variant les intervalles. Aussi avec cette méthode, seulement les rotations autour de l'axe du globe peuvent faire coincider les cellules. Pour arriver à des cellules de mêmes formes et aires, la sphère peut au lieu être approximée par un solide de Platon. Celui avec le plus de faces est l'icosaèdre régulier, ayant $20$ faces triangulaires, ce qui est beaucoup trop peu pour un recalage précis.
+
+Comme compromis, une possibilité est de commencer avec un dodécaèdre régulier ($12$ faces pentagonales), et de subdiviser ses faces en cinq triangles égaux pour obtenir un \emph{pentakis dodecahedron} ayant $60$ faces triangulaires avec la même aire. La subdivision peut ensuite être raffinée jusqu'au niveau désiré par la \emph{division géodésique}: On divise uniformément les côtés de chaque triangle (faces) en $f$ sections. Après avoir appliqué une triangulation, chaque ancienne face a maintenant été subdivisée en $f^2$ nouvelles faces triangulaires.
+
+Lors de la création de la représentation numérique, le test suivant peut être utilisé pour vérifier si un vecteur normal $\vec{n}$ appartient à la cellule triangulaire avec les sommets $\vec{v}_1, \vec{v}_2, \vec{v}_3$, tous donnés en coordonnées cartésiens 3D: On calcule
+\begin{equation}
+	\begin{bmatrix}
+		\lambda_1 \\ \lambda_2 \\ \lambda_3
+	\end{bmatrix} = \begin{bmatrix}
+		v_{1,x} & v_{2,x} & v_{3,x} \\
+		v_{1,y} & v_{2,y} & v_{3,y} \\
+		v_{1,z} & v_{2,z} & v_{3,z}
+	\end{bmatrix}^{-1} \times \begin{bmatrix}
+		n_x \\ n_y \\ n_z
+	\end{bmatrix}
+\end{equation}
+Si $\lambda_1, \lambda_2, \lambda_3$ sont tous positifs, alors $\vec{n}$ appartient à cette cellule.
+
+
+\subsection{Application sur le recalage de nuages de points}
+
+
 
 \section{Identification et correspondance de droites}
 

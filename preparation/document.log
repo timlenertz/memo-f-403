@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  15 AUG 2014 13:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  15 AUG 2014 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,9 +471,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \verbatim@out=\write3
-runsystem(touch w18-test-2014815827.tex)...disabled (restricted).
+runsystem(touch w18-test-2014815977.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-2014815827.tex)...disabled (restricted).
+runsystem(rm -f w18-test-2014815977.tex)...disabled (restricted).
 
 
 
@@ -753,37 +753,45 @@ e the qua-dru-plets $[] \OT1/cmr/m/n/10 = ([]\OML/cmm/m/it/10 ; []; []; []\OT1/
 cmr/m/n/10 )$ \T1/cmr/m/n/10 congruents
  []
 
-[13] [14] [15]
+[13] [14]
+
+LaTeX Warning: Citation `Horn1984' on page 15 undefined on input line 423.
+
+[15] [16]
 Chapitre 3.
-(./document.bbl [16
+(./document.bbl [17
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 28.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 34.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [17
+) [18
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
 
 (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: DDABDD22D4BF70947A8122C4D2CF943B;1328.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
+(rerunfilecheck)             Checksum: 888ADDD552A4DFFDCCCEBF8A9CD69BEA;1786.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
  ) 
 Here is how much of TeX's memory you used:
- 9632 strings out of 493308
- 144910 string characters out of 6137817
- 286291 words of memory out of 5000000
- 12781 multiletter control sequences out of 15000+600000
+ 9643 strings out of 493308
+ 144998 string characters out of 6137817
+ 287316 words of memory out of 5000000
+ 12788 multiletter control sequences out of 15000+600000
  23837 words of font info for 67 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,9n,51p,1306b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,51p,1306b,507s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></u
@@ -819,10 +827,10 @@ ublic/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
 lic/cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
 c/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
 cm-super/sftt1000.pfb>
-Output written on document.pdf (18 pages, 513179 bytes).
+Output written on document.pdf (19 pages, 520895 bytes).
 PDF statistics:
- 505 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 140 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
