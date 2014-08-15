@@ -108,6 +108,32 @@ Ecrit sous forme non-matricielle:
 
 Dans la cas unidimensionnel, on prend la tangente de $f'$ afin d'arriver au point minimal de $f$, qui correspond à la racine de $f'$. Pour trouver celle-ci on a besoin de prendre la dérivée seconde $f''$. Or pour des fonctions multidimensionnelles $\mathbb{R}^n \rightarrow \mathbb{R}$, il y aura $n$ fonctions dérivées partielles, toujours du type $\mathbb{R}^n \rightarrow \mathbb{R}$. Par conséquent il y aura $n^2$ fonctions dérivées secondes partielles. Ceci explique la nécessité de résoudre un système d'équations $n \times n$.
 
+\subsection{Analyse procustéenne généralisée} \label{sec:procust}
+Le problème de trouver une transformation rigide qui minimise une distance d'un ensemble de couples de points donnés ${(x_{1,i}, x_{2,i})}$ peut être résolu par \emph{analyse procustéenne}. L'\emph{analyse procustéenne généralisée} (``GPA'') permet d'avoir au lieu de couples des $k$-uplets ${(x_{1,i}, x_{2,i}, \ldots, x_{k,i})}$, choisis parmi $k$ ensembles de points. En général, l'analyse procustéenne sert à aligner des \emph{formes}, ce qui peut être vu comme l'information géométrique qui reste d'un objet après avoir éliminé sa position, orientation et échelle. La méthode est utilisé dans beaucoup de domaines, notamment en statistique.
+
+Soit $n$ le nombre de couples. On encode la liste des $k$-uplets via $k$ \emph{matrices modèle} $n \times 3$ $\mathbf{X}_j$, dont les colonnes contiennent les $3$ coordonnées des $j$-ième éléments des tuples. Ces matrices contiennent donc tous approximativement les mêmes points, hormis une transformation rigide.
+
+On définit la \emph{cible} $\mathbf{K}$ comme
+\begin{equation} \label{eq:gpa_centroid}
+	\mathbf{K} = \frac{1}{k} \sum_{i=1}^{k} \mathbf{X'}_j 
+\end{equation}
+La matrice $\mathbf{X'}_j$, encore inconnu, correspond à la version transformée $\mathbf{X}_j$.
+
+Le principe de analyse procustéenne généralisée est le suivant: D'abord $\mathbf{K}$ est initialisé à une valeur donnée. Pour toute matrice modèle $\mathbf{X}_j$, on calcule via une solution directe $\mathbf{X'}_j$ qui est aligné le mieux avec le centroid. Par après, on recalcule $\mathbf{K}$ par la formule \ref{eq:gpa_centroid}. Le processus est itéré jusqu'à ce que $\mathbf{K}$ se stabilise. \cite{Told2010}
+
+Donc on doit trouver, pour tous les $k$ matrices $\mathbf{X}_j$, une matrice orthogonale de rotation $\mathbf{R}_j$, un vecteur de translation $\vec{t}$ et un facteur de homothétie $c$ qui minimise
+\begin{equation}
+	\| \mathbf{X'}_j \| = \| c \, \mathbf{X}_j \, \mathbf{R}_j + j \, t^T - \mathbf{K} \|
+\end{equation}
+où $j$ est un vecteur unitaire $3 \times 1$, et $\|\mathbf{X}\|$ représente la norme de Frobenius.\footnote{La norme de Frobenius d'une matrice $m \times n$ $\mathbf{X}$ est défini comme racine carrée de la somme des carrés de tous les éléments de $\mathbf{X}$. On a:\begin{equation}
+	\| \mathbf{X} \|
+	= \sqrt{ \sum_{i=1}^{m} \sum_{j=1}^{n} \| x_{i,j} \|^2 }
+	= \text{tr}(\mathbf{X}^* \, \mathbf{X})
+\end{equation}}
+
+Une solution de l'analyse procustéenne qui permet de trouver $\mathbf{X'}_j$ et la procédure qui permet de calculer ce résultat sont données dans \cite{Scho1970} et \cite{Scho1966}. 
+
+
 \section{Recalage}
 Afin de créer un modèle complet, on doit fusionner plusieurs scans qui sont prises de différents points de vues et qui sont tous limités par le champ de vision du scanner. Ces différents nuages de points ont tous des repères différents, relatifs à la position et à l'orientation du scanner, et possiblement ayant des échelles différents.
 
@@ -205,34 +231,8 @@ Donc, cette méthode permet de déterminer la rotation et translation à appliqu
 \subsection{Variantes de l'algorithme}
 Comme mentionné, diverses variantes de l'ICP sont possibles. \cite{Rusi2001} donne un comparatif des différentes possibilités.
 
-\subsection{Analyse procustéenne généralisée}
-Le problème de trouver une transformation rigide qui minimise une distance d'un ensemble de couples de points donnés ${(x_{1,i}, x_{2,i})}$ peut aussi être résolu par \emph{analyse procustéenne}. L'\emph{analyse procustéenne généralisée} (``GPA'') permet d'avoir au lieu de couples des $k$-uplets ${(x_{1,i}, x_{2,i}, \ldots, x_{k,i})}$, choisis parmi $k$ ensembles de points. En général, l'analyse procustéenne sert à aligner des \emph{formes}, ce qui peut être vu comme l'information géométrique qui reste d'un objet après avoir éliminé sa position, orientation et échelle. La méthode est utilisé dans beaucoup de domaines, notamment en statistique.
-
-Soit $n$ le nombre de couples. On encode la liste des $k$-uplets via $k$ \emph{matrices modèle} $n \times 3$ $\mathbf{X}_j$, dont les colonnes contiennent les $3$ coordonnées des $j$-ième éléments des tuples. Ces matrices contiennent donc tous approximativement les mêmes points, hormis une transformation rigide.
-
-On définit la \emph{cible} $\mathbf{K}$ comme
-\begin{equation} \label{eq:gpa_centroid}
-	\mathbf{K} = \frac{1}{k} \sum_{i=1}^{k} \mathbf{X'}_j 
-\end{equation}
-La matrice $\mathbf{X'}_j$, encore inconnu, correspond à la version transformée $\mathbf{X}_j$.
-
-Le principe de analyse procustéenne généralisée est le suivant: D'abord $\mathbf{K}$ est initialisé à une valeur donnée. Pour toute matrice modèle $\mathbf{X}_j$, on calcule via une solution directe $\mathbf{X'}_j$ qui est aligné le mieux avec le centroid. Par après, on recalcule $\mathbf{K}$ par la formule \ref{eq:gpa_centroid}. Le processus est itéré jusqu'à ce que $\mathbf{K}$ se stabilise. \cite{Told2010}
-
-Donc on doit trouver, pour tous les $k$ matrices $\mathbf{X}_j$, une matrice orthogonale de rotation $\mathbf{R}_j$, un vecteur de translation $\vec{t}$ et un facteur de homothétie $c$ qui minimise
-\begin{equation}
-	\| \mathbf{X'}_j \| = \| c \, \mathbf{X}_j \, \mathbf{R}_j + j \, t^T - \mathbf{K} \|
-\end{equation}
-où $j$ est un vecteur unitaire $3 \times 1$, et $\|\mathbf{X}\|$ représente la norme de Frobenius.\footnote{La norme de Frobenius d'une matrice $m \times n$ $\mathbf{X}$ est défini comme racine carrée de la somme des carrés de tous les éléments de $\mathbf{X}$. On a:\begin{equation}
-	\| \mathbf{X} \|
-	= \sqrt{ \sum_{i=1}^{m} \sum_{j=1}^{n} \| x_{i,j} \|^2 }
-	= \text{tr}(\mathbf{X}^* \, \mathbf{X})
-\end{equation}}
-
-Une solution de l'analyse procustéenne qui permet de trouver $\mathbf{X'}_j$ et la procédure qui permet de calculer ce résultat sont données dans \cite{Scho1970} et \cite{Scho1966}. 
-
-
 \subsection{Version simultanée de l'ICP}
-Une approche qui permet de faire un recalage ICP \emph{simultané} de plusieurs nuages de points en utilisant l'analyse procustéenne généralisée est décrite dans \cite{Told2010}.
+Une approche qui permet de faire un recalage ICP \emph{simultané} de plusieurs nuages de points en utilisant l'analyse procustéenne (c.f. section \ref{sec:procust}) généralisée est décrite dans \cite{Told2010}.
 
 Comme montré dans la section précédente, une solution du problème GPA est l'aligner les nuages de points à une \emph{cible} $\mathbf{K}$ générée artificiellement à partie de tous les nuages de points, au lieu de les aligner à un autre nuage de points donné comme entrée. Ceci est appliqué pour rendre l'ICP \emph{simultané}, de manière à ce qu'il n'y a pas d'erreur qui s'accumule.
 
@@ -449,7 +449,19 @@ Si $\lambda_1, \lambda_2, \lambda_3$ sont tous positifs, alors $\vec{n}$ apparti
 
 
 \subsection{Application sur le recalage de nuages de points}
+L'article \cite{Dold2005} décrit une implémentation d'un recalage de la rotation de deux nuages de points en utilisant les EGI. L'algorithme utilise plusieurs EGI à différents niveaux de pavage. On commence par un recalage brut en utilisant des EGIs avec un petit nombre de faces, puis on raffine itérativement la solution moyennant des EGI plus fins. Les EGI sont construits tel que le premier niveau de pavage produit $20$ faces, et le deuxième en produit $80$. Donc une solution approximative pourra être trouvée rapidement.
 
+Une rotation 3D peut être représenté par 3 angles d'Euler $(\omega, \phi, \kappa)$, donc il y a degrés niveaux de liberté pour le recalage, tous modulo $2 \pi$.
+\footnote{La rotation qui correspond à un triplet d'angles d'Euler dépend de la convention utilisée. Elle défine l'ordre dans lequel on applique les trois rotations axiales, et si on applique la deuxième et troisième rotation dans le repère déjà transformé (\emph{intrinsèque}) ou original (\emph{extrinsèque}).}
+Pour la première itération, tous les triplets possibles sont considérées comme solution potentielles. Durant les itérations qui suivent, on n'essaye plus que des angles de rotations dans un certain rayon autour de l'ancienne solution trouvée, qui diminue progressivement, avec la taille d'incrément des triplets à tester.
+
+Durant chaque test, tous les vecteurs normaux $\{ \vec{n} \}$ issue du nuage de points source sont transformés et l'EGI du niveau actuel en est créé. La représentation numérique de cet EGI est alors comparé avec celle du EGI de même niveau du le nuage de points cible. La problème principal est de définir la méthode selon laquelle la correspondance de deux représentations est évaluée. Soit $N_S(i)$ respectivement $N_C(i)$ les ensembles de vecteurs normaux associés à la $i$-ième face du EGI source ou cible. Trois mesures sont présentées dans l'article:
+\begin{itemize}
+	\item Somme des différences absolues: $\sum_{i} \left| \, \|N_S(i)\| - \|N_C(i)\| \, \right|$
+	\item Somme des carrés des différences: $\sum_{i} \left( \, \|N_S(i)\| - \|N_C(i)\| \, \right)^2$
+	\item En considérant $N_S$ et $N_C$ en tant que variables aléatoires, leur correlation: $\frac{\text{cov}(N_S, N_C)}{\|N_S\| \, \|N_C\|}$
+\end{itemize}
+Il est montré expérimentalement que ces deux dernières mesures peuvent donner de bons résultats. Pour la somme des différences absolues, les résultats se rapprochent trop pour des niveaux de pavage supérieurs. L'article propose aussi d'inclure l'aire des surfaces planaires des nuages de points, en tant que pondération pour les vecteur normaux.
 
 
 \section{Identification et correspondance de droites}

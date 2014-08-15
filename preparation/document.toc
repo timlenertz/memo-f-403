@@ -10,13 +10,13 @@
 \contentsline {section}{\numberline {2.2}Th\IeC {\'e}orie pr\IeC {\'e}liminaire}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}RANSAC}{5}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de Newton}{5}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Recalage}{6}{section.2.3}
-\contentsline {section}{\numberline {2.4}Iterative Closest Point}{7}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Calcul de la transformation par quaternions}{8}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Variantes de l'algorithme}{9}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Analyse procust\IeC {\'e}enne g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}e}{9}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Version simultan\IeC {\'e}e de l'ICP}{10}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}ICP g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{11}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.2.3}Analyse procust\IeC {\'e}enne g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}e}{6}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Recalage}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Iterative Closest Point}{8}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Calcul de la transformation par quaternions}{9}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Variantes de l'algorithme}{10}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Version simultan\IeC {\'e}e de l'ICP}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}ICP g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{11}{subsection.2.4.4}
 \contentsline {section}{\numberline {2.5}4-Points Congruent Sets}{12}{section.2.5}
 \contentsline {section}{\numberline {2.6}Normal Distributions Transform}{14}{section.2.6}
 \contentsline {section}{\numberline {2.7}Extended Gaussian Images}{15}{section.2.7}

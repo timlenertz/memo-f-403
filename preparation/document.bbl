@@ -45,12 +45,24 @@ Roberto Toldo; Alberto Beinat;~Fabio Crosilla.
   generalized procrustes analysis into an icp framework.
 \newblock 3DPVT 2010 Conference, 2010.
 
+\bibitem{Dold2005}
+Christoph Dold.
+\newblock Extended gaussian images for the registration of terrestial scan
+  data.
+\newblock Institute of Cartography and Geoinformatics, University of Hannover,
+  Germany, 2005.
+
 \bibitem{Giro2013}
 Luc Girod.
 \newblock {\'E}galisation radiom{\'e}trique de nuages de points 3d: Principes
   et algorithmique.
 \newblock Stage de fin d'{\'e}tudes, Ecole Nationale des Sciences
   G{\'e}ographiques (France), Septembre 2013.
+
+\bibitem{Horn1984}
+Berthold~K.P. Horn.
+\newblock Extended gaussian images.
+\newblock {\em Proceesings of the IEEE}, 72(12):1671--1686, December 1984.
 
 \bibitem{Horn1986}
 Berthold~K.P. Horn.
