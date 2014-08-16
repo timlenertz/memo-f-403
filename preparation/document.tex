@@ -59,6 +59,10 @@ Pour passer des données bruts au modèle final envisagé, un nombre important d
 Les scanners tridimensionnels utilisent des rayonnements, typiquement des lasers, pour physiquement mesurer des informations de profondeur de leur environnements. Dans les dernières années, cette technologie a connu un développement important. Les scanners 3D disposent d'un niveau avancé d'automatisation, et peuvent produire des données de bonne qualité \cite{Grus2012} à des coût relativement abordables.
 
 \subsubsection{Scanners à temps de vol (LIDAR)}
+Les scanners à temps de vol utilisent un rayon laser qui est projeté dans le champ de vision en différentes directions en succession rapide. Ils disposent aussi d'un capteur qui détecte la lumière reflété du point laser sur l'objet.
+
+Comme la direction du laser est connue, il manque la distance que le rayonnement laser a traversé du scanner jusqu'à l'objet pour arriver à des coordonnés sphériques du point. Pour trouver cette distance, le scanner mesure le temps $\Delta t$ entre l'envoi du pulse laser jusqu'à la détection de la lumière reflété. On peut en déduire la distance $d = c \times \frac{\Delta t}{2}$, où $c$ est la vitesse de la lumière.
+
 \subsubsection{Scanners par triangulation}
 \subsubsection{Scanners par décalage de phase}
 \subsubsection{Scanners par lumière structurée}
