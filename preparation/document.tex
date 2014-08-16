@@ -36,6 +36,8 @@ Ce mémoire se concentre sur le recalage de numérisations à distance d'un obje
 
 
 \chapter{Etat de l'art}
+Ce chapitre est essentiellement une synthèse de plusieurs ouvrages scientifiques sur des projets de documentation 3D par nuage de points, différents algorithme des recalage, et des techniques photogrammétriques. Certains algorithmes et leurs bases mathématiques seront développés plus en détail. Le but est d'exposer une partie de la recherche existante qui pourrait être rélevante pour le mémoire.
+
 
 \section{Documentation 3D}
 Des nuages de points créés via des processus de numérisation 3D sont utilisés dans plusieurs domaines pour représenter des objets réels. Les modèles 3D peuvent passer de représentations détaillées d'objets petits à des bâtiments ou même des sites entiers. Des exemples d'usage sont par exemple la documentation détaillée de sites archéologiques \cite{Web1} \cite{Kein2011} \cite{Grus2012} et d'environnements urbains \cite{Kers2006}, des acquisitions aériennes de terrains, la vision algorithmique en robotique \cite{Bibe2003}, la capture de formes 3D pour création de prothèses en médecine dentaire et orthopédique, la rétroingénierie, la création de modèles en animation 3D.
@@ -65,7 +67,7 @@ Les scanners tridimensionnels utilisent des rayonnements, typiquement des lasers
 \section{Théorie préliminaire}
 
 \subsection{RANSAC}
-L'algorithme RANSAC (``Random Sample Consensus''\emph{Consensus par échantillons aléatoires}), initialement décrit en \cite{Fisc1980}, est une méthode générale qui permet d'aligner un \emph{modèle}, défini par un vecteur de paramètres $\theta$, à des échantillons $p_i$ de données mesurés. L'algorithme procède en sélectionnant aléatoirement des échantillons pour y déduire un modèle possible, qui est ensuite raffiné itérativement. La présence d'une fraction élevée d'erreurs de mesure parmi les échantillons (``outliers''\footnote{dans le contexte de nuages de points, des points qui ne sont pas sur une surface de l'objet}) rend inutilisable des solutions classiques comme la méthode des moindres carrés. Avec l'approche RANSAC, la probabilité inférieure de sélectionner parmi tous les échantillons un outlier mène à un bon alignement avec les échantillons corrects. (``inliers'') Contrairement à des méthodes non-probabilistiques, RANSAC essaye de trouver une estimation initiale du modèle par un nombre minimal d'échantillons, et non pas par un nombre le plus grand possible.
+L'algorithme RANSAC (``Random Sample Consensus''\footnote{Consensus par échantillons aléatoires}), initialement décrit en \cite{Fisc1980}, est une méthode générale qui permet d'aligner un \emph{modèle}, défini par un vecteur de paramètres $\theta$, à des échantillons $p_i$ de données mesurés. L'algorithme procède en sélectionnant aléatoirement des échantillons pour y déduire un modèle possible, qui est ensuite raffiné itérativement. La présence d'une fraction élevée d'erreurs de mesure parmi les échantillons (``outliers''\footnote{dans le contexte de nuages de points, des points qui ne sont pas sur une surface de l'objet}) rend inutilisable des solutions classiques comme la méthode des moindres carrés. Avec l'approche RANSAC, la probabilité inférieure de sélectionner parmi tous les échantillons un outlier mène à un bon alignement avec les échantillons corrects. (``inliers'') Contrairement à des méthodes non-probabilistiques, RANSAC essaye de trouver une estimation initiale du modèle par un nombre minimal d'échantillons, et non pas par un nombre le plus grand possible.
 
 Soit $m$ le nombre minimal d'échantillons requis pour trouver un modèle $\hat{\theta}$ qui comprend ces $m$ échantillons. Soit $P$ l'ensemble d'échantillons. Soit $E(\theta, p)$ une métrique d'erreur qui est zéro si l'échantillon $p$ correspond parfaitement au modèle $\hat{\theta}$. RANSAC procède en répétant la procédure suivante:
 \begin{enumerate}
@@ -187,7 +189,7 @@ On cherche une transformation de la forme $\vec{t'} = \mathbf{R}(\vec{s}) + \vec
 Pour le développement suivant, on prend les coordonnées des points $\vec{s}_i$ et $\vec{c}_i$, relativement au centres de masse des ensembles. On définit
 \begin{equation}
 	\vec{\mu_s} = \frac{1}{n} \sum_{i} \vec{s}_i
-	\hspace{1cm} \text{et} \hspace{1cm}
+	\hspace{7mm} \text{et} \hspace{7mm}
 	\vec{\mu_c} = \frac{1}{n} \sum_{i} \vec{c}_i
 \end{equation}
 
@@ -260,7 +262,7 @@ $\hat{S}$ et $\hat{C}$ constituent une version idéalisée de la représentation
 On suppose aussi que les points de $S$ et $C$ sont des variables aléatoires tirés de $\hat{S}$ et $\hat{C}$ par une loi normale multidimensionnelle
 \begin{equation}
 	s_i \sim \mathcal{N}(\hat{s}_i, \mathbf{C}^S_i)
-	\hspace{1cm} \text{et} \hspace{1cm}
+	\hspace{7mm} \text{et} \hspace{7mm}
 	c_i \sim \mathcal{N}(\hat{c}_i, \mathbf{C}^C_i)
 \end{equation}
 où $\mathbf{C}^S_i$ et $\mathbf{C}^C_i$ sont des matrice de variance-covariance qu'on associe à chaque point de $S$ et $C$. Ces matrices vont être paramétrisés pour décrire la surface autour de $\hat{s}_i$ respectivement $\hat{c}_i$. Ils représentent les distribution de probabilité des positions de $s_i$ et $c_i$.
@@ -313,7 +315,7 @@ avec $\epsilon$ un petit nombre, indique une grande certitude sur la position du
 		0 & 1 & 0 \\
 		0 & 0 & 1
 	\end{bmatrix} \, \mathbf{R}_{s_i}^T
-	\hspace{1cm} \text{et} \hspace{1cm}
+	\hspace{7mm} \text{et} \hspace{7mm}
 	\mathbf{C}^C_i = \mathbf{R}_{c_i} \, \begin{bmatrix}
 		\epsilon & 0 & 0 \\
 		0 & 1 & 0 \\
@@ -350,7 +352,7 @@ La méthode 4PCS utilise comme échantillon deux 4-points (i.e. quadruples de po
 L'opération fondamentale de l'algorithme est la recherche the quadruplets $\dot{u} = (\vec{u}_1, \vec{u}_2, \vec{u}_3, \vec{u}_4)$ congruents à une base $\dot{b} = (\vec{b}_1, \vec{b}_2, \vec{b}_3, \vec{b}_4)$ donnée. Les points de la base sont coplanaires, par définition. Il y aura toujours deux paires dans la base qui forment des droites qui s'intersectent. Sans perte de généralité, soit $\vec{u}_1 \vec{u}_2$ et $\vec{u}_3 \vec{u}_4$ ces droites, et $\vec{e}$ leur point d'intersection. Il a été montré que les deux nombres
 \begin{equation}
 	r_1 = \frac{\| \vec{u}_1 - e \|}{\| \vec{u}_1 - \vec{u}_2 \|}
-	\hspace{1cm} \text{et} \hspace{1cm}
+	\hspace{7mm} \text{et} \hspace{7mm}
 	r_2 = \frac{\| \vec{u}_3 - e \|}{\| \vec{u}_3 - \vec{u}_4 \|}
 \end{equation}
 sont invariants par rapport à la transformation affine de $\dot{b}$. De plus, in changent toujours quand une transformation non-affine est appliqué. Donc pour trouver des candidats pour $\dot{u}$, il suffit de chercher les quadruples qui produisent les mêmes valeurs $r_1$ et $r_2$.
@@ -358,7 +360,7 @@ sont invariants par rapport à la transformation affine de $\dot{b}$. De plus, i
 On considère tous des paires de points $(\vec{s}_1, \vec{s}_2) \in S$, on faisant l'hypothèse qu'ils appartiennent à un des quadruples $\dot{u}$ cherchés, et qu'ils sont congruents à soit $(\vec{b}_1, \vec{b}_2)$ ou $(\vec{b}_3 \vec{b}_4)$. Donc ils forment une des droites qui passent par leur équivalent de $\vec{e}$. Des paires sont cherchés dans les deux ordres, c'est à dire on considère $(\vec{s}_1, \vec{s}_2)$ et $(\vec{s}_2, \vec{s}_1)$ séparément. Puisqu'on ne sait pas quelles des deux droites ils représentent, il y a deux possibilités $\vec{e}_1$ et $\vec{e}_2$ pour la position du point d'intersection de ce quadruple:
 \begin{equation}
 	\vec{e}_1 = \vec{s}_1 = r_1 \, (\vec{s}_2 - \vec{s}_1)
-	\hspace{1cm} \text{ou} \hspace{1cm}
+	\hspace{7mm} \text{ou} \hspace{7mm}
 	\vec{e}_2 = \vec{s}_1 = r_2 \, (\vec{s}_2 - \vec{s}_1)	
 \end{equation}
 Si deux paires de points $(\vec{s_1}', \vec{s_2}')$ et $(\vec{s_1}'', \vec{s_2}'')$ ont pu être trouvés tels que $\vec{e_1}' = \vec{e_2}''$, alors il est probable qu'ils forment un des quadruples congruents cherchés.
@@ -474,11 +476,96 @@ Il est montré expérimentalement que ces deux dernières mesures peuvent donner
 \section{Photogrammétrie}
 La photogrammétrie peut être définie comme la science d'extraire algorithmiquement des informations sur un environnement tridimensionnel à partir de photos. En particulier, une opération photogrammétrique fondamentale est de retrouver les positions 3D correspondants à des points sur la photo.
 
-\subsection{Calibration}
-Une première étape à effectuer pour pouvoir faire de mesures photogrammétriques est la calibration. Elle consiste à déterminer les paramètres extrinsèques et intrinsèques de la caméra avec laquelle les photos one été pris. Les \emph{paramètres extrinsèques} sont la position et l'orientation de la caméra par rapport à l'environnement. Dans un repère donné, ils peuvent être définis par les coordonnées $(x_0, y_0, z_0)$ et les angles d'Euler $(\omega, \phi, \kappa)$. Les \emph{paramètres intrinsèques} consistent 
+Trois systèmes de coordonnées vont intervenir: Le \emph{repère objet} 3D avec lequel on définit des positions dans l'espace, le \emph{repère caméra} 3D, dont l'origine est la caméra, et le \emph{repère image} 2D qui correspond aux pixels de la photo. Pour une caméra perspective idéalisée il est assez simple de déduire à partie d'un point dans le repère objet sa position correspondante dans de repère image. Pour cela on aura besoin des \emph{paramètres extrinsèques} et des \emph{paramètres intrinsèques} de la caméra\footnote{Aussi appelés l'orientation externe et interne de la caméra.}. L'opération inverse est beaucoup plus compliquée car les information de profondeur sont essentiellement perdues par la projection perspective 3D en 2D.
+
+Les \emph{paramètres extrinsèques} sont la position et l'orientation de la caméra par rapport à l'environnement. Dans un repère objet donné, ils peuvent être définis par les coordonnées $(x_0, y_0, z_0)$ et les angles d'Euler $(\omega, \phi, \kappa)$. Ils permettent de passer du repère objet au repère caméra et vice versa, par une simple transformation affine. Les \emph{paramètres intrinsèques}, d'autre part, définissent la projection perspective appliquée par la caméra. Ils dépendent de ses caractéristiques optiques et géométriques. 
+
+\subsection{Optique}
+Chaque point sur un objet peut refléter des radiations de lumière provenant de différentes directions. Un objet devient visible pour un système optique quand ces radiations reflétées touchent la surface photo-sensitive du système, comme par exemple le capteur d'une caméra numérique, le film dans une caméra analogue, ou la rétine de l'œil animal.
+
+Pour obtenir une image nette d'un objet, le système optique doit être tel que tous les rayons de lumière reflétés par un même point de l'objet convergent en un même point sur la surface photo-sensitive. Sinon, ils seront distribués dans un certain rayon sur la surface, et on obtient une image floue. Un système simple qui permet d'obtenir ceci est la \emph{pin-hole camera}: L'aperture optique est rendu assez petit pour que idéalement qu'un seul rayon par point d'objet peut entrer. Ceci permet de captures des photos nettes, peut en pratique, des caméras de ce type ont besoin d'un temps d'illumination très grand et produisent des photos de basse qualité. Ce modèle est cependant utilisé pour modéliser une caméra. Des systèmes optiques réels utilisent au lieu une lentille qui fait converger tous les rayons provenant d'un même point. La distance de ce point de convergence à la lentille varie en fonction de la distance du point sur l'objet. Donc pour pouvoir acquérir une image nette, il est nécessaire d'ajuster soit la distance lentille-capteur (caméra), ou la forme de la lentille (œil) en fonction de la distance de l'objet observé. En pratique, des lentilles introduisent des distortions supplémentaires et d'autres effets optiques qui doivent être pris en compte pour effectues des mesures précises sur base de photos. \cite{Truc1998}
+
+La modélisation de la lumière en tant qu'ondes montre qu'un rayon lumineux correspond à une onde, qui peut être décrit comme une superposition d'un ensemble d'ondes sinusoïdes sur on continuum de fréquences. Quand un radiations est reflété, sa forme d'onde est altérée car certaines de ces fréquences sont absorbées. Trois types de cellules coniques existent dans la rétine humaine, qui sont sensibles à des histogrammes de fréquences différents dans le spectrum visuel. Ceux-ci permettent la vision des couleurs rouge, vert et bleu. La combinaison de valeurs d'intensité de ces trois couleurs fondamentales donne lieu à la perception d'une couleur. Les capteurs d'une caméra numérique fonctionnent selon le même principe, et produisent des valeurs de couleur sous forme d'un triplet RGB. Comme ces valeurs de couleur ne sont pas directement une propriété de l'objet photographié mais dépendent des conditions lumineuses ambiantes et du système optique, des corrections radiométriques peuvent être nécessaires pour égaliser les couleurs si on veut fusionner des informations tirés de plusieurs photos d'un objet.
 
 
-\section{Combination photo-nuage de points}
+\subsection{Modèle pin-hole}
+Comme décrit, on utilise le modèle pin-hole comme base pour modéliser projection de 3D en 2D d'une caméra. Ce modèle ne prend pas en considération des distortions et autres phénomènes produits par une lentille, et suppose que l'image sera nette partout. La figure \ref{fig:pinhole} montre une représentation en deux dimensions: Un point $P$ de l'objet est projeté vers un point $P'$ sur le capteur. $P P'$ représente d'unique rayon lumineux qui passe à travers l'aperture en $O$. L'élément essentiel du modèle est que le position de $P'$ sur le capteur est invariant à la position de $P$ le long de $P P'$. C'est cette information qui est perdue lors de la projection 3D en 2D, et qu'on cherche à retrouver via des techniques photogrammétriques. Les scanners 3D laser mesurent directement la distance $\|O P\|$ pour construire une carte de profondeur et à partir de cela un nuage de points.
+
+La distance $f = \|O O'\|$ est la \emph{longueur focale}, et constitue le seul paramètre de cette projection. Avec la hauteur $h$ du capteur, il détermine la champ de vision $\omega$:
+\begin{equation}
+	\omega = 2 \, \arctan \frac{h}{2 \, f}
+\end{equation}
+En tridimensionnel, le capteur est rectangulaire de champ de vision est donc décrit par deux angles, correspondant à la largeur $w$ et hauteur $h$ du capteur.
+
+$O'$ représente l'origine d'un \emph{repère capteur} 2D intermédiaire. Les coordonnées $(x_s, y_s)$ dans ce repère sont constraints par $-\frac{w}{2} \leq x_i \leq \frac{w}{2}$ et $-\frac{h}{2} \leq y_i \leq \frac{h}{2}$. Ils peuvent directement être traduits en indices de pixels $(x_i, y_i)$ (repère image), en connaissant la taille du capteur $(w, h)$, la taille de l'image en pixels $(W, H)$, et la position $(o_x, o_y)$ de $O'$ dans le repère image. On définit $s_x = \frac{w}{W}$ et $s_y = \frac{h}{H}$, c'est à dire la taille d'un pixel sur le capteur en direction horizontale et verticale:
+\begin{equation}
+	x_i = \frac{x_s}{s_x} - o_x
+	\hspace{7mm} \text{et} \hspace{7mm}
+	y_i = \frac{y_s}{s_y} - o_y
+\end{equation}
+
+Des distortions de l'image sur le capteur introduits par la lentille peuvent souvent être assez bien modélisés par les relations suivantes, où $(x_{sd}, y_{sd})$ sont les coordonnées d'un point sur le repère capteur avec ces distortions, et $(x_s, y_s)$ les coordonnées correspondantes après la correction: \cite{Truc1998}
+\begin{equation}
+	x_s = x_{sd} \, (1 + k_1 \, r^2 + k_2 \, r^4)
+	\hspace{7mm} \text{et} \hspace{7mm}
+	y_s = y_{sd} \, (1 + k_1 \, r^2 + k_2 \, r^4)
+\end{equation}
+avec $r = \sqrt{x_{sd}^2 + y_{sd}^2}$, et $k_1, k_2$ des paramètres de cette correction. Usuellement $k_2$ peut être mis à zéro, et seulement $k_1$ doit être configuré.
+
+A partir de cela, on peut maintenant donner une définition des paramètres intrinsèques d'une caméra par le tuple
+\begin{equation}
+	(f, o_x, o_y, s_x, s_y, k_1)
+\end{equation}
+
+$O$ est l'origine du repère caméra. On suppose que les coordonnées $(x_c, y_c, z_c)$ du point $P$ sont donnés dans ce repère. Par le théorème de Thalès, on a $\frac{-x_s}{x_c} = \frac{f}{z_c}$ et $\frac{-y_s}{y_c} = \frac{f}{z_c}$. On peut donc passer du repère caméra au repère capteur via
+\begin{equation}
+	x_s = f \, \frac{x_c}{z_c}
+	\hspace{7mm} \text{et} \hspace{7mm}
+	y_s = f \, \frac{y_c}{z_c}	
+\end{equation}
+
+En coordonnées homogènes, et si on n'inclut pas la correction des distortions mentionnée, la transformation du repère caméra dans le repère image en utilisant les paramètres intrinsèques peut être exprimé par une multiplication matricielle:
+\begin{equation}
+	\begin{bmatrix}
+		x_c / w_c \\
+		y_c / w_c \\
+		z_c / w_c
+	\end{bmatrix} = \begin{bmatrix}
+		-\frac{f}{s_x} & 0 & o_x \\
+		0 & -\frac{f}{s_y} & 0 \\
+		0 & 0 & 1
+	\end{bmatrix} \times \begin{bmatrix}
+		x_c \\
+		y_c \\
+		z_c
+	\end{bmatrix}
+\end{equation}
+
+La transformation du repère objet dans le repère caméra correspond à une rotation et une translation 3D, aussi exprimables par une matrice de multiplication en coordonnées homogènes.
+
+\begin{figure}[p]
+\center
+\includegraphics[width=.6\textwidth]{pinhole.eps}
+\caption{Modèle caméra pin-hole}
+\label{fig:pinhole}
+\end{figure}
+
+
+\subsection{Calibrage}
+La calibrage en photogrammétrie consiste à estimer les paramètres extrinsèques et/ou intrinsèques d'une caméra en utilisant une ou plusieurs photo d'un objet (pattern de calibrage) connu. \cite{Truc1998} Figure \ref{fig:calibration_pattern} montre un exemple d'un ``polygone de calibrage'' utilisé dans un laboratoire de recherche. \cite{Gard2009} Plusieurs cibles se trouvent sur l'objet qui peuvent être repérés sur les photos manuellement ou possiblement par des algorithmes de détection de zones d'intérêt. Les coordonnées 3D de chaque cible sont connus. En comparant les positions 2D des cibles sur plusieurs photos, un calibrage des paramètres extrinsèques et intrinsèques a pu été effectué dans ce projet.
+
+\begin{figure}[p]
+\includegraphics[width=\textwidth]{calibration_pattern.png}
+\caption{Exemple de pattern de calibrage utilisé en photogrammétrie. Copié de \cite{Gard2009}}
+\label{fig:calibration_pattern}
+\end{figure}
+
+La plupart des techniques photogrammétriques supposent que les paramètres extrinsèques et intrinsèques correspondant aux photos sont connus. Sauf si on travaille dans des conditions très particulières (par exemple avec un banc optique où les paramètres sont fixés), il est donc nécessaire d'effectuer un calibrage avant de procéder. Cependant, il existe aussi des techniques qui permettent d'extraire de l'information à partir de photos non-calibrés. \cite{Truc1998}
+
+
+
+
+\subsection{Combination photo-nuage de points}
 Comme mentionné, dans des projets de documentation 3D on combine souvent des scans laser avec des information extraits de photos prises en combinaison avec les scans laser. Par exemple cela est usuellement utilisé pour coloriser un nuage de points. Une opération fondamentale est de pouvoir déterminer la position 3D qui correspond à chaque pixel de l'image.
 
 Une technique est décrite dans \cite{Tour2009}. Ici, on suppose que la position et pose de la caméra par rapport au scanner laser est connue.
@@ -486,7 +573,9 @@ Une technique est décrite dans \cite{Tour2009}. Ici, on suppose que la position
 
 \chapter{Projet prévu pour le mémoire}
 
-\bibliographystyle{plain}
+
+
+\bibliographystyle{authordate1}
 \bibliography{../references}
 
 \end{document}

@@ -1,170 +1,185 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{}
 
-\bibitem{Holz2014}
-Dirk Holz;~Sven Behnke.
-\newblock Registration of non-uniform density 3d point clouds using approximate
-  surface reconstruction.
-\newblock Joint 45th International Symposium on Robotics (ISR) and 8th German
-  Conference on Robotics (ROBOTIK), Munich, June 2014. Autonomous Intelligent
-  Systems Group, University of Bonn, Germany.
+\bibitem[\protect\citename{Aiger {\em et~al.\ }\relax, }2008]{Aige2008}
+Aiger, Dror, Mitra, Niloy~J, \& Cohen-Or, Daniel. 2008.
+\newblock 4-Points Congruent Sets for Robust Pairwise Surface Registration.
+\newblock {\em ACM Transactions on Graphics}, {\bf 27}(3).
 
-\bibitem{Bibe2003}
-Peter Biber.
-\newblock The normal distributions transform: A new approach to laser scan
-  matching.
-\newblock 2003.
+\bibitem[\protect\citename{Besl \& McKay, }1992]{Besl1992}
+Besl, Paul~J, \& McKay, Neil~D. 1992 (February).
+\newblock A Method for Registration of 3-D Shapes.
+\newblock {\em Pages  239--256 of:} {\em IEEE Transactions on Pattern Analysis
+  and Machine Intelligence},  vol. 14.
+\newblock IEEE.
 
-\bibitem{Dold2006}
-Christoph Dold;~Claus Brenner.
-\newblock Registration of terrestrial laser scanning data using planar patches
-  and image data.
-\newblock In {\em International Archives of Photogrammetry and Remote Sensing},
-  pages 25--27. Leibniz University of Hannover, 2006.
+\bibitem[\protect\citename{Biber, }2003]{Bibe2003}
+Biber, Peter. 2003.
+\newblock The Normal Distributions Transform: A New Approach to Laser Scan
+  Matching.
 
-\bibitem{Dold2007}
-Christoph Dold; Nora Ripperda;~Claus Brenner.
-\newblock Vergleich verschiedener methoden zur automatischen registrierung von
-  terrestrischen laserscandaten.
-\newblock {\em Beitr{\"a}ge der Oldenburger 3D-Tage}, page 196, 2007.
-
-\bibitem{Web1}
-University of~Arkansas Center~for Advanced Spatial~Technologies.
-\newblock Archaeological laser scanning.
+\bibitem[\protect\citename{Center~for Advanced Spatial~Technologies,
+  }2014]{Web1}
+Center~for Advanced Spatial~Technologies, University of~Arkansas. 2014.
+\newblock {\em Archaeological Laser Scanning}.
 \newblock
-  \url{http://www.cast.uark.edu/home/research/archaeology-and-historic-preservation/archaeological-geomatics/archaeological-laser-scanning.html},
-  2014.
+  \url{http://www.cast.uark.edu/home/research/archaeology-and-historic-preservation/archaeological-geomatics/archaeological-laser-scanning.html}.
 
-\bibitem{Aige2008}
-Dror Aiger; Niloy J. Mitra;~Daniel Cohen-Or.
-\newblock 4-points congruent sets for robust pairwise surface registration.
-\newblock {\em ACM Transactions on Graphics}, 27(3), 2008.
-
-\bibitem{Told2010}
-Roberto Toldo; Alberto Beinat;~Fabio Crosilla.
-\newblock Global registration of multiple point clouds embedding the
-  generalized procrustes analysis into an icp framework.
-\newblock 3DPVT 2010 Conference, 2010.
-
-\bibitem{Dold2005}
-Christoph Dold.
-\newblock Extended gaussian images for the registration of terrestial scan
-  data.
+\bibitem[\protect\citename{Dold, }2005]{Dold2005}
+Dold, Christoph. 2005.
+\newblock Extended Gaussian Images for the Registration of Terrestial Scan
+  Data.
 \newblock Institute of Cartography and Geoinformatics, University of Hannover,
-  Germany, 2005.
+  Germany.
 
-\bibitem{Giro2013}
-Luc Girod.
-\newblock {\'E}galisation radiom{\'e}trique de nuages de points 3d: Principes
-  et algorithmique.
+\bibitem[\protect\citename{Dold \& Brenner, }2006]{Dold2006}
+Dold, Christoph, \& Brenner, Claus. 2006.
+\newblock Registration of Terrestrial Laser Scanning Data using Planar Patches
+  and Image Data.
+\newblock {\em Pages  25--27 of:} {\em International Archives of Photogrammetry
+  and Remote Sensing}.
+\newblock Leibniz University of Hannover.
+
+\bibitem[\protect\citename{Dold {\em et~al.\ }\relax, }2007]{Dold2007}
+Dold, Christoph, Ripperda, Nora, \& Brenner, Claus. 2007.
+\newblock Vergleich verschiedener Methoden zur automatischen Registrierung von
+  terrestrischen Laserscandaten.
+\newblock {\em Beitr{\"a}ge der Oldenburger 3D-Tage},  196.
+
+\bibitem[\protect\citename{Elzbieta, }2009]{Gard2009}
+Elzbieta, Gardon. 2009 (Septembre).
+\newblock {\em Fusion de cartes de profondeurs en photogramm{\'e}trie
+  architecturale}.
+\newblock Rapport de Projet Pluridisciplinaire, Ecole Nationale des Sciences
+  G{\'e}ographiques.
+
+\bibitem[\protect\citename{Fischler \& Bolles, }1980]{Fisc1980}
+Fischler, Martin~A, \& Bolles, Robert~C. 1980 (March).
+\newblock {\em Random Sample Consensus: A paradigm for model fitting with
+  applications to image analysis and automated cartography}.
+\newblock Tech. rept. Artificial Intelligence Center, SRI International, Menlo
+  Park, California.
+
+\bibitem[\protect\citename{Girod, }2013]{Giro2013}
+Girod, Luc. 2013 (Septembre).
+\newblock {\em {\'E}galisation radiom{\'e}trique de nuages de points 3D:
+  Principes et Algorithmique}.
 \newblock Stage de fin d'{\'e}tudes, Ecole Nationale des Sciences
-  G{\'e}ographiques (France), Septembre 2013.
+  G{\'e}ographiques (France).
 
-\bibitem{Horn1984}
-Berthold~K.P. Horn.
-\newblock Extended gaussian images.
-\newblock {\em Proceesings of the IEEE}, 72(12):1671--1686, December 1984.
+\bibitem[\protect\citename{Grussenmeyer {\em et~al.\ }\relax, }2012]{Grus2012}
+Grussenmeyer, P., Alby, E., Landes, T., Koehl, M., Guillemin, S., Hullo, J.-F.,
+  Assali, P., \& Smigiel, E. 2012.
+\newblock Recording Approach Of Heritage Sites Based On Merging Point Clouds
+  From High Resolution Photogrammetry And Terrestrial Laser Scanning.
+\newblock {\em International Archives of the Photogrammetry, Remote Sensing and
+  Spatial Information Sciences}, {\bf XXXIX-B5}, 553--558.
 
-\bibitem{Horn1986}
-Berthold~K.P. Horn.
+\bibitem[\protect\citename{Holz \& Behnke, }2014]{Holz2014}
+Holz, Dirk, \& Behnke, Sven. 2014 (June).
+\newblock Registration of Non-Uniform Density 3D Point Clouds using Approximate
+  Surface Reconstruction.
+\newblock Joint 45th International Symposium on Robotics (ISR) and 8th German
+  Conference on Robotics (ROBOTIK).
+\newblock Autonomous Intelligent Systems Group, University of Bonn, Germany,
+  Munich.
+
+\bibitem[\protect\citename{Horn, }1984]{Horn1984}
+Horn, Berthold~K.P. 1984.
+\newblock Extended Gaussian Images.
+\newblock {\em Proceesings of the IEEE}, {\bf 72}(12), 1671--1686.
+
+\bibitem[\protect\citename{Horn, }1987]{Horn1986}
+Horn, Berthold~K.P. 1987 (April).
 \newblock Closed-form solution of absolute orientation using unit quaternions.
-\newblock In {\em Journal of the Optical Society of America A}, volume~4, page
-  629. Department of Electrical Engineering, University of Hawaii at Manoa,
-  April 1987.
+\newblock {\em Page  629 of:} {\em Journal of the Optical Society of America
+  A},  vol. 4.
+\newblock Department of Electrical Engineering, University of Hawaii at Manoa.
 
-\bibitem{Kein2011}
-Christopher Keiner.
-\newblock Bildregistrierung von 3d-laserscans und bildern f{\"u}r wadi sura.
-\newblock Master's thesis, Fachbereich Mathematik und Informatik der Freien
-  Universit{\"a}t Berlin, April, 2011.
+\bibitem[\protect\citename{Keiner, }2011]{Kein2011}
+Keiner, Christopher. 2011.
+\newblock {\em Bildregistrierung von 3D-Laserscans und Bildern f{\"u}r Wadi
+  Sura}.
+\newblock M.Phil. thesis, Fachbereich Mathematik und Informatik der Freien
+  Universit{\"a}t Berlin, April.
 
-\bibitem{Rusi2001}
-Szymon Rusinkiewicz;~Marc Levoy.
-\newblock Efficient variants of the icp algorithm.
-\newblock volume 3-D Digital Imaging and Modeling, pages 145--152. Stanford
-  University, 2001.
+\bibitem[\protect\citename{Kersten {\em et~al.\ }\relax, }2006]{Kers2006}
+Kersten, Thomas, Przybilla, Heinz-J{\"u}rgen, \& Lindstaedt, Maren. 2006.
+\newblock Integration, Fusion und Kombination von terrestrischen
+  Laserscannerdaten und digitalen Bildern.
+\newblock November.
 
-\bibitem{Lich2011}
-Maria Lichtenstein.
+\bibitem[\protect\citename{Lerma {\em et~al.\ }\relax, }2009]{Lerm2009}
+Lerma, Jos{\'e}~Luis, Navarro, Santiago, Cabrelles, Miriam, \& Villaverde,
+  Valent{\'\i}n. 2009.
+\newblock Terrestrial laser scanning and close range photogrammetry for 3D
+  archaeological documentation: the Upper Palaeolithic Cave of Parpall{\'o} as
+  a case study.
+\newblock {\em Journal of Archaeological Science}, {\bf 37}(October), 499--507.
+
+\bibitem[\protect\citename{Lichtenstein, }2011]{Lich2011}
+Lichtenstein, Maria. 2011.
 \newblock {\em Strukturbasierte Registrierung von Punktwolken unter Verwendung
   von Bild- und Laserscannerdaten}.
-\newblock PhD thesis, Rheinisch-Westf{\"a}lische Technische Hochschule Aachen,
-  2011.
+\newblock Ph.D. thesis, Rheinisch-Westf{\"a}lische Technische Hochschule
+  Aachen.
 
-\bibitem{Kers2006}
-Thomas Kersten; Heinz-J{\"u}rgen Przybilla;~Maren Lindstaedt.
-\newblock Integration, fusion und kombination von terrestrischen
-  laserscannerdaten und digitalen bildern.
-\newblock November 2006.
+\bibitem[\protect\citename{Low, }2004]{Low2004}
+Low, Kok-Lim. 2004 (February).
+\newblock {\em Linear Least-Squares Optimization for Point-to-Plane ICP Surface
+  Registration}.
+\newblock Tech. rept. Department of Computer Science; University of North
+  Carolina at Chapel Hill.
 
-\bibitem{Low2004}
-Kok-Lim Low.
-\newblock Linear least-squares optimization for point-to-plane icp surface
-  registration.
-\newblock Technical report, Department of Computer Science; University of North
-  Carolina at Chapel Hill, February 2004.
+\bibitem[\protect\citename{Matiukas \& Miniotas, }2011]{Mati2011}
+Matiukas, V., \& Miniotas, D. 2011.
+\newblock Point Cloud Merging for Complete 3D Surface Reconstruction.
+\newblock ISSN 1392--1215 ELECTRONICS AND ELECTRICAL ENGINEERING, no. ~7.
+\newblock Department of Electronic Systems, Vilnius Gediminas Technical
+  University.
 
-\bibitem{Fisc1980}
-Robert C~Bolles Martin A~Fischler.
-\newblock Random sample consensus: A paradigm for model fitting with
-  applications to image analysis and automated cartography.
-\newblock Technical report, Artificial Intelligence Center, SRI International,
-  Menlo Park, California, March 1980.
+\bibitem[\protect\citename{Rusinkiewicz \& Levoy, }2001]{Rusi2001}
+Rusinkiewicz, Szymon, \& Levoy, Marc. 2001.
+\newblock Efficient Variants of the ICP Algorithm.
+\newblock  vol. 3-D Digital Imaging and Modeling.
+\newblock Stanford University.
 
-\bibitem{Besl1992}
-Paul J Besl; Neil~D. McKay.
-\newblock A method for registration of 3-d shapes.
-\newblock In {\em IEEE Transactions on Pattern Analysis and Machine
-  Intelligence}, volume~14, pages 239--256. IEEE, February 1992.
+\bibitem[\protect\citename{Sch{\"o}nemann, }1966]{Scho1966}
+Sch{\"o}nemann, Peter~H. 1966.
+\newblock A generalized solution of the orthogonal procrustes problem.
+\newblock {\em Phychometrika}, {\bf 31}(1), 1--10.
 
-\bibitem{Tuyt2007}
-Tinne Tuytelaars;~Krystian Mikolajczyk.
-\newblock Local invariant feature detectors: A survey.
-\newblock {\em Foundations and Trends in Computer Graphics and Vision}, 3(3),
-  2007.
-
-\bibitem{Scho1970}
-Robert M~Caroll Peter H~Sch{\"o}nemann.
+\bibitem[\protect\citename{Sch{\"o}nemann \& Caroll, }1970]{Scho1970}
+Sch{\"o}nemann, Peter~H, \& Caroll, Robert~M. 1970.
 \newblock Fitting one matrix to another using choice of a central dilation and
   a rigid motion.
-\newblock {\em Phychometrika}, 35(2):245--255, June 1970.
+\newblock {\em Phychometrika}, {\bf 35}(2), 245--255.
 
-\bibitem{Scho1966}
-Peter~H Sch{\"o}nemann.
-\newblock A generalized solution of the orthogonal procrustes problem.
-\newblock {\em Phychometrika}, 31(1):1--10, March 1966.
+\bibitem[\protect\citename{Segal {\em et~al.\ }\relax, }2009]{Sega2009}
+Segal, Aleksandr~V., Haehnel, Dirk, \& Thrun, Sebastian. 2009.
+\newblock Generalized-ICP.
+\newblock {\em Proceedings of Robotics: Science and Systems}.
 
-\bibitem{Grus2012}
-P.~Grussenmeyer; E. Alby; T. Landes; M. Koehl; S. Guillemin; J.-F. Hullo; P.
-  Assali;~E. Smigiel.
-\newblock Recording approach of heritage sites based on merging point clouds
-  from high resolution photogrammetry and terrestrial laser scanning.
-\newblock {\em International Archives of the Photogrammetry, Remote Sensing and
-  Spatial Information Sciences}, XXXIX-B5:553--558, 2012.
+\bibitem[\protect\citename{Toldo {\em et~al.\ }\relax, }2010]{Told2010}
+Toldo, Roberto, Beinat, Alberto, \& Crosilla, Fabio. 2010.
+\newblock Global registration of multiple point clouds embedding the
+  Generalized Procrustes Analysis into an ICP framework.
+\newblock 3DPVT 2010 Conference.
 
-\bibitem{Sega2009}
-Aleksandr V. Segal; Dirk Haehnel;~Sebastian Thrun.
-\newblock Generalized-icp.
-\newblock {\em Proceedings of Robotics: Science and Systems}, 2009.
+\bibitem[\protect\citename{Tournas \& Tsakiri, }2009]{Tour2009}
+Tournas, E., \& Tsakiri, M. 2009.
+\newblock Automatic 3D Point Cloud Registration for Cultural Heritage
+  Documentation.
+\newblock {\em Laser scanning 2009, IAPRS}, {\bf XXXVIII}(September), 189--194.
 
-\bibitem{Tour2009}
-E.~Tournas;~M. Tsakiri.
-\newblock Automatic 3d point cloud registration for cultural heritage
-  documentation.
-\newblock {\em Laser scanning 2009, IAPRS}, XXXVIII:189--194, September 2009.
+\bibitem[\protect\citename{Trucco \& Verri, }1998]{Truc1998}
+Trucco, Emanuele, \& Verri, Alessandro. 1998.
+\newblock {\em Introductory Techniques for 3-D Computer Vision}.
+\newblock Prentice Hall.
 
-\bibitem{Mati2011}
-D.~Miniotas V.~Matiukas.
-\newblock Point cloud merging for complete 3d surface reconstruction.
-\newblock Number~7 in ISSN 1392--1215 ELECTRONICS AND ELECTRICAL ENGINEERING.
-  Department of Electronic Systems, Vilnius Gediminas Technical University,
-  2011.
-
-\bibitem{Lerm2009}
-Jos{\'e} Luis Lerma; Santiago Navarro; Miriam Cabrelles;~Valent{\'\i}n
-  Villaverde.
-\newblock Terrestrial laser scanning and close range photogrammetry for 3d
-  archaeological documentation: the upper palaeolithic cave of parpall{\'o} as
-  a case study.
-\newblock {\em Journal of Archaeological Science}, 37:499--507, October 2009.
+\bibitem[\protect\citename{Tuytelaars \& Mikolajczyk, }2007]{Tuyt2007}
+Tuytelaars, Tinne, \& Mikolajczyk, Krystian. 2007.
+\newblock Local Invariant Feature Detectors: A Survey.
+\newblock {\em Foundations and Trends in Computer Graphics and Vision}, {\bf
+  3}(3).
 
 \end{thebibliography}
