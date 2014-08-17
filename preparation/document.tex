@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{gnuplottex}
 \usepackage{fullpage}
+\usepackage{wrapfig}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage[T1]{fontenc}
@@ -58,10 +59,17 @@ Pour passer des données bruts au modèle final envisagé, un nombre important d
 \subsection{Scanner tridimensionnels}
 Les scanners tridimensionnels utilisent des rayonnements, typiquement des lasers, pour physiquement mesurer des informations de profondeur de leur environnements. Dans les dernières années, cette technologie a connu un développement important. Les scanners 3D disposent d'un niveau avancé d'automatisation, et peuvent produire des données de bonne qualité \cite{Grus2012} à des coût relativement abordables.
 
-\subsubsection{Scanners à temps de vol (LIDAR)}
-Les scanners à temps de vol utilisent un rayon laser qui est projeté dans le champ de vision en différentes directions en succession rapide. Ils disposent aussi d'un capteur qui détecte la lumière reflété du point laser sur l'objet.
+\subsubsection{Scanners par temps de vol (LIDAR)}
+Les scanners à temps de vol utilisent un rayon laser qui est projeté dans le champ de vision en différentes directions en succession rapide. Ils disposent aussi d'un capteur qui détecte la lumière reflété du point laser sur l'objet. On mesure le temps de retour des pulses laser. 
 
-Comme la direction du laser est connue, il manque la distance que le rayonnement laser a traversé du scanner jusqu'à l'objet pour arriver à des coordonnés sphériques du point. Pour trouver cette distance, le scanner mesure le temps $\Delta t$ entre l'envoi du pulse laser jusqu'à la détection de la lumière reflété. On peut en déduire la distance $d = c \times \frac{\Delta t}{2}$, où $c$ est la vitesse de la lumière.
+Ces scanner sont aussi appelès scanners \emph{LIDAR}\footnote{Light detection and ranging}, par analogie au \emph{RADAR}\footnote{Radio detection and ranging} qui fonctionne selon un principe similaire avec des rayonnements radio, et au \emph{SONAR}\footnote{Sound navigation and ranging} pour des ondes sonores dans l'eau.
+
+Comme la direction du laser est connue, il manque la distance que le rayonnement laser a traversé du scanner jusqu'à l'objet pour arriver à des coordonnés sphériques du point. Pour trouver cette distance, le scanner mesure le temps de retour $\Delta t$ entre l'envoi du pulse laser jusqu'à la détection de la lumière reflété. On peut en déduire la distance $d = c \times \frac{\Delta t}{2}$, où $c$ est la vitesse de la lumière. Pour pouvoir acquérir une valeur exacte de $d$, le scanner doit être muni d'un chronomètre très exact: La lumière prend $3.3$ picosecondes pour parcourir un millimètre. Typiquement, les scanners LIDAR collectionnent aussi le valeur d'intensité du signal de retour reçu. Celle-ci peut par exemple être utile pour déterminer le type de materiel de l'objet.
+
+Le balayage du champ de vision peut être fait par des miroirs rotatifs. 
+
+Le système fonctionne bien pour des surfaces à réflexion diffuse, mais pas pour des surfaces qui manifestent une réflexion spéculaire (par exemple des surfaces métalliques), ou des surfaces transparentes (par exemple des vitrines). En fonction du type d'objet à scanner différentes fréquences de rayonnement sont utilisés, allant de l'ultraviolèt par le visible au proche infrarouge. Dans quelques application (par exemple des mesures aériennes d'un terrain), la fréquence est choisie pour ne pas endommager des yeux, dans d'autres (par exemples applications militaires) les balayages doivent être invisibles.
+
 
 \subsubsection{Scanners par triangulation}
 \subsubsection{Scanners par décalage de phase}
@@ -149,7 +157,9 @@ Par recalage, on entend le procédé de trouver ces transformations rigides, de 
 
 On peut distinguer entre les algorithmes locaux (séquentiels) qui opèrent sur deux nuages de points à la fois, et les algorithmes globaux (simultanés) qui effectuent un recalage de plusieurs nuages de points. Cette dernière méthode est plus complexe, mais a l'avantage qu'il n'y a pas d'erreur de recalage qui s'accumule lors des recalages deux-à-deux. Ces algorithmes tentent au lieu de distribuer l'erreur uniformément parmi les nuages.
 
-La méthode préférée pour déterminer un recalage approximatif dépend surtout du type et de la forme de l'objet numérisé, et des données bruts dont on dispose. Certains algorithmes procèdent en identifiant des droites \cite{Lich2011} ou des plans \cite{Dold2006} dans le modèle, et sont donc plus appropriés pour par exemple des façades simples de bâtiments. Si les scans ont des zones de chevauchement assez grandes, il peut être possible d'en déduire le recalage de façon complètement automatisée. D'autres méthodes peuvent être utilisées avec des données collectionnées additionnelles, comme des photos prises par le même point de vue que le scanner \cite{Tour2009} ou des markers placés sur l'objet avant la numérisation \cite{Mati2011}. Par des algorithmes de détection de zones d'intérêt \cite{Tuyt2007} sur des images ou directement sur les nuages de points, on peut alors identifier des points communs dans les différents scans. Aussi les information attribués aux points, comme une couleur, une mesure de température, ou autres, peuvent servir en tant que dimension en plus des coordonnées 3D pour déterminer leur distance. Une première estimation de la pose des scans peut être issue de sensors odométriques ou GPS du scanner.
+La méthode préférée pour déterminer un recalage approximatif dépend surtout du type et de la forme de l'objet numérisé, et des données bruts dont on dispose. Certains algorithmes procèdent en identifiant des droites \cite{Lich2011} ou des plans \cite{Dold2006} dans le modèle, et sont donc plus appropriés pour par exemple des façades simples de bâtiments. Si les scans ont des zones de chevauchement assez grandes, il peut être possible d'en déduire le recalage de façon complètement automatisée. D'autres méthodes peuvent être utilisées avec des données collectionnées additionnelles, comme des photos prises par le même point de vue que le scanner \cite{Tour2009} ou des markers placés sur l'objet avant la numérisation \cite{Mati2011}. Par des algorithmes de détection de zones d'intérêt \cite{Tuyt2007} sur des images ou directement sur les nuages de points, on peut alors identifier des points communs dans les différents scans. \cite{Huan2012} présente une méthode basée sur une détection d'autosimilarité de nuages de points. Aussi les information attribués aux points, comme une couleur, une mesure de température, ou autres, peuvent servir en tant que dimension en plus des coordonnées 3D pour déterminer leur distance. Une première estimation de la pose des scans peut être issue de sensors odométriques ou GPS du scanner.
+
+
 
 Dans les pages suivantes certains algorithmes et méthodes seront décrit en détail, avec leurs bases mathématiques. Il pourront possiblement être utilisés ou développées pour le projet de mémoire.
 
@@ -469,13 +479,6 @@ Durant chaque test, tous les vecteurs normaux $\{ \vec{n} \}$ issue du nuage de 
 Il est montré expérimentalement que ces deux dernières mesures peuvent donner de bons résultats. Pour la somme des différences absolues, les résultats se rapprochent trop pour des niveaux de pavage supérieurs. L'article propose aussi d'inclure l'aire des surfaces planaires des nuages de points, en tant que pondération pour les vecteur normaux.
 
 
-\section{Identification et correspondance de droites}
-
-\section{Identification et correspondance de plans}
-
-\section{Détecteurs de zones d'intérêt}
-
-\section{Recalage via des photos}
 
 \section{Photogrammétrie}
 La photogrammétrie peut être définie comme la science d'extraire algorithmiquement des informations sur un environnement tridimensionnel à partir de photos. En particulier, une opération photogrammétrique fondamentale est de retrouver les positions 3D correspondants à des points sur la photo.
@@ -492,7 +495,7 @@ Pour obtenir une image nette d'un objet, le système optique doit être tel que 
 La modélisation de la lumière en tant qu'ondes montre qu'un rayon lumineux correspond à une onde, qui peut être décrit comme une superposition d'un ensemble d'ondes sinusoïdes sur on continuum de fréquences. Quand un radiations est reflété, sa forme d'onde est altérée car certaines de ces fréquences sont absorbées. Trois types de cellules coniques existent dans la rétine humaine, qui sont sensibles à des histogrammes de fréquences différents dans le spectrum visuel. Ceux-ci permettent la vision des couleurs rouge, vert et bleu. La combinaison de valeurs d'intensité de ces trois couleurs fondamentales donne lieu à la perception d'une couleur. Les capteurs d'une caméra numérique fonctionnent selon le même principe, et produisent des valeurs de couleur sous forme d'un triplet RGB. Comme ces valeurs de couleur ne sont pas directement une propriété de l'objet photographié mais dépendent des conditions lumineuses ambiantes et du système optique, des corrections radiométriques peuvent être nécessaires pour égaliser les couleurs si on veut fusionner des informations tirés de plusieurs photos d'un objet.
 
 
-\subsection{Modèle pin-hole}
+\subsection{Modèle pin-hole} \label{sec:pinhole}
 Comme décrit, on utilise le modèle pin-hole comme base pour modéliser projection de 3D en 2D d'une caméra. Ce modèle ne prend pas en considération des distortions et autres phénomènes produits par une lentille, et suppose que l'image sera nette partout. La figure \ref{fig:pinhole} montre une représentation en deux dimensions: Un point $P$ de l'objet est projeté vers un point $P'$ sur le capteur. $P P'$ représente d'unique rayon lumineux qui passe à travers l'aperture en $O$. L'élément essentiel du modèle est que le position de $P'$ sur le capteur est invariant à la position de $P$ le long de $P P'$. C'est cette information qui est perdue lors de la projection 3D en 2D, et qu'on cherche à retrouver via des techniques photogrammétriques. Les scanners 3D laser mesurent directement la distance $\|O P\|$ pour construire une carte de profondeur et à partir de cela un nuage de points.
 
 La distance $f = \|O O'\|$ est la \emph{longueur focale}, et constitue le seul paramètre de cette projection. Avec la hauteur $h$ du capteur, il détermine la champ de vision $\omega$:
@@ -529,14 +532,14 @@ $O$ est l'origine du repère caméra. On suppose que les coordonnées $(x_c, y_c
 \end{equation}
 
 En coordonnées homogènes, et si on n'inclut pas la correction des distortions mentionnée, la transformation du repère caméra dans le repère image en utilisant les paramètres intrinsèques peut être exprimé par une multiplication matricielle:
-\begin{equation}
+\begin{equation} \label{eq:cam_to_img}
 	\begin{bmatrix}
-		x_c / w_c \\
-		y_c / w_c \\
-		z_c / w_c
+		\ddot{x_i} \\
+		\ddot{y_i} \\
+		\ddot{w_i}
 	\end{bmatrix} = \begin{bmatrix}
 		-\frac{f}{s_x} & 0 & o_x \\
-		0 & -\frac{f}{s_y} & 0 \\
+		0 & -\frac{f}{s_y} & o_y \\
 		0 & 0 & 1
 	\end{bmatrix} \times \begin{bmatrix}
 		x_c \\
@@ -545,7 +548,15 @@ En coordonnées homogènes, et si on n'inclut pas la correction des distortions 
 	\end{bmatrix}
 \end{equation}
 
-La transformation du repère objet dans le repère caméra correspond à une rotation et une translation 3D, aussi exprimables par une matrice de multiplication en coordonnées homogènes.
+La transformation du repère objet dans le repère caméra correspond à une rotation et une translation 3D, aussi exprimables par une matrice de multiplication en coordonnées homogènes. La projection complète du repère objet dans le repère image correspondera donc à une multiplication matricielle $(\ddot{x_i}, \ddot{y_i}, \ddot{w_i})^T = \mathbf{M} \, (x_o, y_o, z_o, 1)^T$. $\mathbf{M}$ est donnée par:
+\begin{equation}
+	\mathbf{M} = \begin{bmatrix}
+		-f_x r_{1,1} + o_x r_{3,1} & -f_x r_{1,2} + o_x r_{3,2} & -f_x r_{1,3} + o_x r_{3,3} & -f_x t_x + o_x t_z \\
+		-f_y r_{2,1} + o_y r_{3,1} & -f_y r_{2,2} + o_y r_{3,2} & -f_y r_{2,3} + o_y r_{3,3} & -f_y t_x + o_y t_z \\
+		r_{3,1} & r_{3,2} & r_{3,3} & t_z
+	\end{bmatrix}
+\end{equation}
+Ici, $r_{i,j}$ sont les $3 \times 3$ éléments de la matrice de rotation, $\vec{t} = (t_x, t_y, t_z)^T$ le vecteur de translation. De plus, on pose $f_x = \frac{f}{s_x}$ et $f_y = \frac{f}{s_y}$, pour que les paramètres dans l'expression soient indépendants.
 
 \begin{figure}[p]
 \center
@@ -566,13 +577,77 @@ La calibrage en photogrammétrie consiste à estimer les paramètres extrinsèqu
 
 La plupart des techniques photogrammétriques supposent que les paramètres extrinsèques et intrinsèques correspondant aux photos sont connus. Sauf si on travaille dans des conditions très particulières (par exemple avec un banc optique où les paramètres sont fixés), il est donc nécessaire d'effectuer un calibrage avant de procéder. Cependant, il existe aussi des techniques qui permettent d'extraire de l'information à partir de photos non-calibrés. \cite{Truc1998}
 
+Comme vu en section \ref{sec:pinhole}, la projection de coordonnées du repère \emph{objet} 3D dans le repère image 2D peut être exprimé en tant que matrice de transformation $\mathbf{M}$. Soit $m_{i,k}$ ses $3 \times 4$ éléments. Exprimé en forme non-matricielle, avec conversion de coordonnées homogènes en coordonnées on obtient
+\begin{equation}
+\begin{gathered}
+	x_i = \frac{\ddot{x_i}}{\ddot{w_i}} = \frac
+		{m_{1,1} x_o + m_{1,2} y_o + m_{1,3} z_o + m_{1,4}}
+		{m_{3,1} x_o + m_{3,2} y_o + m_{3,3} z_o + m_{3,4}} \\
+	y_i = \frac{\ddot{y_i}}{\ddot{w_i}} = \frac
+		{m_{2,1} x_o + m_{2,2} y_o + m_{2,3} z_o + m_{2,4}}
+		{m_{3,1} x_o + m_{3,2} y_o + m_{3,3} z_o + m_{3,4}}
+\end{gathered}
+\end{equation}
+
+En négligeant un facteur de redimensionnement, $\mathbf{M}$ a $11$ composants indépendants à chercher. $6$ cibles pour lesquelles on connait leur coordonnées image $(x_i, y_i)$, et leurs coordonnées objet $(x_o, y_o, z_o)$ suffisent donc pour trouver $\mathbf{M}$ par résolution d'un système linéaire formé par ces équations. En pratique, beaucoup plus de cibles seront connus, et donc une meilleur estimation de $\mathbf{M}$ pourra être obtenu par la méthode des moindres carrés.
+
+La prochaine étape est de retrouver à partir des $12$ valeurs $m_{i,j}$ les paramètres extrinsèques $(\mathbf{R}, \vec{t})$ et intrinsèques $(o_x, o_y, f_x, f_y)$. Le développement correspondant est donné en \cite{Trus1998}.
 
 
+
+\subsection{Problème de correspondance}
+Afin de pouvoir reconstruire la position d'un point dans le repère objet à partir de deux ou plusieurs photos, il est d'abord nécessaire d'identifier la projection du même point sur les photos. Quand le but est de reconstruire un petit nombre de points spécifique, on peut manuellement identifier les points correspondants, ou utiliser des algorithmes de détection de zones d'intérêt.
+
+Dans le but de générer un nuage de points par photogrammétrie, il sera par contre nécessaire d'associer une valeur de profondeur à chaque pixel des photos. Ici des méthodes de mise en correspondante peuvent être appliquées. En utilisant deux photos, l'\emph{appariement dense} consiste donc à trouver pour chaque pixel $(x_i, y_i)$ d'une image son homologue $(x'_i, y'_i)$ sur l'autre image. Quand les deux poses de caméra se distinguent uniquement par un déplacement horizontal, alors des pixels homologues de trouveront toujours sur la même ligne dans les deux images, donc $y_i = y'_i$. La profondeur $z_c$ peut alors être estimée par la \emph{disparité} $d = \| x_i - x'_i \|$ des deux pixels. \cite{Gard2009} Ceci correspond au principe de fonctionnement de la vision humaine stéréoscopique.
+
+Pour estimer le pixel $(x'_i, y'_i)$ homologue à $(x_i, y_i)$, une méthode est de comparer visuellement les valeurs des pixels dans un voisinage $V$ autour des pixels sur les deux images. Soit $I(x, y)$ respectivement $I'(x', y')$ la valeur d'un pixel dans le premier et le deuxième image. Pour des images en couleurs RGB, cela peut par exemple être une valeur de luminosité calculée à partie des canaux de couleur. En calcule donc $\hat{d}(x, y)$, la disparité à associer à une position dans le repère image, en maximisant une fonction de ressemblance du voisinage
+\begin{equation}
+	\hat{d}(x, y) = \argmax_{d_{\min} < d <  d_{\max}} \sum_{\Delta x=-V}^{V} \sum_{\Delta y=-V}^{V} \psi(I(x + \Delta x, y + \Delta y), I'(x + \Delta x, y + \Delta y + d))
+\end{equation}
+Pour la fonction $\psi$, on utilise souvent $\psi(I_1, I_2) = I_1 \, I_2$ ou $\psi(I_1, I_2) = -(I_1 - I_2)^2$. Ils sont toutes les deux maximales quand $I_1 = I_2$. De tels méthodes d'appariement dense souffrent surtout d'problèmes d'occlusion (une partie d'une image n'est pas visible dans l'autre), et de fausses correspondances causés par du bruit dans les photos. Une contraint qui peut être appliquée pour éviter ces problèmes est que la même correspondance est trouvée en cherchant dans les deux directions. Pour la méthode décrite ici $\hat{d}(x_i, y_i) \simeq -\hat{d'}(x'_i, y'_i)$.
+
+\subsection{Reconstruction 3D}
+Quand les paramètres intrinsèques et extrinsèques d'une photo sont connus, on peut déterminer pour chaque pixel $(x_i, y_i)$ la droite du rayonnement de lumière $P P'$ (voir figure \ref{fig:pinhole}), dans le repère objet. Si on a deux photos pris de différentes poses et sur lequel le même point $(x_i, y_i)$ à été identifié, on a une deuxième droite $P P''$ connue. On connait donc en repère objet les points $P'$, $P''$, les droites $P P'$, $P P''$, et on sait que $P, P', P''$ sont coplanaires. Les coordonnées de $P$ peuvent ainsi être calculés par triangulation.
+
+Cela correspond à une résolution d'un système linéaire formés de deux équations du type $\vec{P'}_{i} \mathbf{M} = \vec{P}$, où $\vec{P'}_i$ sont les coordonnées image de pixels correspondants sur les deux images, et l'inconnue $\vec{P}$ les coordonnées 3D cherchés. Comme pour le calibrage, une amélioration du résultat est possible en utilisant plusieurs images.
+
+Il n'est d'ailleurs pas nécessaire d'avoir les paramètres extrinsèques absolues des caméras, donc la rotation et translation dans le repère objet. Au lieu, des paramètres extrinsèques relatifs, c'est à dire par rapport à l'autre caméra sont suffisants.
+
+Quand seulement les paramètres intrinsèques sont connus, une reconstruction est toujours possible à un facteur de redimensionnement près. Quand on ne dispose pas d'information sur les paramètres, une reconstruction à une transformation de perspective près est possible. Pour ces deux cas au moins $8$ correspondances entre les deux images sont requis. \cite{Truc1998}
 
 \subsection{Combination photo-nuage de points}
-Comme mentionné, dans des projets de documentation 3D on combine souvent des scans laser avec des information extraits de photos prises en combinaison avec les scans laser. Par exemple cela est usuellement utilisé pour coloriser un nuage de points. Une opération fondamentale est de pouvoir déterminer la position 3D qui correspond à chaque pixel de l'image.
+Comme mentionné, dans des projets de documentation 3D on combine souvent des scans laser avec des information extraits de photos prises en combinaison avec les scans laser. La colorisation d'un nuage de points $P = \{ p_i \}$ via une photo est assez simple en utilisant les techniques exposées. Le but est de trouver pour chaque point $p_i$ du nuage de point, le pixel correspondant $(x_i, y_i)$ sur la photo. On attribut alors la couleur de ce pixel au point du nuage.
 
-Une technique est décrite dans \cite{Tour2009}. Ici, on suppose que la position et pose de la caméra par rapport au scanner laser est connue.
+Dans beaucoup de cas, la position de la caméra par rapport au scanner est connue. Il existe par exemple des dispositifs où une caméra est directement monté sur le scanner. Les points du nuage de points seront dans un repère propre au scanner. En utilisant une matrice de transformation qui exprime la position relative de la caméra, ils peuvent être reportés dans le repère caméra. Maintenant, les coordonnées du pixel peuvent être trouvés un utilisant les paramètres intrinsèques de la caméra, par la formule \ref{eq:cam_to_img}. Il peut cependant être nécessaire d'ajouter des corrections de distortions comme ceux mentionnés. Pour des points qui sont occlus sur la photo, on aura des faux résultats, l'écart caméra-scanner doit donc être assez petit.
+
+Quand le but sera de fusionner plusieurs nuage de points coloriés ainsi pour former un modèle complet, et pourra aussi être utile d'appliquer des corrections de homogénéisation des couleurs. \cite{Giro2013} décrit une approche pour résoudre ce problème: D'abord le vignettage sur les photos est effacé, ensuite des corrections radiométriques sont appliqués sur l'ensemble des images.
+
+Le vignettage est une réduction de la luminosité d'une photo aux périphéries. Un exemple est montré sur figure \ref{fig:vignetting}. Le phénomène peut avoir des différentes origines géométriques, optiques et électroniques, tous liée à l'angle d'incidence du rayonnement sur le capteur. Il peut donc être modélisé par un modèle radial. L'article montre que $1 + \alpha r^2 + \beta r^4 + \gamma r^6$ décrit assez bien un facteur de l'intensité lumineuse perçu par le capteur de la caméra, en fonction de la distance au centre $r$. Les paramètres du modèle $\alpha, \beta, \gamma$ devront être estimés. Pour cela, on prend plusieurs photos pris d'un même objet avec la caméra, sur lesquels on identifie des points de correspondance. On suppose que la luminosité ambiante est constante sur ce jeux photos. Soit $G_i,j$ la valeur en niveaux gris du $i$-ième point de correspondance sur la $j$-ième photo. Dans de modèle, on suppose donc que des valeurs distincts d'un même point de correspondance sur différentes images sont dus au vignettage. Donc pour tout point de correspondance $i$,
+\begin{equation}
+	G_{i,1} (1 + \alpha r_{i,1}^2 + \beta r_{i,1}^4 + \gamma r_{i,1}^6) = G_{i,2} (1 + \alpha r_{i,2}^2 + \beta r_{i,2}^4 + \gamma r_{i,2}^6) = \cdots
+\end{equation}
+avec $r_{i,j}$ la distance au centre du point sur cette image. Il a été montré que la méthode RANSAC est approprié pour trouver une bonne estimation de $\alpha, \beta, \gamma$, avec les données d'entré souvent erronés.
+
+Après avoir corrigé les vignettes sur les photos individuelles, on veut préparer des photos pris de différents points de vue d'un objet afin s'en créer un nuage de points fusionné colorié de manière homogène. La méthode proposée en \cite{Giro2013} cherche des points de correspondance sur des zones communes de différentes photos par le détecteur SIFT, puis calcule des matrices de correction de couleur à appliquer à l'ensemble de pixels de chaque image. La figure \ref{fig:color_correction} montre un résultat obtenu avec cette méthode.
+
+\begin{figure}[p]
+\center
+\includegraphics[width=.6\textwidth]{vignetting.png}
+\caption{Exemple de vignettage d'une photo. Copié de \cite{Giro2013}}
+\label{fig:vignetting}
+\end{figure}
+
+\begin{figure}[p]
+\center
+\includegraphics[width=.8\textwidth]{color_correction.png}
+\caption{Nuage de points sans et avec homogénéisation des couleurs. Copié de \cite{Giro2013}}
+\label{fig:color_correction}
+\end{figure}
+
+
+
+
+
 
 
 \chapter{Projet prévu pour le mémoire}

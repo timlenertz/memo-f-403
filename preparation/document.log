@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  16 AUG 2014 19:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  17 AUG 2014 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,9 +471,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \verbatim@out=\write3
-runsystem(touch w18-test-20148161192.tex)...disabled (restricted).
+runsystem(touch w18-test-20148171171.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-20148161192.tex)...disabled (restricted).
+runsystem(rm -f w18-test-20148171171.tex)...disabled (restricted).
 
 
 
@@ -484,6 +484,14 @@ Package gnuplottex Warning: Shell escape not enabled.
 ) (/usr/local/texlive/2013/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip55
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen123
+\WF@size=\dimen124
+\c@WF@wrappedlines=\count110
+\WF@box=\box29
+\WF@everypar=\toks24
+Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -542,16 +550,16 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen123
-\Hy@linkcounter=\count110
-\Hy@pagecounter=\count111
+\@linkdim=\dimen125
+\Hy@linkcounter=\count111
+\Hy@pagecounter=\count112
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count112
+\Hy@SavedSpaceFactor=\count113
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -563,17 +571,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count113
+\c@Hy@tempcnt=\count114
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen124
-\Fld@menulength=\count114
-\Field@Width=\dimen125
-\Fld@charsize=\dimen126
+\XeTeXLinkMargin=\dimen126
+\Fld@menulength=\count115
+\Field@Width=\dimen127
+\Fld@charsize=\dimen128
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -583,17 +591,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count115
-\c@Item=\count116
-\c@Hfootnote=\count117
+\Hy@abspage=\count116
+\c@Item=\count117
+\c@Hfootnote=\count118
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count118
-\c@bookmark@seq@number=\count119
+\Fld@listcount=\count119
+\c@bookmark@seq@number=\count120
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -617,59 +625,59 @@ Language: frenchb 2014/03/14 v3.0b French support from the babel system
 
 (/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/03/24 3.9k Babel common definitions
-\babel@savecnt=\count120
-\U@D=\dimen127
+\babel@savecnt=\count121
+\U@D=\dimen129
 )
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
 \FBcolonskip=\skip57
 \FBthinskip=\skip58
-\FB@interchartokenstateORI=\count121
+\FB@interchartokenstateORI=\count122
 Package babel Info: Making : an active character on input line 367.
 Package babel Info: Making ; an active character on input line 368.
 Package babel Info: Making ! an active character on input line 369.
 Package babel Info: Making ? an active character on input line 370.
 \FBguillskip=\skip59
-\FB@Mht=\dimen128
-\std@mcc=\count122
-\dec@mcc=\count123
+\FB@Mht=\dimen130
+\std@mcc=\count123
+\dec@mcc=\count124
 \listindentFB=\skip60
 \labelwidthFB=\skip61
 \leftmarginFB=\skip62
-\parindentFFN=\dimen129
+\parindentFFN=\dimen131
 ))
 (/usr/local/texlive/2013/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen130
-\scratchbox=\box29
-\nofMPsegments=\count125
-\nofMParguments=\count126
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen131
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count125
+\scratchdimen=\dimen132
+\scratchbox=\box30
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen133
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -685,8 +693,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 18.
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 19.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -694,35 +702,35 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count130
+\c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
 
 (./document.out) (./document.out)
 \@outlinefile=\write4
 \openout4 = `document.out'.
 
-LaTeX Info: Redefining \degres on input line 18.
-LaTeX Info: Redefining \dots on input line 18.
-LaTeX Info: Redefining \up on input line 18.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 25.
+LaTeX Info: Redefining \degres on input line 19.
+LaTeX Info: Redefining \dots on input line 19.
+LaTeX Info: Redefining \up on input line 19.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 26.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 25.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 26.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -744,10 +752,10 @@ Chapitre 1.
 
 ]
 Chapitre 2.
-./document.tex:43: Undefined control sequence.
+./document.tex:44: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Center~for Advanced Spatial~Techno...
-l.43 ...llée de sites archéologiques \cite{Web1}
+l.44 ...llée de sites archéologiques \cite{Web1}
                                                    \cite{Kein2011} \cite{Gru...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -755,10 +763,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:43: Undefined control sequence.
+./document.tex:44: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Keiner, }2011
-l.43 ...rchéologiques \cite{Web1} \cite{Kein2011}
+l.44 ...rchéologiques \cite{Web1} \cite{Kein2011}
                                                    \cite{Grus2012} et d'envi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -766,10 +774,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:43: Undefined control sequence.
+./document.tex:44: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Grussenmeyer {\em et~al.\ }\relax ...
-l.43 ...cite{Web1} \cite{Kein2011} \cite{Grus2012}
+l.44 ...cite{Web1} \cite{Kein2011} \cite{Grus2012}
                                                    et d'environnements urbai...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -777,10 +785,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:43: Undefined control sequence.
+./document.tex:44: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Kersten {\em et~al.\ }\relax , }2006
-l.43 ...t d'environnements urbains \cite{Kers2006}
+l.44 ...t d'environnements urbains \cite{Kers2006}
                                                   , des acquisitions aérien...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -788,10 +796,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:43: Undefined control sequence.
+./document.tex:44: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Biber, }2003
-l.43 ...algorithmique en robotique \cite{Bibe2003}
+l.44 ...algorithmique en robotique \cite{Bibe2003}
                                                   , la capture de formes 3D ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -800,15 +808,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (4.27977pt too wide) in paragraph at lines 43--44
+Overfull \hbox (4.27977pt too wide) in paragraph at lines 44--45
 \T1/cmr/m/n/10 [[]] et d'en-vi-ron-ne-ments ur-bains [[]], des ac-qui-si-tions 
 a�-riennes
  []
 
-./document.tex:47: Undefined control sequence.
+./document.tex:48: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Lerma {\em et~al.\ }\relax , }2009
-l.47 ...par les étapes suivantes: \cite{Lerm2009}
+l.48 ...par les étapes suivantes: \cite{Lerm2009}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -816,10 +824,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:53: Undefined control sequence.
+./document.tex:54: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Tournas \& Tsakiri, }2009
-l.53 ...thodes photogrammétriques \cite{Tour2009}
+l.54 ...thodes photogrammétriques \cite{Tour2009}
                                                    et radiométriques \cite{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -827,10 +835,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:53: Undefined control sequence.
+./document.tex:54: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Girod, }2013
-l.53 ...ur2009} et radiométriques \cite{Giro2013}
+l.54 ...ur2009} et radiométriques \cite{Giro2013}
                                                   , les photos sont modifié...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -841,10 +849,10 @@ and I'll forget about whatever was undefined.
 [4
 
 ]
-./document.tex:59: Undefined control sequence.
+./document.tex:60: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Grussenmeyer {\em et~al.\ }\relax ...
-l.59 ...données de bonne qualité \cite{Grus2012}
+l.60 ...données de bonne qualité \cite{Grus2012}
                                                    à des coût relativement...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -852,10 +860,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:74: Undefined control sequence.
+./document.tex:82: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Fischler \& Bolles, }1980
-l.74 ...), initialement décrit en \cite{Fisc1980}
+l.82 ...), initialement décrit en \cite{Fisc1980}
                                                   , est une méthode génér...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -864,16 +872,16 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (5.7955pt too wide) in paragraph at lines 74--75
+Overfull \hbox (5.7955pt too wide) in paragraph at lines 82--83
 []\T1/cmr/m/n/10 L'algorithme RAN-SAC (``Ran-dom Sample Consen-sus''[][][]), in
 i-tia-le-ment d�-crit en [[]],
  []
 
 [5] [6]
-./document.tex:128: Undefined control sequence.
+./document.tex:136: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Toldo {\em et~al.\ }\relax , }2010
-l.128 ...\mathbf{K}$ se stabilise. \cite{Told2010}
+l.136 ...\mathbf{K}$ se stabilise. \cite{Told2010}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -881,10 +889,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:140: Undefined control sequence.
+./document.tex:148: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Sch{\"o}nemann \& Caroll, }1970
-l.140 ...sultat sont données dans \cite{Scho1970}
+l.148 ...sultat sont données dans \cite{Scho1970}
                                                    et \cite{Scho1966}.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -892,10 +900,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:140: Undefined control sequence.
+./document.tex:148: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Sch{\"o}nemann, }1966
-l.140 ...s dans \cite{Scho1970} et \cite{Scho1966}
+l.148 ...s dans \cite{Scho1970} et \cite{Scho1966}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -904,10 +912,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [7]
-./document.tex:152: Undefined control sequence.
+./document.tex:160: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Lichtenstein, }2011
-l.152 ...n identifiant des droites \cite{Lich2011}
+l.160 ...n identifiant des droites \cite{Lich2011}
                                                    ou des plans \cite{Dold20...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -915,10 +923,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:152: Undefined control sequence.
+./document.tex:160: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Dold \& Brenner, }2006
-l.152 ...te{Lich2011} ou des plans \cite{Dold2006}
+l.160 ...te{Lich2011} ou des plans \cite{Dold2006}
                                                    dans le modèle, et sont ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -926,10 +934,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:152: Undefined control sequence.
+./document.tex:160: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Tournas \& Tsakiri, }2009
-l.152 ...int de vue que le scanner \cite{Tour2009}
+l.160 ...int de vue que le scanner \cite{Tour2009}
                                                    ou des markers placés su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -937,10 +945,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:152: Undefined control sequence.
+./document.tex:160: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Matiukas \& Miniotas, }2011
-l.152 ...et avant la numérisation \cite{Mati2011}
+l.160 ...et avant la numérisation \cite{Mati2011}
                                                   . Par des algorithmes de d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -948,10 +956,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:152: Undefined control sequence.
+./document.tex:160: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Tuytelaars \& Mikolajczyk, }2007
-l.152 ...tion de zones d'intérêt \cite{Tuyt2007}
+l.160 ...tion de zones d'intérêt \cite{Tuyt2007}
                                                    sur des images ou directe...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -959,10 +967,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:162: Undefined control sequence.
+[8]
+./document.tex:170: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Besl \& McKay, }1992
-l.162 ...nt à chaque point $s_i$. \cite{Besl1992}
+l.170 ...nt à chaque point $s_i$. \cite{Besl1992}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -970,10 +979,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:164: Undefined control sequence.
+./document.tex:172: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Low, }2004
-l.164 ...vent localement planaires. \cite{Low2004}
+l.172 ...vent localement planaires. \cite{Low2004}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -981,10 +990,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:166: Undefined control sequence.
+./document.tex:174: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Rusinkiewicz \& Levoy, }2001
-l.166 ...t définie et minimisée. \cite{Rusi2001}
+l.174 ...t définie et minimisée. \cite{Rusi2001}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -992,10 +1001,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:168: Undefined control sequence.
+./document.tex:176: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Horn, }1987
-l.168 ... sous forme de quaternion \cite{Horn1986}
+l.176 ... sous forme de quaternion \cite{Horn1986}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1003,23 +1012,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[8]
-./document.tex:183: Undefined control sequence.
+./document.tex:191: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Besl \& McKay, }1992
-l.183 ...source} est décrite dans \cite{Besl1992}
+l.191 ...source} est décrite dans \cite{Besl1992}
                                                    et \cite{Horn1986}. La pr...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./document.tex:183: Undefined control sequence.
-<argument> \@safe@activesfalse \citename 
-                                         {Horn, }1987
-l.183 ...e dans \cite{Besl1992} et \cite{Horn1986}
-                                                  . La procédure prend uniq...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1029,7 +1026,18 @@ and I'll forget about whatever was undefined.
 ./document.tex:191: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Horn, }1987
-l.191 ...développement décrit en \cite{Horn1986}
+l.191 ...e dans \cite{Besl1992} et \cite{Horn1986}
+                                                  . La procédure prend uniq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:199: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Horn, }1987
+l.199 ...développement décrit en \cite{Horn1986}
                                                    inclut aussi un facteur d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1038,10 +1046,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [9]
-./document.tex:225: Undefined control sequence.
+./document.tex:233: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Horn, }1987
-l.225 L'article \cite{Horn1986}
+l.233 L'article \cite{Horn1986}
                                 montre qu'en utilisant les propriétés des ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1049,10 +1057,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:237: Undefined control sequence.
+./document.tex:245: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Rusinkiewicz \& Levoy, }2001
-l.237 ... de l'ICP sont possibles. \cite{Rusi2001}
+l.245 ... de l'ICP sont possibles. \cite{Rusi2001}
                                                    donne un comparatif des d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1060,10 +1068,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:240: Undefined control sequence.
+./document.tex:248: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Toldo {\em et~al.\ }\relax , }2010
-l.240 ...alisée est décrite dans \cite{Told2010}
+l.248 ...alisée est décrite dans \cite{Told2010}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1071,10 +1079,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:246: Undefined control sequence.
+[10]
+./document.tex:254: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Toldo {\em et~al.\ }\relax , }2010
-l.246 ...�tre formulé comme suit: \cite{Told2010}
+l.254 ...�tre formulé comme suit: \cite{Told2010}
                                                    \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1082,11 +1091,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[10]
-./document.tex:260: Undefined control sequence.
+./document.tex:268: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Segal {\em et~al.\ }\relax , }2009
-l.260 ...ICP est développée dans \cite{Sega2009}
+l.268 ...ICP est développée dans \cite{Sega2009}
                                                   : On prend en compte que l...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1095,16 +1103,16 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (16.59637pt too wide) in paragraph at lines 260--261
+Overfull \hbox (16.59637pt too wide) in paragraph at lines 268--269
 \T1/cmr/m/n/10 points � den-si-t�s de points dif-f�-rents. Une ver-sion \T1/cmr
 /m/it/10 g�-n�-ra-li-s�e \T1/cmr/m/n/10 du ICP est d�-ve-lop-p�e dans [[]] :
  []
 
-[11]
-./document.tex:330: Undefined control sequence.
+[11] [12]
+./document.tex:338: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Segal {\em et~al.\ }\relax , }2009
-l.330 ...périors au ICP standard. \cite{Sega2009}
+l.338 ...périors au ICP standard. \cite{Sega2009}
                                                    Cependant, puisqu'elle su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1112,10 +1120,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:332: Undefined control sequence.
+./document.tex:340: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Holz \& Behnke, }2014
-l.332 L'article \cite{Holz2014}
+l.340 L'article \cite{Holz2014}
                                 présente une manière de calculer les vecte...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1123,11 +1131,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[12]
-./document.tex:340: Undefined control sequence.
+./document.tex:348: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Horn, }1987
-l.340 ...mathbf{M}$ est donnée en \cite{Horn1986}
+l.348 ...mathbf{M}$ est donnée en \cite{Horn1986}
                                                   . $\mathbf{M}$ représente...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1135,18 +1142,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (4.2574pt too wide) in paragraph at lines 356--357
+[13]
+Overfull \hbox (4.2574pt too wide) in paragraph at lines 364--365
 []\T1/cmr/m/n/10 L'op�ration fon-da-men-tale de l'al-go-rithme est la re-cherch
 e the qua-dru-plets $[] \OT1/cmr/m/n/10 = ([]\OML/cmm/m/it/10 ; []; []; []\OT1/
 cmr/m/n/10 )$ \T1/cmr/m/n/10 congruents
  []
 
-[13]
-./document.tex:372: Undefined control sequence.
+./document.tex:380: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Aiger {\em et~al.\ }\relax , }2008
-l.372 ...plémentation donnée par \cite{Aige2008}
+l.380 ...plémentation donnée par \cite{Aige2008}
                                                   , l'algorithme considère ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1154,10 +1160,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:379: Undefined control sequence.
+./document.tex:387: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Biber, }2003
-l.379 ...e sur un plan horizontal. \cite{Bibe2003}
+l.387 ...e sur un plan horizontal. \cite{Bibe2003}
                                                    Ce recalage permet de con...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1166,10 +1172,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [14]
-./document.tex:420: Undefined control sequence.
+./document.tex:428: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Dold {\em et~al.\ }\relax , }2007
-l.420 ...rizontal, est décrite en \cite{Dold2007}
+l.428 ...rizontal, est décrite en \cite{Dold2007}
                                                   . On extrait à partir des...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1177,10 +1183,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./document.tex:428: Undefined control sequence.
+./document.tex:436: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Horn, }1984
-l.428 ...aussian Image de l'objet. \cite{Horn1984}
+l.436 ...aussian Image de l'objet. \cite{Horn1984}
                                                    Il a été montré que po...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1189,10 +1195,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [15]
-./document.tex:457: Undefined control sequence.
+./document.tex:465: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Dold, }2005
-l.457 L'article \cite{Dold2005}
+l.465 L'article \cite{Dold2005}
                                 décrit une implémentation d'un recalage de...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1201,10 +1207,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [16]
-./document.tex:490: Undefined control sequence.
+./document.tex:498: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Trucco \& Verri, }1998
-l.490 ...cises sur base de photos. \cite{Truc1998}
+l.498 ...cises sur base de photos. \cite{Truc1998}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1213,10 +1219,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [17]
-./document.tex:511: Undefined control sequence.
+./document.tex:519: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Trucco \& Verri, }1998
-l.511 ...tes après la correction: \cite{Truc1998}
+l.519 ...tes après la correction: \cite{Truc1998}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1224,6 +1230,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[18]
 Package epstopdf Info: Source file: <pinhole.eps>
 (epstopdf)                    date: 2014-08-16 17:12:30
 (epstopdf)                    size: 36110 bytes
@@ -1232,77 +1239,20 @@ Package epstopdf Info: Source file: <pinhole.eps>
 (epstopdf)                    size: 6878 bytes
 (epstopdf)             Command: <repstopdf --outfile=pinhole-eps-converted-to.p
 df pinhole.eps>
-(epstopdf)             \includegraphics on input line 552.
+(epstopdf)             \includegraphics on input line 568.
 Package epstopdf Info: Output file is already uptodate.
-<pinhole-eps-converted-to.pdf, id=418, 453.695pt x 334.24875pt>
+ <pinhole-eps-converted-to.pdf, id=443, 453.695pt x 334.24875pt>
 File: pinhole-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pinhole-eps-converted-to.pdf>
-Package pdftex.def Info: pinhole-eps-converted-to.pdf used on input line 552.
+Package pdftex.def Info: pinhole-eps-converted-to.pdf used on input line 568.
 (pdftex.def)             Requested size: 271.78352pt x 200.22948pt.
 
-./document.tex:559: Undefined control sequence.
+./document.tex:575: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
                                          {Trucco \& Verri, }1998
-l.559 ...tern de calibrage) connu. \cite{Truc1998}
+l.575 ...tern de calibrage) connu. \cite{Truc1998}
                                                    Figure \ref{fig:calibrati...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./document.tex:559: Undefined control sequence.
-<argument> \@safe@activesfalse \citename 
-                                         {Elzbieta, }2009
-l.559 ...laboratoire de recherche. \cite{Gard2009}
-                                                   Plusieurs cibles se trouv...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (25.61626pt too wide) in paragraph at lines 559--560
-\T1/cmr/m/n/10 d'une ca-m�ra en uti-li-sant une ou plu-sieurs photo d'un ob-jet
- (pat-tern de ca-li-brage) connu. [[]]
- []
-
-[18] <calibration_pattern.png, id=434, 1600.98125pt x 607.26875pt>
-File: calibration_pattern.png Graphic file (type png)
-
-<use calibration_pattern.png>
-Package pdftex.def Info: calibration_pattern.png used on input line 562.
-(pdftex.def)             Requested size: 452.96796pt x 171.81319pt.
-
-./document.tex:563: Undefined control sequence.
-<argument> \@safe@activesfalse \citename 
-                                         {Elzbieta, }2009
-l.563 ...togrammétrie. Copié de \cite{Gard2009}}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./document.tex:563: Undefined control sequence.
-<argument> \@safe@activesfalse \citename 
-                                         {Elzbieta, }2009
-l.563 ...togrammétrie. Copié de \cite{Gard2009}}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./document.tex:567: Undefined control sequence.
-<argument> \@safe@activesfalse \citename 
-                                         {Trucco \& Verri, }1998
-l.567 ... de photos non-calibrés. \cite{Truc1998}
-                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1311,18 +1261,170 @@ and I'll forget about whatever was undefined.
 
 ./document.tex:575: Undefined control sequence.
 <argument> \@safe@activesfalse \citename 
-                                         {Tournas \& Tsakiri, }2009
-l.575 ...chnique est décrite dans \cite{Tour2009}
-                                                  . Ici, on suppose que la p...
+                                         {Elzbieta, }2009
+l.575 ...laboratoire de recherche. \cite{Gard2009}
+                                                   Plusieurs cibles se trouv...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+Overfull \hbox (25.61626pt too wide) in paragraph at lines 575--576
+\T1/cmr/m/n/10 d'une ca-m�ra en uti-li-sant une ou plu-sieurs photo d'un ob-jet
+ (pat-tern de ca-li-brage) connu. [[]]
+ []
+
+<calibration_pattern.png, id=447, 1600.98125pt x 607.26875pt>
+File: calibration_pattern.png Graphic file (type png)
+
+<use calibration_pattern.png>
+Package pdftex.def Info: calibration_pattern.png used on input line 578.
+(pdftex.def)             Requested size: 452.96796pt x 171.81319pt.
+
+./document.tex:579: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Elzbieta, }2009
+l.579 ...togrammétrie. Copié de \cite{Gard2009}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:579: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Elzbieta, }2009
+l.579 ...togrammétrie. Copié de \cite{Gard2009}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:583: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Trucco \& Verri, }1998
+l.583 ... de photos non-calibrés. \cite{Truc1998}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `Trus1998' on page 19 undefined on input line 599.
+
 [19] [20 <./pinhole-eps-converted-to.pdf> <./calibration_pattern.png>]
+./document.tex:606: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Elzbieta, }2009
+l.606 ...x'_i \|$ des deux pixels. \cite{Gard2009}
+                                                   Ceci correspond au princi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:621: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Trucco \& Verri, }1998
+l.621 ... deux images sont requis. \cite{Truc1998}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[21]
+./document.tex:628: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Girod, }2013
+l.628 ...�néisation des couleurs. \cite{Giro2013}
+                                                   décrit une approche pour...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:636: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Girod, }2013
+l.636 ... La méthode proposée en \cite{Giro2013}
+                                                   cherche des points de cor...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<vignetting.png, id=484, 1108.14pt x 736.7525pt>
+File: vignetting.png Graphic file (type png)
+ <use vignetting.png>
+Package pdftex.def Info: vignetting.png used on input line 640.
+(pdftex.def)             Requested size: 271.78352pt x 180.69144pt.
+
+./document.tex:641: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Girod, }2013
+l.641 ...e d'une photo. Copié de \cite{Giro2013}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:641: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Girod, }2013
+l.641 ...e d'une photo. Copié de \cite{Giro2013}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<color_correction.png, id=487, 1195.46625pt x 633.36626pt>
+File: color_correction.png Graphic file (type png)
+
+<use color_correction.png>
+Package pdftex.def Info: color_correction.png used on input line 647.
+(pdftex.def)             Requested size: 362.37573pt x 191.99254pt.
+
+./document.tex:648: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Girod, }2013
+l.648 ... des couleurs. Copié de \cite{Giro2013}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./document.tex:648: Undefined control sequence.
+<argument> \@safe@activesfalse \citename 
+                                         {Girod, }2013
+l.648 ... des couleurs. Copié de \cite{Giro2013}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[22] [23 <./vignetting.png> <./color_correction.png>]
 Chapitre 3.
-(./document.bbl [21
+(./document.bbl [24
 
 ]
 ./document.bbl:3: Undefined control sequence.
@@ -1589,7 +1691,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 117.
 
-[22
+[25
 
 ]
 ./document.bbl:119: Undefined control sequence.
@@ -1770,24 +1872,28 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              by `\normalfont \bfseries ' on input line 182.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
- [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 660.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 660.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 660.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 660.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 188B00FE5E71F31453941B1F417B8FA9;2077.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+(rerunfilecheck)             Checksum: E40C07D2716A407C57470D4E60B08857;2235.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 660.
  ) 
 Here is how much of TeX's memory you used:
- 9692 strings out of 493308
- 145781 string characters out of 6137817
- 289281 words of memory out of 5000000
- 12809 multiletter control sequences out of 15000+600000
+ 9793 strings out of 493308
+ 147211 string characters out of 6137817
+ 291774 words of memory out of 5000000
+ 12890 multiletter control sequences out of 15000+600000
  24510 words of font info for 68 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,9n,51p,1410b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,51p,1410b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></u
@@ -1824,10 +1930,10 @@ lic/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
 c/cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
 cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
 -super/sftt1000.pfb>
-Output written on document.pdf (23 pages, 2838029 bytes).
+Output written on document.pdf (26 pages, 6436107 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 548 compressed objects within 6 object streams
- 167 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 670 PDF objects out of 1000 (max. 8388607)
+ 594 compressed objects within 6 object streams
+ 181 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
