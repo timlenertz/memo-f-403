@@ -95,6 +95,12 @@ Horn, Berthold~K.P. 1987 (April).
   A},  vol. 4.
 \newblock Department of Electrical Engineering, University of Hawaii at Manoa.
 
+\bibitem[\protect\citename{Huang \& You, }2012]{Huan2012}
+Huang, Jing, \& You, Suya. 2012.
+\newblock Point Cloud Matching based on 3D Self-Similarity.
+\newblock {\em Computer Vision and Pattern Recognition Workshops (CVPRW), 2012
+  IEEE Computer Society Conference on}, June, 41--48.
+
 \bibitem[\protect\citename{Keiner, }2011]{Kein2011}
 Keiner, Christopher. 2011.
 \newblock {\em Bildregistrierung von 3D-Laserscans und Bildern f{\"u}r Wadi
@@ -107,6 +113,11 @@ Kersten, Thomas, Przybilla, Heinz-J{\"u}rgen, \& Lindstaedt, Maren. 2006.
 \newblock Integration, Fusion und Kombination von terrestrischen
   Laserscannerdaten und digitalen Bildern.
 \newblock November.
+
+\bibitem[\protect\citename{Koch, }2008]{Koch2008}
+Koch, K.~R. 2008.
+\newblock Fitting Free-Form Surfaces to Laserscan Data by NURBS.
+\newblock {\em Allgemeine Vermessungs-Nachrichten}, {\bf 4}(August), 134--140.
 
 \bibitem[\protect\citename{Lerma {\em et~al.\ }\relax, }2009]{Lerm2009}
 Lerma, Jos{\'e}~Luis, Navarro, Santiago, Cabrelles, Miriam, \& Villaverde,
@@ -181,5 +192,15 @@ Tuytelaars, Tinne, \& Mikolajczyk, Krystian. 2007.
 \newblock Local Invariant Feature Detectors: A Survey.
 \newblock {\em Foundations and Trends in Computer Graphics and Vision}, {\bf
   3}(3).
+
+\bibitem[\protect\citename{Wendt, }2008]{Wend2008}
+Wendt, Axel. 2008.
+\newblock {\em Objektraumbasierte simultane multisensorale Orientierung}.
+\newblock Ph.D. thesis, Universit{\"a}t Hannover.
+
+\bibitem[\protect\citename{Wikipedia, }2014]{Web2}
+Wikipedia. 2014.
+\newblock {\em Article Wikipedia - Scanner tridimensionnel}.
+\newblock \url{http://fr.wikipedia.org/wiki/Scanner_tridimensionnel}.
 
 \end{thebibliography}

@@ -4,32 +4,25 @@
 \contentsline {section}{\numberline {2.1}Documentation 3D}{4}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Scanner tridimensionnels}{5}{subsection.2.1.1}
 \contentsline {subsubsection}{\nonumberline Scanners par temps de vol (LIDAR)}{5}{section*.2}
-\contentsline {subsubsection}{\nonumberline Scanners par triangulation}{5}{section*.3}
-\contentsline {subsubsection}{\nonumberline Scanners par d\IeC {\'e}calage de phase}{5}{section*.4}
-\contentsline {subsubsection}{\nonumberline Scanners par lumi\IeC {\`e}re structur\IeC {\'e}e}{5}{section*.5}
-\contentsline {section}{\numberline {2.2}Th\IeC {\'e}orie pr\IeC {\'e}liminaire}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}RANSAC}{5}{subsection.2.2.1}
+\contentsline {subsubsection}{\nonumberline Scanners par triangulation}{6}{section*.3}
+\contentsline {section}{\numberline {2.2}Th\IeC {\'e}orie pr\IeC {\'e}liminaire}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}RANSAC}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de Newton}{6}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Analyse procust\IeC {\'e}enne g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}e}{7}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Recalage}{7}{section.2.3}
-\contentsline {section}{\numberline {2.4}Iterative Closest Point}{8}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Calcul de la transformation par quaternions}{9}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Variantes de l'algorithme}{10}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Version simultan\IeC {\'e}e de l'ICP}{11}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}ICP g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{11}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.3}Recalage}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}Iterative Closest Point}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Calcul de la transformation par quaternions}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Version simultan\IeC {\'e}e de l'ICP}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}ICP g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{11}{subsection.2.4.3}
 \contentsline {section}{\numberline {2.5}4-Points Congruent Sets}{13}{section.2.5}
-\contentsline {section}{\numberline {2.6}Normal Distributions Transform}{14}{section.2.6}
-\contentsline {section}{\numberline {2.7}Extended Gaussian Images}{15}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Application sur le recalage de nuages de points}{16}{subsection.2.7.1}
-\contentsline {section}{\numberline {2.8}Identification et correspondance de droites}{17}{section.2.8}
-\contentsline {section}{\numberline {2.9}Identification et correspondance de plans}{17}{section.2.9}
-\contentsline {section}{\numberline {2.10}D\IeC {\'e}tecteurs de zones d'int\IeC {\'e}r\IeC {\^e}t}{17}{section.2.10}
-\contentsline {section}{\numberline {2.11}Recalage via des photos}{17}{section.2.11}
-\contentsline {section}{\numberline {2.12}Photogramm\IeC {\'e}trie}{17}{section.2.12}
-\contentsline {subsection}{\numberline {2.12.1}Optique}{17}{subsection.2.12.1}
-\contentsline {subsection}{\numberline {2.12.2}Mod\IeC {\`e}le pin-hole}{18}{subsection.2.12.2}
-\contentsline {subsection}{\numberline {2.12.3}Calibrage}{19}{subsection.2.12.3}
-\contentsline {subsection}{\numberline {2.12.4}Probl\IeC {\`e}me de correspondance}{21}{subsection.2.12.4}
-\contentsline {subsection}{\numberline {2.12.5}Reconstruction 3D}{21}{subsection.2.12.5}
-\contentsline {subsection}{\numberline {2.12.6}Combination photo-nuage de points}{22}{subsection.2.12.6}
-\contentsline {chapter}{\numberline {3}Projet pr\IeC {\'e}vu pour le m\IeC {\'e}moire}{24}{chapter.3}
+\contentsline {section}{\numberline {2.6}Normal Distributions Transform}{15}{section.2.6}
+\contentsline {section}{\numberline {2.7}Extended Gaussian Images}{17}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Application sur le recalage de nuages de points}{19}{subsection.2.7.1}
+\contentsline {section}{\numberline {2.8}Photogramm\IeC {\'e}trie}{19}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Optique}{19}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Mod\IeC {\`e}le pin-hole}{20}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Calibrage}{21}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.4}Probl\IeC {\`e}me de correspondance}{23}{subsection.2.8.4}
+\contentsline {subsection}{\numberline {2.8.5}Reconstruction 3D}{23}{subsection.2.8.5}
+\contentsline {subsection}{\numberline {2.8.6}Combination photo-nuage de points}{24}{subsection.2.8.6}
+\contentsline {chapter}{\numberline {3}Projet pr\IeC {\'e}vu pour le m\IeC {\'e}moire}{26}{chapter.3}
