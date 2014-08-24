@@ -4,9 +4,9 @@ The top-level auxiliary file: document.aux
 The style file: authordate1.bst
 Database file #1: ../references.bib
 Warning--entry type for "Web2" isn't style-file defined
---line 12 of file ../references.bib
+--line 25 of file ../references.bib
 Warning--entry type for "Web1" isn't style-file defined
---line 141 of file ../references.bib
+--line 155 of file ../references.bib
 Warning--I didn't find a database entry for "Trus1998"
 Warning--empty journal in Bibe2003
 Warning--empty booktitle in Dold2005

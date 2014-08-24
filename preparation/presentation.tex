@@ -51,6 +51,7 @@
 	\begin{column}[T]{.7\textwidth}
 		\begin{itemize}
 		\item Planification des scans / photos
+			\\ p.ex. ajouter markers visuels
 		\item Filtrage bruit, outliers
 		\item Recalage:
 			\begin{itemize}
@@ -58,7 +59,8 @@
 				\item Transformation rigide \\
 					(translation, rotation, redimensionnement)
 				\item Multiplication matricielle en coordonnées homogènes
-				\item Recalage brut (semi-automatisé):
+				\item Recalage brut (semi-automatisé)
+					\\ identifier correspondances, comparer formes, ...
 				\item Recalage précis: ICP
 			\end{itemize}
 		\item Combinaison photo + nuage $\rightarrow$ colorisation
@@ -66,7 +68,11 @@
 		\end{itemize}
 	\end{column}
 	\begin{column}[T]{.3\textwidth}
-
+		{\footnotesize Markers: \cite{Lerm2009}} \\
+		\includegraphics[width=\textwidth]{markers.png}
+		\vspace{1cm}
+		{\footnotesize Colorisation: \cite{Lich2011} } \\
+		\includegraphics[width=\textwidth]{imagetocloud.png}
 	\end{column}
 	\end{columns}
 \end{frame}
@@ -113,40 +119,80 @@
 	\item Grands nombres de points $\rightarrow$ algorithmes efficaces
 	\item Développer méthode/algorithmes, établir workflow nécessaire
 		\\ i.e. types de scans, photos requis
-	\item Scan Hôtel de Ville
+	\item Projets de documentation 3D
+		\begin{itemize}
+		\item Hôtel de Ville de Bruxelles
+		\item Grotte avec gravures préhistoriques
+		\end{itemize}
 	\end{itemize}
 	\begin{columns}
 		\begin{column}[T]{.5\textwidth}
 			\includegraphics[width=\textwidth]{HotelDeVille_08.png}
-			\center \Large{Détail}
 		\end{column}
 		\begin{column}[T]{.5\textwidth}
 			\includegraphics[width=\textwidth]{HotelDeVille_06rect.png}
-			\center \Large{Modèle complet}
 		\end{column}
 	\end{columns}
 \end{frame}
 
 \begin{frame}
-\frametitle{Projet de mémoire}
-	\begin{itemize}
+\frametitle{Quelques techniques/algorithmes}
+	\begin{block}{Nuages de points}
+		\begin{description}
+		\item[ICP] Recalage précis, minimisation distances
+		\item[Generalized-ICP] Approximation de surface par distribution des points
+		\item[4PCS] Correspondance de 4-points congruents
+		\item[Keypoints] Identifier points marquants
+		\item[Recalage par photos] Correspondances sur photos associés aux nuages
+		\end{description}	
+	\end{block}
 	
+	\begin{block}{Photogrammétrie}
+		\begin{description}
+		\item[Reconstruction] Trouver position 3D à partir de photos
+		\item[Appariement dense] Photos $\rightarrow$ carte de profondeur
+		\item[Zônes d'intérêt] Points communs sur les photos
+		\item[Hough Transform] Identifier droites
+		\end{description}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Iterative Closest Point {\footnotesize \cite{Besl1992}}}
+	\begin{itemize}
+	\item 2 nuages de points déjà recalés approximativement
+	\item \textbf{Cible} reste fixe, \textbf{Source} est transformée \\
+		\begin{enumerate}
+		\item Former couples $(s_i, c_i)$ de points +/- correspondants
+			\\ p.ex. points les plus proches
+		\item Métrique d'erreur, p.ex $\sum_i \| s_i - c_i \|^2$
+		\item Transformer \textf{source} pour minimiser erreur
+			\\ méthodes fermées, p.ex. rotation en quaternion
+		\item Répéter jusqu'à erreur $<$ seuil
+		\end{enumerate}
+	\item Plusieurs variantes {\footnotesize \cite{Rusi2001}}
+	\item \emph{Point-to-plane}: Plans normaux de \textbf{cible}
+	\item \emph{Generalized-ICP}: Points $=$ variables aléatoires {\footnotesize \cite{Sega2009}}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{ICP}
+\frametitle{4-Points Congruent Sets}
 	\begin{itemize}
-	\item Iterative Closest Point
-	\item Algorithme standard pour recalage précis
-	\item Nuages de points \emph{source} et \emph{cible} déjà approximativement alignés
-	\item Raffiner itérativement transformation
-	\item $\rightarrow$ Minimiser métrique d'erreur
+	\item \emph{4-Points} $=$ ensemble de 4 points coplanaires
+	\item Choisir alétoirement \emph{4-Points} \textbf{base} dans \textbf{cible}
+	\item Trouver plusieurs \emph{4-Points} congruents à \textbf{base} dans \textbf{source}
+		\\ $=$ liées par transformation rigide
+	\item Chercher celui qui donne le meilleure recalage
+	\item Répéter (RANSAC)
+	\item Pas besoin de recalage initial
+	\item Résistant au bruit (outliers)
+	\item \emph{K-4PCS}: Utilise des keypoints $\rightarrow$ Peut avoir densités différentes
 	\end{itemize}
+	\center \includegraphics[width=.7\textwidth]{4pcs.pdf} {\footnotesize \cite{Aige2008}}
 \end{frame}
 
-
 \bibliographystyle{plain}
-\bibliography{../references}
+\footnotesize \bibliography{../references}
 
 \end{document}

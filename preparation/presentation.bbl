@@ -1,5 +1,31 @@
 \begin{thebibliography}{1}
 
+\bibitem{Aige2008}
+Dror Aiger, Niloy~J Mitra, and Daniel Cohen-Or.
+\newblock 4-points congruent sets for robust pairwise surface registration.
+\newblock {\em ACM Transactions on Graphics}, 27(3), 2008.
+
+\bibitem{Besl1992}
+Paul~J Besl and Neil~D. McKay.
+\newblock A method for registration of 3-d shapes.
+\newblock In {\em IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, volume~14, pages 239--256. IEEE, February 1992.
+
+\bibitem{Lerm2009}
+Jos{\'e}~Luis Lerma, Santiago Navarro, Miriam Cabrelles, and Valent{\'\i}n
+  Villaverde.
+\newblock Terrestrial laser scanning and close range photogrammetry for 3d
+  archaeological documentation: the upper palaeolithic cave of parpall{\'o} as
+  a case study.
+\newblock {\em Journal of Archaeological Science}, 37:499--507, October 2009.
+
+\bibitem{Lich2011}
+Maria Lichtenstein.
+\newblock {\em Strukturbasierte Registrierung von Punktwolken unter Verwendung
+  von Bild- und Laserscannerdaten}.
+\newblock PhD thesis, Rheinisch-Westf{\"a}lische Technische Hochschule Aachen,
+  2011.
+
 \bibitem{Maka2006}
 Ameesh Makadia, Alexander~Patterson IV, and Kostas Daniilidis.
 \newblock Fully automatic registration of 3d point clouds.
@@ -13,5 +39,16 @@ V.~Matiukas and D.~Miniotas.
 \newblock Number~7 in ISSN 1392--1215 ELECTRONICS AND ELECTRICAL ENGINEERING.
   Department of Electronic Systems, Vilnius Gediminas Technical University,
   2011.
+
+\bibitem{Rusi2001}
+Szymon Rusinkiewicz and Marc Levoy.
+\newblock Efficient variants of the icp algorithm.
+\newblock volume 3-D Digital Imaging and Modeling, pages 145--152. Stanford
+  University, 2001.
+
+\bibitem{Sega2009}
+Aleksandr~V. Segal, Dirk Haehnel, and Sebastian Thrun.
+\newblock Generalized-icp.
+\newblock {\em Proceedings of Robotics: Science and Systems}, 2009.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  23 AUG 2014 18:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  24 AUG 2014 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1353,46 +1353,62 @@ Overfull \hbox (92.88457pt too wide) has occurred while \output is active
 [4
 
  <./dragon_screenshot.png>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+LaTeX Font Info:    Try loading font information for U+msa on input line 78.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+LaTeX Font Info:    Try loading font information for U+msb on input line 78.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 72.
+line 78.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-)
+) <markers.png, id=59, 932.48375pt x 855.195pt>
+File: markers.png Graphic file (type png)
+ <use markers.png>
+Package pdftex.def Info: markers.png used on input line 78.
+(pdftex.def)             Requested size: 102.73163pt x 94.21527pt.
+
+<imagetocloud.png, id=61, 1037.8775pt x 726.715pt>
+File: imagetocloud.png Graphic file (type png)
+ <use imagetocloud.png>
+Package pdftex.def Info: imagetocloud.png used on input line 78.
+(pdftex.def)             Requested size: 102.73163pt x 71.9217pt.
+
+Overfull \vbox (0.3751pt too high) detected at line 78
+ []
+
+
 Overfull \hbox (92.88457pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [5
 
-] <pre_reg.png, id=67, 1217.54875pt x 769.87625pt>
+ <./markers.png> <./imagetocloud.png>]
+<pre_reg.png, id=73, 1217.54875pt x 769.87625pt>
 File: pre_reg.png Graphic file (type png)
  <use pre_reg.png>
-Package pdftex.def Info: pre_reg.png used on input line 88.
+Package pdftex.def Info: pre_reg.png used on input line 94.
 (pdftex.def)             Requested size: 179.98631pt x 113.81102pt.
 
-Overfull \hbox (8.76866pt too wide) in paragraph at lines 88--88
+Overfull \hbox (8.76866pt too wide) in paragraph at lines 94--94
 [][]  
  []
 
-<post_reg.png, id=68, 1159.83313pt x 721.69624pt>
+<post_reg.png, id=74, 1159.83313pt x 721.69624pt>
 File: post_reg.png Graphic file (type png)
  <use post_reg.png>
-Package pdftex.def Info: post_reg.png used on input line 88.
+Package pdftex.def Info: post_reg.png used on input line 94.
 (pdftex.def)             Requested size: 182.90475pt x 113.81102pt.
 
-Overfull \hbox (11.6871pt too wide) in paragraph at lines 88--88
+Overfull \hbox (11.6871pt too wide) in paragraph at lines 94--94
 [][]  
  []
 
@@ -1404,16 +1420,16 @@ Overfull \hbox (92.88457pt too wide) has occurred while \output is active
 [6
 
  <./pre_reg.png> <./post_reg.png>]
-<pre_reg2.png, id=78, 861.2175pt x 754.82pt>
+<pre_reg2.png, id=84, 861.2175pt x 754.82pt>
 File: pre_reg2.png Graphic file (type png)
  <use pre_reg2.png>
-Package pdftex.def Info: pre_reg2.png used on input line 105.
+Package pdftex.def Info: pre_reg2.png used on input line 111.
 (pdftex.def)             Requested size: 162.30577pt x 142.26378pt.
 
-<post_reg2.png, id=79, 398.48875pt x 764.8575pt>
+<post_reg2.png, id=85, 398.48875pt x 764.8575pt>
 File: post_reg2.png Graphic file (type png)
  <use post_reg2.png>
-Package pdftex.def Info: post_reg2.png used on input line 105.
+Package pdftex.def Info: post_reg2.png used on input line 111.
 (pdftex.def)             Requested size: 74.11449pt x 142.26378pt.
 
 Overfull \hbox (92.88457pt too wide) has occurred while \output is active
@@ -1423,23 +1439,19 @@ Overfull \hbox (92.88457pt too wide) has occurred while \output is active
 [7
 
  <./pre_reg2.png> <./post_reg2.png>]
-<HotelDeVille_08.png, id=88, 1575.8875pt x 846.16125pt>
+<HotelDeVille_08.png, id=94, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_08.png Graphic file (type png)
 
 <use HotelDeVille_08.png>
-Package pdftex.def Info: HotelDeVille_08.png used on input line 128.
+Package pdftex.def Info: HotelDeVille_08.png used on input line 136.
 (pdftex.def)             Requested size: 171.21765pt x 91.92891pt.
 
-<HotelDeVille_06rect.png, id=89, 1575.8875pt x 846.16125pt>
+<HotelDeVille_06rect.png, id=95, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_06rect.png Graphic file (type png)
 
 <use HotelDeVille_06rect.png>
-Package pdftex.def Info: HotelDeVille_06rect.png used on input line 128.
+Package pdftex.def Info: HotelDeVille_06rect.png used on input line 136.
 (pdftex.def)             Requested size: 171.21765pt x 91.92891pt.
-
-Overfull \vbox (0.89842pt too high) detected at line 128
- []
-
 
 Overfull \hbox (92.88457pt too wide) has occurred while \output is active
  [][][][]  
@@ -1448,20 +1460,6 @@ Overfull \hbox (92.88457pt too wide) has occurred while \output is active
 [8
 
  <./HotelDeVille_08.png> <./HotelDeVille_06rect.png>]
-
-./presentation.tex:135: LaTeX Error: Something's wrong--perhaps a missing \item
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.135 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Overfull \hbox (92.88457pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1469,21 +1467,50 @@ Overfull \hbox (92.88457pt too wide) has occurred while \output is active
 [9
 
 ]
+./presentation.tex:177: Undefined control sequence.
+\beamer@doifinframe ...$ \item Transformer \textf 
+                                                  {source} pour minimiser er...
+l.177 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
 Overfull \hbox (92.88457pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [10
 
-] (./presentation.bbl)
+] <4pcs.pdf, id=130, 240.59102pt x 92.27403pt>
+File: 4pcs.pdf Graphic file (type pdf)
+ <use 4pcs.pdf>
+Package pdftex.def Info: 4pcs.pdf used on input line 193.
+(pdftex.def)             Requested size: 239.70367pt x 91.93727pt.
+
 Overfull \hbox (92.88457pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [11
 
+ <./4pcs.pdf>] (./presentation.bbl
+Overfull \hbox (92.88457pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[12
+
  </usr/local/texlive/2013/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
->]
+>])
+Overfull \hbox (92.88457pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[13]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1493,11 +1520,11 @@ Overfull \hbox (92.88457pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1505,33 +1532,41 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 18172 strings out of 493308
- 343099 string characters out of 6137817
- 418023 words of memory out of 5000000
- 21152 multiletter control sequences out of 15000+600000
- 21947 words of font info for 62 fonts, out of 8000000 for 9000
+ 18270 strings out of 493308
+ 345169 string characters out of 6137817
+ 422179 words of memory out of 5000000
+ 21233 multiletter control sequences out of 15000+600000
+ 24881 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,16n,57p,419b,830s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,57p,419b,830s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Navigation1} has been referenced but does not exi
 st, replaced by a fixed one
 
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on presentation.pdf (11 pages, 17012242 bytes).
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfsi0900.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local
+/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
+Output written on presentation.pdf (13 pages, 29948177 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2468 PDF objects out of 2487 (max. 8388607)
+ 1318 compressed objects within 14 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
