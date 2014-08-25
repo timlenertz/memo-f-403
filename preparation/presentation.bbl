@@ -51,4 +51,11 @@ Aleksandr~V. Segal, Dirk Haehnel, and Sebastian Thrun.
 \newblock Generalized-icp.
 \newblock {\em Proceedings of Robotics: Science and Systems}, 2009.
 
+\bibitem{Thei2013}
+P.W. Theiler, J.D. Wegner, and K.~Schindler.
+\newblock Markerless point cloud registration with keypoint-based 4-points
+  congruent sets.
+\newblock {\em ISPRS Annals of the Photogrammetry, Remote Sensing and Special
+  Information Sciences}, 2(5):283--288, November 2013.
+
 \end{thebibliography}

@@ -7,10 +7,10 @@
 \usecolortheme{whale}
 \beamertemplatenavigationsymbolsempty
 
-\title{Recalage et fusion de modèles numérisés\\tridimensionnels de grande taille}
+\title{\textbf{Recalage et fusion de modèles numérisés\\tridimensionnels de grande taille}}
 \subtitle{MEMO-F-403 - Préparation au mémoire}
 \author{Tim Lenertz}
-\date{\today}
+\date{2 septembre 2014}
 \institute{ULB}
 
 \maketitle
@@ -19,16 +19,23 @@
 
 \begin{frame}
 \frametitle{Introduction}
-	\begin{itemize}
-	\item \textbf{Nuage de points}\\
-		= points sur surface d'objet scanné
-	\item Coordonnées dans repère cartésien 3D 
-	\item Pris par scanner LIDAR, photogrammétrie
-	\item Attribués par couleur RGB, température, intensité, etc.
-	\item Pas de connectivité des points
-	\item Documentation 3D \\
-		(sites archéologiqes, bâtiments, terrain, dent, ...)
-	\end{itemize}
+	\begin{columns}
+	\begin{column}[T]{.7\textwidth}
+		\begin{itemize}
+		\item \textbf{Nuage de points}\\
+			= ensemble de points sur surface d'objet
+		\item Pas de connectivité des points
+		\item Coordonnées dans repère cartésien 3D 
+		\item Pris par scanner laser, photogrammétrie
+		\item Attribués par couleur RGB, température, intensité, etc.
+		\item Documentation 3D \\
+			(site archéologiqes, bâtiment, grotte, terrain, dent, Lune, ...)
+		\end{itemize}
+	\end{column}
+	\begin{column}[T]{.3\textwidth}
+		\includegraphics[width=\textwidth]{lidar.jpg}
+	\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -119,7 +126,7 @@
 	\item Grands nombres de points $\rightarrow$ algorithmes efficaces
 	\item Développer méthode/algorithmes, établir workflow nécessaire
 		\\ i.e. types de scans, photos requis
-	\item Projets de documentation 3D
+	\item Projets de documentation 3D (LISA ULB)
 		\begin{itemize}
 		\item Hôtel de Ville de Bruxelles
 		\item Grotte avec gravures préhistoriques
@@ -138,7 +145,7 @@
 \begin{frame}
 \frametitle{Quelques techniques/algorithmes}
 	\begin{block}{Nuages de points}
-		\begin{description}
+		\begin{description}[Recalage par photos]
 		\item[ICP] Recalage précis, minimisation distances
 		\item[Generalized-ICP] Approximation de surface par distribution des points
 		\item[4PCS] Correspondance de 4-points congruents
@@ -148,7 +155,7 @@
 	\end{block}
 	
 	\begin{block}{Photogrammétrie}
-		\begin{description}
+		\begin{description}[Appariement dense]
 		\item[Reconstruction] Trouver position 3D à partir de photos
 		\item[Appariement dense] Photos $\rightarrow$ carte de profondeur
 		\item[Zônes d'intérêt] Points communs sur les photos
@@ -171,23 +178,25 @@
 		\item Répéter jusqu'à erreur $<$ seuil
 		\end{enumerate}
 	\item Plusieurs variantes {\footnotesize \cite{Rusi2001}}
-	\item \emph{Point-to-plane}: Plans normaux de \textbf{cible}
+	\item \emph{Point-to-plane}: Plans tangents de \textbf{cible}
 	\item \emph{Generalized-ICP}: Points $=$ variables aléatoires {\footnotesize \cite{Sega2009}}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{4-Points Congruent Sets}
+\frametitle{4-Points Congruent Sets {\footnotesize \cite{Aige2008}}}
 	\begin{itemize}
-	\item \emph{4-Points} $=$ ensemble de 4 points coplanaires
-	\item Choisir alétoirement \emph{4-Points} \textbf{base} dans \textbf{cible}
-	\item Trouver plusieurs \emph{4-Points} congruents à \textbf{base} dans \textbf{source}
-		\\ $=$ liées par transformation rigide
-	\item Chercher celui qui donne le meilleure recalage
-	\item Répéter (RANSAC)
+	\item {4-Points} $=$ ensemble de 4 points coplanaires. Procédure:
+		\begin{enumerate}
+		\item Choisir alétoirement \emph{4-Points} \textbf{base} dans \textbf{cible}
+		\item Trouver plusieurs \emph{4-Points} congruents à \textbf{base} dans \textbf{source}
+			\\ $=$ liées par transformation rigide
+		\item Chercher celui qui donne le meilleure recalage
+		\item Répéter (RANSAC)
+		\end{enumerate}
 	\item Pas besoin de recalage initial
 	\item Résistant au bruit (outliers)
-	\item \emph{K-4PCS}: Utilise des keypoints $\rightarrow$ Peut avoir densités différentes
+	\item \emph{K-4PCS}: Utilise des keypoints $\rightarrow$ Peut avoir densités différentes {\footnotesize \cite{Thei2013}}
 	\end{itemize}
 	\center \includegraphics[width=.7\textwidth]{4pcs.pdf} {\footnotesize \cite{Aige2008}}
 \end{frame}
