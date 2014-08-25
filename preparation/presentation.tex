@@ -25,15 +25,16 @@
 		\item \textbf{Nuage de points}\\
 			= ensemble de points sur surface d'objet
 		\item Pas de connectivité des points
-		\item Coordonnées dans repère cartésien 3D 
 		\item Pris par scanner laser, photogrammétrie
-		\item Attribués par couleur RGB, température, intensité, etc.
+		\item Coordonnées dans repère cartésien 3D 
+		\item Attribués par couleur RGB, température, etc.
 		\item Documentation 3D \\
-			(site archéologiqes, bâtiment, grotte, terrain, dent, Lune, ...)
+			(site archéologiqes, bâtiment, grotte, terrain, dent, objet céleste, ...)
 		\end{itemize}
 	\end{column}
 	\begin{column}[T]{.3\textwidth}
 		\includegraphics[width=\textwidth]{lidar.jpg}
+		\\ \footnotesize Scanner LIDAR
 	\end{column}
 	\end{columns}
 \end{frame}
@@ -58,13 +59,13 @@
 	\begin{column}[T]{.7\textwidth}
 		\begin{itemize}
 		\item Planification des scans / photos
-			\\ p.ex. ajouter markers visuels
+			\\ p.ex. ajouter marqueurs visuels
 		\item Filtrage bruit, outliers
 		\item Recalage:
 			\begin{itemize}
 				\item Mettre plusieurs scans dans même repère
 				\item Transformation rigide \\
-					(translation, rotation, redimensionnement)
+					translation, rotation, (redimensionnement)
 				\item Multiplication matricielle en coordonnées homogènes
 				\item Recalage brut (semi-automatisé)
 					\\ identifier correspondances, comparer formes, ...
@@ -75,7 +76,7 @@
 		\end{itemize}
 	\end{column}
 	\begin{column}[T]{.3\textwidth}
-		{\footnotesize Markers: \cite{Lerm2009}} \\
+		{\footnotesize Marqueurs: \cite{Lerm2009}} \\
 		\includegraphics[width=\textwidth]{markers.png}
 		\vspace{1cm}
 		{\footnotesize Colorisation: \cite{Lich2011} } \\
