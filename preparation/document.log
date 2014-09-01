@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  25 AUG 2014 15:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  1 SEP 2014 16:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,9 +471,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \verbatim@out=\write3
-runsystem(touch w18-test-2014825958.tex)...disabled (restricted).
+runsystem(touch w18-test-201491966.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-2014825958.tex)...disabled (restricted).
+runsystem(rm -f w18-test-201491966.tex)...disabled (restricted).
 
 
 
@@ -865,7 +865,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<lidar.jpg, id=184, 1927.2pt x 2569.6pt>
+<lidar.jpg, id=185, 1927.2pt x 2569.6pt>
 File: lidar.jpg Graphic file (type jpg)
  <use lidar.jpg>
 Package pdftex.def Info: lidar.jpg used on input line 79.
@@ -1227,7 +1227,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[14] <ndt.png, id=360, 1371.1225pt x 497.86pt>
+[14] <ndt.png, id=361, 1371.1225pt x 497.86pt>
 File: ndt.png Graphic file (type png)
  <use ndt.png>
 Package pdftex.def Info: ndt.png used on input line 409.
@@ -1267,7 +1267,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [15] [16 <./lidar.jpg> <./ndt.png>]
-<ndt3d.png, id=384, 1388.18625pt x 567.11874pt>
+<ndt3d.png, id=385, 1388.18625pt x 567.11874pt>
 File: ndt3d.png Graphic file (type png)
  <use ndt3d.png>
 Package pdftex.def Info: ndt3d.png used on input line 451.
@@ -1315,7 +1315,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<egi.png, id=389, 1039.885pt x 487.8225pt>
+<egi.png, id=390, 1039.885pt x 487.8225pt>
 File: egi.png Graphic file (type png)
  <use egi.png>
 Package pdftex.def Info: egi.png used on input line 474.
@@ -1347,7 +1347,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `fig:egi_latlon' on page 17 undefined on input line 47
 9.
 
-<egi_lonlat.png, id=393, 557.08125pt x 555.07375pt>
+<egi_lonlat.png, id=394, 557.08125pt x 555.07375pt>
 File: egi_lonlat.png Graphic file (type png)
  <use egi_lonlat.png>
 Package pdftex.def Info: egi_lonlat.png used on input line 485.
@@ -1375,7 +1375,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<egi_geo.png, id=396, 822.07124pt x 819.06pt>
+<egi_geo.png, id=397, 822.07124pt x 819.06pt>
 File: egi_geo.png Graphic file (type png)
  <use egi_geo.png>
 Package pdftex.def Info: egi_geo.png used on input line 492.
@@ -1449,7 +1449,7 @@ Package epstopdf Info: Source file: <pinhole.eps>
 df pinhole.eps>
 (epstopdf)             \includegraphics on input line 609.
 Package epstopdf Info: Output file is already uptodate.
- <pinhole-eps-converted-to.pdf, id=433, 453.695pt x 334.24875pt>
+ <pinhole-eps-converted-to.pdf, id=434, 453.695pt x 334.24875pt>
 File: pinhole-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pinhole-eps-converted-to.pdf>
@@ -1484,7 +1484,7 @@ Overfull \hbox (25.61626pt too wide) in paragraph at lines 616--617
  (pat-tern de ca-li-brage) connu. [[]]
  []
 
-<calibration_pattern.png, id=437, 1600.98125pt x 607.26875pt>
+<calibration_pattern.png, id=438, 1600.98125pt x 607.26875pt>
 File: calibration_pattern.png Graphic file (type png)
 
 <use calibration_pattern.png>
@@ -1540,7 +1540,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<disparity.png, id=458, 1211.52625pt x 644.4075pt>
+<disparity.png, id=459, 1211.52625pt x 644.4075pt>
 File: disparity.png Graphic file (type png)
  <use disparity.png>
 Package pdftex.def Info: disparity.png used on input line 649.
@@ -1602,7 +1602,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<vignetting.png, id=473, 1108.14pt x 736.7525pt>
+<vignetting.png, id=474, 1108.14pt x 736.7525pt>
 File: vignetting.png Graphic file (type png)
  <use vignetting.png>
 Package pdftex.def Info: vignetting.png used on input line 686.
@@ -1630,7 +1630,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<color_correction.png, id=476, 1195.46625pt x 633.36626pt>
+<color_correction.png, id=477, 1195.46625pt x 633.36626pt>
 File: color_correction.png Graphic file (type png)
 
 <use color_correction.png>
@@ -1683,42 +1683,42 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<HotelDeVille_06.png, id=501, 1575.8875pt x 846.16125pt>
+<HotelDeVille_06.png, id=502, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_06.png Graphic file (type png)
 
 <use HotelDeVille_06.png>
 Package pdftex.def Info: HotelDeVille_06.png used on input line 716.
 (pdftex.def)             Requested size: 452.96796pt x 243.21136pt.
 
-<HotelDeVille_08.png, id=502, 1575.8875pt x 846.16125pt>
+<HotelDeVille_08.png, id=503, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_08.png Graphic file (type png)
 
 <use HotelDeVille_08.png>
 Package pdftex.def Info: HotelDeVille_08.png used on input line 723.
 (pdftex.def)             Requested size: 452.96796pt x 243.21136pt.
 
-<HotelDeVille_09.png, id=503, 1575.8875pt x 846.16125pt>
+<HotelDeVille_09.png, id=504, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_09.png Graphic file (type png)
 
 <use HotelDeVille_09.png>
 Package pdftex.def Info: HotelDeVille_09.png used on input line 729.
 (pdftex.def)             Requested size: 452.96796pt x 243.21136pt.
 
-<HotelDeVille_07.png, id=504, 1575.8875pt x 846.16125pt>
+<HotelDeVille_07.png, id=505, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_07.png Graphic file (type png)
 
 <use HotelDeVille_07.png>
 Package pdftex.def Info: HotelDeVille_07.png used on input line 735.
 (pdftex.def)             Requested size: 452.96796pt x 243.21136pt.
 
-<HotelDeVille_04.png, id=505, 1575.8875pt x 846.16125pt>
+<HotelDeVille_04.png, id=506, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_04.png Graphic file (type png)
 
 <use HotelDeVille_04.png>
 Package pdftex.def Info: HotelDeVille_04.png used on input line 741.
 (pdftex.def)             Requested size: 452.96796pt x 243.21136pt.
 
-<HotelDeVille_10.png, id=506, 1575.8875pt x 846.16125pt>
+<HotelDeVille_10.png, id=507, 1575.8875pt x 846.16125pt>
 File: HotelDeVille_10.png Graphic file (type png)
 
 <use HotelDeVille_10.png>
@@ -2253,11 +2253,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 756.
  ) 
 Here is how much of TeX's memory you used:
- 9854 strings out of 493308
- 148226 string characters out of 6137817
+ 9858 strings out of 493308
+ 148271 string characters out of 6137817
  292491 words of memory out of 5000000
- 12958 multiletter control sequences out of 15000+600000
- 24510 words of font info for 68 fonts, out of 8000000 for 9000
+ 12960 multiletter control sequences out of 15000+600000
+ 25275 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,9n,51p,1687b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -2287,19 +2287,20 @@ st/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/texmf-dist
 /fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dist/f
 onts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-dist/fon
 ts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/cm-super/sfsx1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/cm-super/sfsx1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
--super/sftt1000.pfb>
-Output written on document.pdf (31 pages, 26086776 bytes).
+/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
+/public/cm-super/sfsx1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/cm-super/sfsx1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
+lic/cm-super/sfsx1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/cm-super/sfsx2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
+-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
+uper/sftt1000.pfb>
+Output written on document.pdf (31 pages, 26098499 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
- 589 compressed objects within 6 object streams
+ 694 PDF objects out of 1000 (max. 8388607)
+ 592 compressed objects within 6 object streams
  160 named destinations out of 1000 (max. 500000)
  286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

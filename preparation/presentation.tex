@@ -148,16 +148,16 @@
 	\begin{block}{Nuages de points}
 		\begin{description}[Recalage par photos]
 		\item[ICP] Recalage précis, minimisation distances
-		\item[Generalized-ICP] Approximation de surface par distribution des points
+		\item[Generalized-ICP] Approximation de surface par distributions des points
 		\item[4PCS] Correspondance de 4-points congruents
-		\item[Keypoints] Identifier points marquants
-		\item[Recalage par photos] Correspondances sur photos associés aux nuages
+		\item[Keypoints] Identifier points d'intérêt
+		\item[Recalage par photos] Correspondances sur photos associées aux nuages
 		\end{description}	
 	\end{block}
 	
 	\begin{block}{Photogrammétrie}
 		\begin{description}[Appariement dense]
-		\item[Reconstruction] Trouver position 3D à partir de photos
+		\item[Reconstruction] Trouver positions 3D à partir de photos
 		\item[Appariement dense] Photos $\rightarrow$ carte de profondeur
 		\item[Zônes d'intérêt] Points communs sur les photos
 		\item[Hough Transform] Identifier droites
@@ -175,7 +175,7 @@
 			\\ p.ex. points les plus proches
 		\item Métrique d'erreur, p.ex $\sum_i \| s_i - c_i \|^2$
 		\item Transformer \textf{source} pour minimiser erreur
-			\\ méthodes fermées, p.ex. rotation en quaternion
+			\\ méthodes directes, p.ex. rotation en quaternion
 		\item Répéter jusqu'à erreur $<$ seuil
 		\end{enumerate}
 	\item Plusieurs variantes {\footnotesize \cite{Rusi2001}}
